@@ -48,7 +48,7 @@ const close_overlayContainer_btn = document.getElementById("overlay1-close-btn-i
 const back_overlayContainer_btn = document.getElementById("overlay1-back-btn-id");
 
 //GET URL STRING
-const queryString = window.location.serach; //PULL FROM BROSWER
+const queryString = window.location.search; //PULL FROM BROSWER
 // const queryString = "https://www.urcard.org/urmarket/checkout&&servid1=1&servid2=2&servcode1=1001171170&servcode2=1234&prodid1=1&prodcode1=122000111000112&urcardid=tm1v1000001a"; //TEST URL
 //PARSE THE URL PARAMETERS
 const urlParams = new URLSearchParams(queryString);
