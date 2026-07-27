@@ -2346,6 +2346,8 @@ urCard_btn.addEventListener("click", () => {
     loadingContainer.style.display = "block"; 
     //LOG - 'VIEW URCARD SELECTIONS' Button was clicked!
     console.log("'VIEW URCARD SELECTIONS' Button was clicked!");
+    //CHECK FOR - EMPTY SELECTED ITEMS IN ALL SLOTS
+    checkFor_emptySelectedItems_allSlots(); 
     //OPEN OVERLAY CONTAINER
     open_overlayContainer(); 
     open_stuff();
