@@ -3723,10 +3723,16 @@ function checkFor_emptySelectedItems_allSlots() {
         bottomBtns_container1.style.display = "none"; 
         //OPEN - NO ITEMS SELECTED CONTAINER
         noItems_selected_container.style.display = "flex";
+        //UPDATE - OVERLAY HEADER TXT
+        mainHeader_txt.innerHTML = "View UR Selections"; 
+        //CHECK IF 'ALL UR CARD SELECTIONS CONTAINER' IS PRESENT
+        if (allURCARD_selections_container.style.display == "none") {
+            allURCARD_selections_container.style.display = "flex"; 
+        }
     }
-    //ELSE - THERE ARE SLOTS PRESENT
+     //ELSE - THERE ARE SLOTS PRESENT
     else {
-        //NO SLOTS ARE PRESENT
+        //SLOTS ARE PRESENT - DO NOTHING
     }
 }
 
