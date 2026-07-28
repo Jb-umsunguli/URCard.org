@@ -4058,7 +4058,7 @@ let map;
 let placeSearch;
 let infoWindow;
 const markers = new Map();
-import { Loader } from "@googlemaps/js-api-loader";
+import {APILoader} from 'https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.15/index.min.js';
 const loader = new Loader({
     apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4" 
     // apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4",
@@ -4067,7 +4067,7 @@ const loader = new Loader({
 
 async function initMap() {
     const { Map } = await google.maps.importLibrary('maps');
-    import {APILoader} from 'https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.15/index.min.js';
+    const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
 
     map = new Map(document.getElementById('map'), {
         center: { lat: 36.988, lng: -76.361 }, // Example center (Hampton, VA)
