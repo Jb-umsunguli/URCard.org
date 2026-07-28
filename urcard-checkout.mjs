@@ -4054,175 +4054,94 @@ function pos_inputTokenization() {
 
 
 //  //ADDRESS SEARCH ASSETS
-// let map;
-// let placeSearch;
-// let infoWindow;
-// const markers = new Map();
-// import { Loader } from "@googlemaps/js-api-loader";
-// const loader = new Loader({
-//     apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4" 
-//     // apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4",
-//     // version: "weekly"
-// });
+let map;
+let placeSearch;
+let infoWindow;
+const markers = new Map();
+import { Loader } from "@googlemaps/js-api-loader";
+const loader = new Loader({
+    apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4" 
+    // apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4",
+    // version: "weekly"
+});
 
-// async function initMap() {
-//     const { Map } = await google.maps.importLibrary('maps');
-//     const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
+async function initMap() {
+    const { Map } = await google.maps.importLibrary('maps');
+    const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
 
-//     map = new Map(document.getElementById('map'), {
-//         center: { lat: 36.988, lng: -76.361 }, // Example center (Hampton, VA)
-//         zoom: 11,
-//         mapTypeControl: false,
-//         mapId: '6813b4cc8278d8a13d70094f', // Use your specific Map ID here
-//     });
+    map = new Map(document.getElementById('map'), {
+        center: { lat: 36.988, lng: -76.361 }, // Example center (Hampton, VA)
+        zoom: 11,
+        mapTypeControl: false,
+        mapId: '6813b4cc8278d8a13d70094f', // Use your specific Map ID here
+    });
 
-//     placeSearch = document.getElementById('place-search');
-//     placeSearch.addEventListener('gmp-load', addMarkers);
-//     placeSearch.addEventListener('gmp-select', ({ place }) => {
-//         if (markers.has(place.id)) {
-//             // Optionally zoom to the selected place
-//             map.setCenter(place.location);
-//             map.setZoom(15);
-//         }
-//     });
+    placeSearch = document.getElementById('place-search');
+    placeSearch.addEventListener('gmp-load', addMarkers);
+    placeSearch.addEventListener('gmp-select', ({ place }) => {
+        if (markers.has(place.id)) {
+            // Optionally zoom to the selected place
+            map.setCenter(place.location);
+            map.setZoom(15);
+        }
+    });
 
-//     const textInput = document.getElementById('search-text-input');
-//     const searchButton = document.getElementById('search-text-input-button');
+    const textInput = document.getElementById('search-text-input');
+    const searchButton = document.getElementById('search-text-input-button');
 
-//     searchButton.addEventListener('click', () => {
-//         findPlaces(textInput.value);
-//     });
+    searchButton.addEventListener('click', () => {
+        findPlaces(textInput.value);
+    });
 
-//     textInput.addEventListener('keydown', (event) => {
-//         if (event.key === 'Enter') {
-//             findPlaces(textInput.value);
-//         }
-//     });
+    textInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            findPlaces(textInput.value);
+        }
+    });
     
-//     infoWindow = new google.maps.InfoWindow();
-// }
+    infoWindow = new google.maps.InfoWindow();
+}
 
-// async function findPlaces(query) {
-//     // Clear existing markers
-//     markers.forEach(marker => marker.setMap(null));
-//     markers.clear();
+async function findPlaces(query) {
+    // Clear existing markers
+    markers.forEach(marker => marker.setMap(null));
+    markers.clear();
 
-//     if (query) {
-//         // Configure the search request
-//         placeSearch.textQuery = query;
-//         // The gmp-load event listener will be triggered once the search results load
-//     }
-// }
+    if (query) {
+        // Configure the search request
+        placeSearch.textQuery = query;
+        // The gmp-load event listener will be triggered once the search results load
+    }
+}
 
-// async function addMarkers() {
-//     const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
+async function addMarkers() {
+    const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
 
-//     if (placeSearch.places.length === 0) {
-//         return;
-//     }
+    if (placeSearch.places.length === 0) {
+        return;
+    }
 
-//     for (const place of placeSearch.places) {
-//         // The place object includes formattedAddress and placeId
-//         console.log("Found place:", place.displayName, place.formattedAddress, place.id);
+    for (const place of placeSearch.places) {
+        // The place object includes formattedAddress and placeId
+        console.log("Found place:", place.displayName, place.formattedAddress, place.id);
 
-//         const marker = new AdvancedMarkerElement({
-//             map: map,
-//             position: place.location,
-//             title: place.displayName,
-//         });
-
-//         marker.addListener('click', () => {
-//             infoWindow.setContent(`
-//                 <strong>${place.displayName}</strong><br>
-//                 Address: ${place.formattedAddress}<br>
-//                 Place ID: ${place.id}
-//             `);
-//             infoWindow.open(map, marker);
-//         });
-
-//         markers.set(place.id, marker);
-//     }
-// }
-
-// initMap();
-
-
-
-
-
-
-
-
-      "use strict";
-
-      // This loads helper components from the Extended Component Library,
-      // https://github.com/googlemaps/extended-component-library.
-      import {APILoader} from 'https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.15/index.min.js';
-
-      const CONFIGURATION = {
-        "ctaTitle": "Checkout",
-        "mapOptions": {"center":{"lat":37.4221,"lng":-122.0841},"fullscreenControl":false,"mapTypeControl":false,"streetViewControl":false,"zoom":11,"zoomControl":false,"maxZoom":22,"mapId":""},
-        "mapsApiKey": "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4",
-        "capabilities": {"addressAutocompleteControl":true,"mapDisplayControl":false,"ctaControl":true}
-      };
-
-      const SHORT_NAME_ADDRESS_COMPONENT_TYPES =
-          new Set(['street_number', 'administrative_area_level_1', 'postal_code']);
-
-      const ADDRESS_COMPONENT_TYPES_IN_FORM = [
-        'location',
-        'locality',
-        'administrative_area_level_1',
-        'postal_code',
-        'country',
-      ];
-
-      function getFormInputElement(componentType) {
-        return document.getElementById(`${componentType}-input`);
-      }
-
-      function fillInAddress(place) {
-        function getComponentName(componentType) {
-          for (const component of place.address_components || []) {
-            if (component.types[0] === componentType) {
-              return SHORT_NAME_ADDRESS_COMPONENT_TYPES.has(componentType) ?
-                  component.short_name :
-                  component.long_name;
-            }
-          }
-          return '';
-        }
-
-        function getComponentText(componentType) {
-          return (componentType === 'location') ?
-              `${getComponentName('street_number')} ${getComponentName('route')}` :
-              getComponentName(componentType);
-        }
-
-        for (const componentType of ADDRESS_COMPONENT_TYPES_IN_FORM) {
-          getFormInputElement(componentType).value = getComponentText(componentType);
-        }
-      }
-
-      async function initMap() {
-        const {Autocomplete} = await APILoader.importLibrary('places');
-
-        const autocomplete = new Autocomplete(getFormInputElement('location'), {
-          fields: ['address_components', 'geometry', 'name'],
-          types: ['address'],
+        const marker = new AdvancedMarkerElement({
+            map: map,
+            position: place.location,
+            title: place.displayName,
         });
 
-        autocomplete.addListener('place_changed', () => {
-          const place = autocomplete.getPlace();
-          if (!place.geometry) {
-            // User entered the name of a Place that was not suggested and
-            // pressed the Enter key, or the Place Details request failed.
-            window.alert(`No details available for input: '${place.name}'`);
-            return;
-          }
-          fillInAddress(place);
+        marker.addListener('click', () => {
+            infoWindow.setContent(`
+                <strong>${place.displayName}</strong><br>
+                Address: ${place.formattedAddress}<br>
+                Place ID: ${place.id}
+            `);
+            infoWindow.open(map, marker);
         });
-      }
 
-      initMap();
+        markers.set(place.id, marker);
+    }
+}
+initMap();
 //  //END - ADDRESS SEARCH ASSETS
