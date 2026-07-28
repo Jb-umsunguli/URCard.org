@@ -4067,7 +4067,7 @@ const loader = new Loader({
 
 async function initMap() {
     const { Map } = await google.maps.importLibrary('maps');
-    const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
+    import {APILoader} from 'https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.15/index.min.js';
 
     map = new Map(document.getElementById('map'), {
         center: { lat: 36.988, lng: -76.361 }, // Example center (Hampton, VA)
