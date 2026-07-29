@@ -5092,9 +5092,7 @@
                         if (!selectedPlace) {
                             alert("Please select an address from the search dropdown first.");
                             return;
-                        } else if (streetInput.value == "") {
-                            alert("Please select an address from the search dropdown to verify your shipping address");
-                        }        
+                        } 
                         try {
                             // Request addressComponents field from the selected place
                             await selectedPlace.fetchFields({
