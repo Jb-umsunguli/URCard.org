@@ -5107,10 +5107,10 @@
                 }
     
                 // Populate inputs
-                user_streetAddress.value = `${streetNumber} ${route}`.trim();
-                user_city.value = city;
-                user_state.value = state;
-                user_zipcode.value = zip;
+                document.getElementById("user-street-id").value = `${streetNumber} ${route}`.trim();
+                document.getElementById("user-city-id").value = city;
+                document.getElementById("user-state-id").value = state;
+                document.getElementById("user-zipcode-id").value = zip;
             }
     
             initAutocomplete().catch(console.error);
