@@ -5083,6 +5083,43 @@
                     console.log("Selected Place details:", place);
                 });
             }
+
+            /**
+            * Parses Google Places addressComponents array and assigns values to specific form inputs
+            */
+            function fillAddressFields(components) {
+                let streetNumber = '';
+                let route = '';
+                let city = '';
+                let state = '';
+                let zip = '';
+    
+                // Iterate through components and match by type tag
+                for (const component of components) {
+                    const types = component.types;
+    
+                    if (types.includes('street_number')) {
+                        streetNumber = component.longText;
+                    } else if (types.includes('route')) {
+                        route = component.shortText; // e.g. "Main St"
+                    } else if (types.includes('locality')) {
+                        city = component.longText; // City name
+                    } else if (types.includes('sublocality_level_1') && !city) {
+                        // Fallback for cities formatted under sublocality (e.g., Brooklyn, NY)
+                        city = component.longText;
+                    } else if (types.includes('administrative_area_level_1')) {
+                        state = component.shortText; // Two-letter state code (e.g. "VA")
+                    } else if (types.includes('postal_code')) {
+                        zip = component.longText;
+                    }
+                }
+    
+                // Populate inputs
+                document.getElementById('user_streetAddress').value = `${streetNumber} ${route}`.trim();
+                document.getElementById('user_city').value = city;
+                document.getElementById('user_state').value = state;
+                document.getElementById('user_zipcode').value = zip;
+            }
     
             initAutocomplete().catch(console.error);
         </script>
