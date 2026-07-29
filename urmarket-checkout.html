@@ -5051,7 +5051,7 @@
             let selectedPlace = null;
         
             const loader = new Loader({
-                apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4",
+                apiKey: "YOUR_API_KEY",
                 version: "weekly",
                 libraries: ["places"]
             });
@@ -5060,8 +5060,9 @@
                 await loader.load();
                 const { PlaceAutocompleteElement } = await google.maps.importLibrary('places');
         
+                // Note: New API uses includedRegionCodes for country filtering
                 const autocompleteElement = new PlaceAutocompleteElement({
-                    componentRestrictions: { country: ['us'] }
+                    includedRegionCodes: ['us']
                 });
         
                 const container = document.getElementById('autocomplete-container');
@@ -5069,16 +5070,19 @@
                     container.appendChild(autocompleteElement);
                 }
         
-                // Listen for place selection
-                autocompleteElement.addEventListener('gmp-placeselect', async (event) => {
-                    selectedPlace = event.place;
+                // 1. Correct event name: 'gmp-select'
+                // 2. Extract placePrediction and convert to a Place instance
+                autocompleteElement.addEventListener('gmp-select', async (event) => {
+                    if (event.placePrediction) {
+                        selectedPlace = event.placePrediction.toPlace();
+                    }
                 });
         
                 // Finish button handler
                 const finishBtn = document.getElementById('finish-userAddress-button-id');
                 if (finishBtn) {
                     finishBtn.addEventListener('click', async (e) => {
-                        e.preventDefault(); // Prevent any accidental form submission
+                        e.preventDefault();
         
                         if (!selectedPlace) {
                             alert("Please select an address from the search dropdown first.");
@@ -5086,7 +5090,7 @@
                         }
         
                         try {
-                            // Explicitly fetch address components
+                            // Request addressComponents field from the selected place
                             await selectedPlace.fetchFields({
                                 fields: ['addressComponents']
                             });
@@ -5094,10 +5098,10 @@
                             if (selectedPlace.addressComponents) {
                                 fillAddressFields(selectedPlace.addressComponents);
                             } else {
-                                console.error("No address components found for place:", selectedPlace);
+                                console.error("No address components returned:", selectedPlace);
                             }
                         } catch (err) {
-                            console.error("Error fetching place fields:", err);
+                            console.error("Error fetching place details:", err);
                         }
                     });
                 }
@@ -5113,7 +5117,7 @@
                 for (const component of components) {
                     const types = component.types || [];
                     
-                    // Handle both new Place Class (longText / shortText) and classic Objects
+                    // Support modern (longText/shortText) and classic (long_name/short_name) properties
                     const longVal = component.longText || component.long_name || '';
                     const shortVal = component.shortText || component.short_name || '';
         
@@ -5132,7 +5136,7 @@
                     }
                 }
         
-                // Populate fields
+                // Match input element IDs
                 const streetInput = document.getElementById("user-street-id");
                 const cityInput = document.getElementById("user-city-id");
                 const stateInput = document.getElementById("user-state-id");
@@ -5143,9 +5147,12 @@
                 if (stateInput) stateInput.value = state;
                 if (zipInput) zipInput.value = zip;
         
-                // Force browser change events so inputs update visually/statefully
+                // Trigger change events so UI frameworks reflect the new values
                 [streetInput, cityInput, stateInput, zipInput].forEach(input => {
-                    if (input) input.dispatchEvent(new Event('input', { bubbles: true }));
+                    if (input) {
+                        input.dispatchEvent(new Event('input', { bubbles: true }));
+                        input.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
                 });
             }
         
