@@ -5111,10 +5111,11 @@
                 document.getElementById("user-city-id").value = city;
                 document.getElementById("user-state-id").value = state;
                 document.getElementById("user-zipcode-id").value = zip;
+
+                console.log("Test: " + document.getElementById("user-street-id").value);
             }
     
             initAutocomplete().catch(console.error);
-            console.log("Test: " + document.getElementById("user-street-id").value);
         </script>
         
     </body>
