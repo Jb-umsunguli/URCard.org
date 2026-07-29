@@ -5030,4 +5030,98 @@
         
     </body>
     <!-- <script type="module" src="app.js"></script> -->
+    <script type="module">
+         //  //ADDRESS SEARCH ASSETS
+        let map;
+        let placeSearch;
+        let infoWindow;
+        const markers = new Map();
+        import {APILoader} from 'https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.15/index.min.js';
+        const loader = new Loader({
+            apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4" 
+            // apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4",
+            // version: "weekly"
+        });
+        
+        async function initMap() {
+            const { Map } = await google.maps.importLibrary('maps');
+            const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
+        
+            map = new Map(document.getElementById('map'), {
+                center: { lat: 36.988, lng: -76.361 }, // Example center (Hampton, VA)
+                zoom: 11,
+                mapTypeControl: false,
+                mapId: '6813b4cc8278d8a13d70094f', // Use your specific Map ID here
+            });
+        
+            placeSearch = document.getElementById('place-search');
+            placeSearch.addEventListener('gmp-load', addMarkers);
+            placeSearch.addEventListener('gmp-select', ({ place }) => {
+                if (markers.has(place.id)) {
+                    // Optionally zoom to the selected place
+                    map.setCenter(place.location);
+                    map.setZoom(15);
+                }
+            });
+        
+            const textInput = document.getElementById('search-text-input');
+            const searchButton = document.getElementById('search-text-input-button');
+        
+            searchButton.addEventListener('click', () => {
+                findPlaces(textInput.value);
+            });
+        
+            textInput.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    findPlaces(textInput.value);
+                }
+            });
+            
+            infoWindow = new google.maps.InfoWindow();
+        }
+        
+        async function findPlaces(query) {
+            // Clear existing markers
+            markers.forEach(marker => marker.setMap(null));
+            markers.clear();
+        
+            if (query) {
+                // Configure the search request
+                placeSearch.textQuery = query;
+                // The gmp-load event listener will be triggered once the search results load
+            }
+        }
+        
+        async function addMarkers() {
+            const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
+        
+            if (placeSearch.places.length === 0) {
+                return;
+            }
+        
+            for (const place of placeSearch.places) {
+                // The place object includes formattedAddress and placeId
+                console.log("Found place:", place.displayName, place.formattedAddress, place.id);
+        
+                const marker = new AdvancedMarkerElement({
+                    map: map,
+                    position: place.location,
+                    title: place.displayName,
+                });
+        
+                marker.addListener('click', () => {
+                    infoWindow.setContent(`
+                        <strong>${place.displayName}</strong><br>
+                        Address: ${place.formattedAddress}<br>
+                        Place ID: ${place.id}
+                    `);
+                    infoWindow.open(map, marker);
+                });
+        
+                markers.set(place.id, marker);
+            }
+        }
+        initMap();
+        //  //END - ADDRESS SEARCH ASSETS
+    </script>
 </html>
