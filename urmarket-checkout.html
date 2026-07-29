@@ -5031,98 +5031,101 @@
     </body>
     <!-- <script type="module" src="app.js"></script> -->
     <script type="module">
-         //  //ADDRESS SEARCH ASSETS
+        // 1. Import Loader from a proper ESM CDN link
+        import { Loader } from 'https://cdn.jsdelivr.net/npm/@googlemaps/js-api-loader@1.16.6/+esm';
+
         let map;
         let placeSearch;
         let infoWindow;
         const markers = new Map();
-        import { Loader } from 'https://github.com/googlemaps/extended-component-library';
-        // import { Loader } from "@googlemaps/js-api-loader";
+
         const loader = new Loader({
-            // apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4" 
             apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4",
-            version: "weekly"
+            version: "weekly",
+            libraries: ["places", "marker"]
         });
-        
+
         async function initMap() {
+            // 2. Ensure the JS API is loaded before accessing google.maps
+            await loader.load();
+
             const { Map } = await google.maps.importLibrary('maps');
             const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
-        
+
             map = new Map(document.getElementById('map'), {
-                center: { lat: 36.988, lng: -76.361 }, // Example center (Hampton, VA)
+                center: { lat: 36.988, lng: -76.361 }, // Hampton, VA
                 zoom: 11,
                 mapTypeControl: false,
-                mapId: '6813b4cc8278d8a13d70094f', // Use your specific Map ID here
+                mapId: '6813b4cc8278d8a13d70094f',
             });
-        
+
             placeSearch = document.getElementById('place-search');
-            placeSearch.addEventListener('gmp-load', addMarkers);
-            placeSearch.addEventListener('gmp-select', ({ place }) => {
-                if (markers.has(place.id)) {
-                    // Optionally zoom to the selected place
-                    map.setCenter(place.location);
-                    map.setZoom(15);
-                }
-            });
-        
+            
+            if (placeSearch) {
+                placeSearch.addEventListener('gmp-load', addMarkers);
+                placeSearch.addEventListener('gmp-select', ({ place }) => {
+                    if (place && place.location && markers.has(place.id)) {
+                        map.setCenter(place.location);
+                        map.setZoom(15);
+                    }
+                });
+            }
+
             const textInput = document.getElementById('search-text-input');
             const searchButton = document.getElementById('search-text-input-button');
-        
+
             searchButton.addEventListener('click', () => {
                 findPlaces(textInput.value);
             });
-        
+
             textInput.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter') {
                     findPlaces(textInput.value);
                 }
             });
-            
+
             infoWindow = new google.maps.InfoWindow();
         }
-        
+
         async function findPlaces(query) {
-            // Clear existing markers
-            markers.forEach(marker => marker.setMap(null));
+            // 3. Clear existing markers using marker.map = null for AdvancedMarkerElement
+            markers.forEach(marker => marker.map = null);
             markers.clear();
-        
-            if (query) {
-                // Configure the search request
+
+            if (query && placeSearch) {
                 placeSearch.textQuery = query;
-                // The gmp-load event listener will be triggered once the search results load
             }
         }
-        
+
         async function addMarkers() {
             const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
-        
-            if (placeSearch.places.length === 0) {
+
+            if (!placeSearch.places || placeSearch.places.length === 0) {
                 return;
             }
-        
+
             for (const place of placeSearch.places) {
-                // The place object includes formattedAddress and placeId
                 console.log("Found place:", place.displayName, place.formattedAddress, place.id);
-        
+
                 const marker = new AdvancedMarkerElement({
                     map: map,
                     position: place.location,
                     title: place.displayName,
                 });
-        
+
                 marker.addListener('click', () => {
                     infoWindow.setContent(`
-                        <strong>${place.displayName}</strong><br>
-                        Address: ${place.formattedAddress}<br>
+                        <strong>${place.displayName || ''}</strong><br>
+                        Address: ${place.formattedAddress || 'N/A'}<br>
                         Place ID: ${place.id}
                     `);
                     infoWindow.open(map, marker);
                 });
-        
+
                 markers.set(place.id, marker);
             }
         }
-        initMap();
-        //  //END - ADDRESS SEARCH ASSETS
+
+        initMap().catch(console.error);
     </script>
 </html>
