@@ -5046,7 +5046,7 @@
         <!-- ADDRESS SEARCH ASSETS -->
         <script type="module">
             import { Loader } from 'https://cdn.jsdelivr.net/npm/@googlemaps/js-api-loader@1.16.6/+esm';
-    
+
             const loader = new Loader({
                 apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4",
                 version: "weekly",
@@ -5055,38 +5055,30 @@
     
             async function initAutocomplete() {
                 await loader.load();
-    
-                // Import the modern PlaceAutocompleteElement class
                 const { PlaceAutocompleteElement } = await google.maps.importLibrary('places');
     
-                // Instantiate the new Web Component element
                 const autocompleteElement = new PlaceAutocompleteElement({
-                    componentRestrictions: { country: ['us'] } // Optional: restrict to specific countries
+                    componentRestrictions: { country: ['us'] }
                 });
     
-                // Mount the element inside your DOM container
-                const container = document.getElementById('autocomplete-container');
-                container.appendChild(autocompleteElement);
+                document.getElementById('autocomplete-container').appendChild(autocompleteElement);
     
-                // Listen for selection via the new 'gmp-placeselect' event
+                // Listen for selection
                 autocompleteElement.addEventListener('gmp-placeselect', async ({ place }) => {
-                    // Fetch specific details for the selected place
+                    // Request addressComponents from the place details
                     await place.fetchFields({
-                        fields: ['displayName', 'formattedAddress', 'location']
+                        fields: ['addressComponents']
                     });
     
-                    // Display place info
-                    document.getElementById('selected-details').style.display = 'block';
-                    document.getElementById('place-name').textContent = `Name: ${place.displayName || 'N/A'}`;
-                    document.getElementById('place-address').textContent = `Formatted Address: ${place.formattedAddress || 'N/A'}`;
-    
-                    console.log("Selected Place details:", place);
+                    if (place.addressComponents) {
+                        fillAddressFields(place.addressComponents);
+                    }
                 });
             }
-
+    
             /**
-            * Parses Google Places addressComponents array and assigns values to specific form inputs
-            */
+             * Parses Google Places addressComponents array and assigns values to specific form inputs
+             */
             function fillAddressFields(components) {
                 let streetNumber = '';
                 let route = '';
@@ -5115,10 +5107,10 @@
                 }
     
                 // Populate inputs
-                document.getElementById('user_streetAddress').value = `${streetNumber} ${route}`.trim();
-                document.getElementById('user_city').value = city;
-                document.getElementById('user_state').value = state;
-                document.getElementById('user_zipcode').value = zip;
+                document.getElementById('street-address').value = `${streetNumber} ${route}`.trim();
+                document.getElementById('city').value = city;
+                document.getElementById('state').value = state;
+                document.getElementById('zip').value = zip;
             }
     
             initAutocomplete().catch(console.error);
