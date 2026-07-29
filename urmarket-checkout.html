@@ -2481,6 +2481,7 @@
                                                 <!-- <input id="address-input" type="text" placeholder="Enter shipping address" style="text-align: center;">
                                                 <button id="search-text-input-button">Search</button> -->
                                                 <div id="autocomplete-container"></div>
+                                                <button id="finish-userAddress-button-id">finish</button>
                                             </div>                                            
                                         </div>
                                         <!-- 2ND COLUMN - STREET / CITY / STATE INPUTS -->
@@ -5072,7 +5073,6 @@
     
                     if (place.addressComponents) {
                         fillAddressFields(place.addressComponents);
-                        alert("it's working nigga!");
                     }
                 });
             }
@@ -5080,6 +5080,11 @@
             /**
              * Parses Google Places addressComponents array and assigns values to specific form inputs
              */
+            const finish_userAddress_button = document.getElementById("finish-userAddress-button-id"); 
+            finish_userAddress_button.addEventListener('click', () => {
+                fillAddressFields(components); 
+                alert("it's working nigga!"); 
+            });
             function fillAddressFields(components) {
                 let streetNumber = '';
                 let route = '';
