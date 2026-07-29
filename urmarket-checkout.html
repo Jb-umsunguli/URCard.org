@@ -5048,6 +5048,9 @@
         <script type="module">
             import { Loader } from 'https://cdn.jsdelivr.net/npm/@googlemaps/js-api-loader@1.16.6/+esm';
 
+            // Holds the reference to the selected place until the button is clicked
+            let selectedPlace = null;
+    
             const loader = new Loader({
                 apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4",
                 version: "weekly",
@@ -5064,15 +5067,25 @@
     
                 document.getElementById('autocomplete-container').appendChild(autocompleteElement);
     
-                // Listen for selection
-                autocompleteElement.addEventListener('gmp-placeselect', async ({ place }) => {
-                    // Request addressComponents from the place details
-                    await place.fetchFields({
+                // Save the selected place object when the user selects from suggestions
+                autocompleteElement.addEventListener('gmp-placeselect', ({ place }) => {
+                    selectedPlace = place;
+                });
+    
+                // Button click listener
+                document.getElementById('finish-userAddress-button-id').addEventListener('click', async () => {
+                    if (!selectedPlace) {
+                        alert("Please select an address from the search box first.");
+                        return;
+                    }
+    
+                    // Fetch address components for the stored place
+                    await selectedPlace.fetchFields({
                         fields: ['addressComponents']
                     });
     
-                    if (place.addressComponents) {
-                        fillAddressFields(place.addressComponents);
+                    if (selectedPlace.addressComponents) {
+                        fillAddressFields(selectedPlace.addressComponents);
                     }
                 });
             }
@@ -5080,11 +5093,6 @@
             /**
              * Parses Google Places addressComponents array and assigns values to specific form inputs
              */
-            const finish_userAddress_button = document.getElementById("finish-userAddress-button-id"); 
-            finish_userAddress_button.addEventListener('click', () => {
-                fillAddressFields(); 
-                alert("it's working nigga!"); 
-            });
             function fillAddressFields(components) {
                 let streetNumber = '';
                 let route = '';
