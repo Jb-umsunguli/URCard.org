@@ -1,3 +1,4 @@
+<script type="module">
 //CLICK ABOVE CARD TXT
 const clickAbove_card_txt = document.getElementById("clickAbove-card-txt-id");
 const mediaQuery = window.matchMedia("(max-width: 650px)");
@@ -4052,7 +4053,6 @@ function pos_inputTokenization() {
     alert("Ready to tokenize input data for payment processor!"); 
 }
 
-<script type="module">
     //  //ADDRESS SEARCH ASSETS
     let map;
     let placeSearch;
