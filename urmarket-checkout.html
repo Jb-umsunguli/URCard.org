@@ -2498,7 +2498,7 @@
                                             </div>
                                             <!-- 2ND COLUMN - STATE INPUT -->
                                             <div class="col3-w20pr-h100pr-container2-class form-group" style="display: block; padding: 15px; font-size: auto;">
-                                                <label style="display: block;" for="user-city-id">State:</label>
+                                                <label style="display: block;" for="user-state-id">State:</label>
                                                 <select name="state" id="user-state-id" class="textInput-type1-class">
                                                     <!-- BLANK OPTION -->
                                                     <option value=""></option>
@@ -5047,49 +5047,55 @@
         <!-- ADDRESS SEARCH ASSETS -->
         <script type="module">
             import { Loader } from 'https://cdn.jsdelivr.net/npm/@googlemaps/js-api-loader@1.16.6/+esm';
-
+        
             // Holds the reference to the selected place until the button is clicked
             let selectedPlace = null;
-    
+        
             const loader = new Loader({
                 apiKey: "AIzaSyDYWdF5Y0PyquMmIVeynOLmLUXRXBNeNe4",
                 version: "weekly",
                 libraries: ["places"]
             });
-    
+        
             async function initAutocomplete() {
                 await loader.load();
                 const { PlaceAutocompleteElement } = await google.maps.importLibrary('places');
-    
+        
                 const autocompleteElement = new PlaceAutocompleteElement({
                     componentRestrictions: { country: ['us'] }
                 });
-    
-                document.getElementById('autocomplete-container').appendChild(autocompleteElement);
-    
+        
+                const container = document.getElementById('autocomplete-container');
+                if (container) {
+                    container.appendChild(autocompleteElement);
+                }
+        
                 // Save the selected place object when the user selects from suggestions
                 autocompleteElement.addEventListener('gmp-placeselect', ({ place }) => {
                     selectedPlace = place;
                 });
-    
+        
                 // Button click listener
-                document.getElementById('finish-userAddress-button-id').addEventListener('click', async () => {
-                    if (!selectedPlace) {
-                        alert("Please select an address from the search box first.");
-                        return;
-                    }
-    
-                    // Fetch address components for the stored place
-                    await selectedPlace.fetchFields({
-                        fields: ['addressComponents']
+                const finishBtn = document.getElementById('finish-userAddress-button-id');
+                if (finishBtn) {
+                    finishBtn.addEventListener('click', async () => {
+                        if (!selectedPlace) {
+                            alert("Please select an address from the search box first.");
+                            return;
+                        }
+        
+                        // Fetch address components for the stored place
+                        await selectedPlace.fetchFields({
+                            fields: ['addressComponents']
+                        });
+        
+                        if (selectedPlace.addressComponents) {
+                            fillAddressFields(selectedPlace.addressComponents);
+                        }
                     });
-    
-                    if (selectedPlace.addressComponents) {
-                        fillAddressFields(selectedPlace.addressComponents);
-                    }
-                });
+                }
             }
-    
+        
             /**
              * Parses Google Places addressComponents array and assigns values to specific form inputs
              */
@@ -5099,11 +5105,11 @@
                 let city = '';
                 let state = '';
                 let zip = '';
-    
+        
                 // Iterate through components and match by type tag
                 for (const component of components) {
                     const types = component.types;
-    
+        
                     if (types.includes('street_number')) {
                         streetNumber = component.longText;
                     } else if (types.includes('route')) {
@@ -5119,16 +5125,22 @@
                         zip = component.longText;
                     }
                 }
-    
-                // Populate inputs
-                document.getElementById("user-street-id").value = `${streetNumber} ${route}`.trim();
-                document.getElementById("user-city-id").value = city;
-                document.getElementById("user-state-id").value = state;
-                document.getElementById("user-zipcode-id").value = zip;
-
-                console.log("Test: " + document.getElementById("user-street-id").value);
+        
+                // Populate HTML input fields using matched IDs
+                const streetInput = document.getElementById("user-street-id");
+                const cityInput = document.getElementById("user-city-id");
+                const stateInput = document.getElementById("user-state-id");
+                const zipInput = document.getElementById("user-zipcode-id");
+        
+                if (streetInput) streetInput.value = `${streetNumber} ${route}`.trim();
+                if (cityInput) cityInput.value = city;
+                if (stateInput) stateInput.value = state; // Selects option with value="VA", "CA", etc.
+                if (zipInput) zipInput.value = zip;
+        
+                console.log("Populated Street Address:", streetInput ? streetInput.value : "Field not found");
             }
-    
+        
+            // CRITICAL FIX: Actually execute the function!
             initAutocomplete().catch(console.error);
         </script>
         
