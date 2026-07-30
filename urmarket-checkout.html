@@ -5107,6 +5107,8 @@
                             document.getElementById("user-buildingApt-id").value = "";
                             //REMOVE - ADDRESS VERIFICATION CONTAINER
                             document.getElementById("shippingAddress-verification-container1-id").style.display = "none";
+                            //UPDATE - VERIFY BTN TXT
+                            finishBtn.innerHTML = "verify";
                             return;
                         } 
                         try {
@@ -5156,6 +5158,8 @@
                     }
                     //ADD - ADDRESS VERIFICATION CONTAINER
                     document.getElementById("shippingAddress-verification-container1-id").style.display = "flex";
+                    //UPDATE - VERIFY BTN TXT
+                    finishBtn.innerHTML = "re-verify";
                 }
         
                 // Match input element IDs
