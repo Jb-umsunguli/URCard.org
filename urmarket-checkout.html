@@ -5099,6 +5099,14 @@
         
                         if (!selectedPlace) {
                             alert("Please select an address from the search dropdown first.");
+                            //CLEAR - USER ADDRESS INPUTS
+                            document.getElementById("user-street-id").value = ""; 
+                            document.getElementById("user-city-id").value = ""; 
+                            document.getElementById("user-state-id").value = ""; 
+                            document.getElementById("user-zipcode-id").value = ""; 
+                            document.getElementById("user-buildingApt-id").value = "";
+                            //REMOVE - ADDRESS VERIFICATION CONTAINER
+                            document.getElementById("shippingAddress-verification-container1-id").style.display = "none";
                             return;
                         } 
                         try {
@@ -5109,6 +5117,8 @@
         
                             if (selectedPlace.addressComponents) {
                                 fillAddressFields(selectedPlace.addressComponents);
+                                //ADD - ADDRESS VERIFICATION CONTAINER
+                                document.getElementById("shippingAddress-verification-container1-id").style.display = "flex";
                             } else {
                                 console.error("No address components returned:", selectedPlace);
                             }
