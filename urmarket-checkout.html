@@ -5117,8 +5117,6 @@
         
                             if (selectedPlace.addressComponents) {
                                 fillAddressFields(selectedPlace.addressComponents);
-                                //ADD - ADDRESS VERIFICATION CONTAINER
-                                document.getElementById("shippingAddress-verification-container1-id").style.display = "flex";
                             } else {
                                 console.error("No address components returned:", selectedPlace);
                             }
@@ -5156,6 +5154,8 @@
                     } else if (types.includes('postal_code')) {
                         zip = longVal;
                     }
+                    //ADD - ADDRESS VERIFICATION CONTAINER
+                    document.getElementById("shippingAddress-verification-container1-id").style.display = "flex";
                 }
         
                 // Match input element IDs
