@@ -5108,7 +5108,7 @@
                             //REMOVE - ADDRESS VERIFICATION CONTAINER
                             document.getElementById("shippingAddress-verification-container1-id").style.display = "none";
                             //UPDATE - VERIFY BTN TXT
-                            finishBtn.innerHTML = "verify";
+                            document.getElementById("finish-userAddress-button-id").innerHTML = "verify";
                             return;
                         } 
                         try {
@@ -5121,9 +5121,29 @@
                                 fillAddressFields(selectedPlace.addressComponents);
                             } else {
                                 console.error("No address components returned:", selectedPlace);
+                                //CLEAR - USER ADDRESS INPUTS
+                                document.getElementById("user-street-id").value = ""; 
+                                document.getElementById("user-city-id").value = ""; 
+                                document.getElementById("user-state-id").value = ""; 
+                                document.getElementById("user-zipcode-id").value = ""; 
+                                document.getElementById("user-buildingApt-id").value = "";
+                                //REMOVE - ADDRESS VERIFICATION CONTAINER
+                                document.getElementById("shippingAddress-verification-container1-id").style.display = "none";
+                                //UPDATE - VERIFY BTN TXT
+                                document.getElementById("finish-userAddress-button-id").innerHTML = "verify";
                             }
                         } catch (err) {
                             console.error("Error fetching place details:", err);
+                            //CLEAR - USER ADDRESS INPUTS
+                            document.getElementById("user-street-id").value = ""; 
+                            document.getElementById("user-city-id").value = ""; 
+                            document.getElementById("user-state-id").value = ""; 
+                            document.getElementById("user-zipcode-id").value = ""; 
+                            document.getElementById("user-buildingApt-id").value = "";
+                            //REMOVE - ADDRESS VERIFICATION CONTAINER
+                            document.getElementById("shippingAddress-verification-container1-id").style.display = "none";
+                            //UPDATE - VERIFY BTN TXT
+                            document.getElementById("finish-userAddress-button-id").innerHTML = "verify";
                         }
                     });
                 }
@@ -5159,7 +5179,7 @@
                     //ADD - ADDRESS VERIFICATION CONTAINER
                     document.getElementById("shippingAddress-verification-container1-id").style.display = "flex";
                     //UPDATE - VERIFY BTN TXT
-                    finishBtn.innerHTML = "re-verify";
+                    document.getElementById("finish-userAddress-button-id").innerHTML = "re-verify";
                 }
         
                 // Match input element IDs
