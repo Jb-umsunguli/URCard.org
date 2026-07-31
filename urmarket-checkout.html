@@ -4818,37 +4818,12 @@
                                             </div>
 
                                             <div style="display: block;">
-                                                <div>
-                                                    <!-- <input id="address-input" type="text" placeholder="Enter shipping address" style="text-align: center;">
-                                                    <button id="search-text-input-button">Search</button> -->
-                                                    <div id="autocomplete-container"></div>
-                                                </div>
-                                                <div id="selected-details" style="display: none;">
-                                                    <strong>Selected Place Details:</strong>
-                                                    <p id="place-name"></p>
-                                                    <p id="place-address"></p>
-                                                </div>
-                                            </div>
-
-                                            <div style="display: block; overflow: hidden;">
-                                                <!-- BILLING ADDRESS SEARCH -->
-                                                <div style="display: flex; justify-content: center; height: 110px;">
-                                                    <!-- <input id="address-input" type="text" placeholder="Enter shipping address" style="text-align: center;">
-                                                    <button id="search-text-input-button">Search</button> -->
-                                                    <div id="autocomplete-container2"><gmp-place-autocomplete included-region-codes="us" value=""></gmp-place-autocomplete></div>
-                                                </div> 
+                                                <div id="autocomplete-container"></div> 
                                                 <!-- ADDRESS FINISH BTN CONTAINER -->
                                                 <p style="text-align: center">Once you've entered your address above press the 'Verify' button below to continue</p>
                                                 <div style="display: flex; width: 100%; justify-content: center; overflow: hidden;">
                                                     <!-- ADDRESS FINISH BTN -->
-                                                    <div id="finish-userAddress-button-id" class="btnType-3-class" style="width: auto;">re-verify</div>
-                                                </div>
-                                                <!-- VERIFICATION COMPLETE MESSAGE - DISPLAY:NONE/FLEX -->
-                                                <div id="shippingAddress-verification-container1-id" style="display: flex; overflow: hidden; justify-content: center;">
-                                                    <!-- ICON -->
-                                                    <img width="25px" height="25px" style="margin: 0 5px 0 0;" src="images/check_9068908.png">
-                                                    <!-- TXT -->
-                                                    <b>Address Verification Complete!</b>
+                                                    <div id="finish-userAddress-button2-id" class="btnType-3-class" style="width: auto;">re-verify</div>
                                                 </div>
                                             </div>
                                             <!-- VERIFICATION COMPLETE MESSAGE - DISPLAY:NONE/FLEX -->
@@ -5232,7 +5207,6 @@
                             if (selectedPlace.addressComponents) {
                                 fillAddressFields(selectedPlace.addressComponents);
                             } else {
-                                alert("AHHHH!");
                                 console.error("No address components returned:", selectedPlace);
                                 //CLEAR - USER ADDRESS INPUTS
                                 document.getElementById("user-street-id").value = ""; 
