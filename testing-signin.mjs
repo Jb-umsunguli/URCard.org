@@ -5,7 +5,7 @@ testing_signin_btn.addEventListener('click', () => {
     //DO NOTHING
   } else {
     if (testing_signin_input.value == "run_checkout_test") {
-      
+      window.location.href = "about.html";
     } else {
       //DO NOTHING
     }
