@@ -4580,15 +4580,15 @@
                                         <div id="paymentOptions-btn-container-id">
                                             <!-- DEBIT/CREDIT OPTION BTN -->
                                             <div class="selected-item-content-class2">
-                                                <div id="debitCredit-card-btn-id" class="btnType-3-class" style="height: 40px; width: auto; padding: 10px 20px 10px 20px; text-align: center;">Debit/Credit Card</div>
+                                                <div id="debitCredit-card-btn-id" class="btnType-3-class" style="height: 40px; width: auto; padding: 10px 20px 10px 20px; text-align: center; font-size: medium;">Debit/Credit Card</div>
                                             </div>
                                             <!-- GOOGLE PAY OPTION BTN -->
                                             <div class="selected-item-content-class2">
-                                                <div id="googlePay-btn-id" class="btnType-3-class" style="height: 40px; width: auto; padding: 10px 20px 10px 20px; text-align: center;">Google Pay</div>
+                                                <div id="googlePay-btn-id" class="btnType-3-class" style="height: 40px; width: auto; padding: 10px 20px 10px 20px; text-align: center; font-size: medium;">Google Pay</div>
                                             </div>
                                             <!-- APPLE OPTION BTN -->
                                             <div class="selected-item-content-class2">
-                                                <div id="applePay-btn-id" class="btnType-3-class" style="height: 40px; width: auto; padding: 10px 20px 10px 20px; text-align: center;">Apple Pay</div>
+                                                <div id="applePay-btn-id" class="btnType-3-class" style="height: 40px; width: auto; padding: 10px 20px 10px 20px; text-align: center; font-size: medium;">Apple Pay</div>
                                             </div>
                                         </div> <!-- END - PAYMENT OPTION BTN CONTAINER -->
                                     </div>
@@ -4830,24 +4830,53 @@
                                                 </div>
                                             </div>
 
+                                            <div style="display: block; overflow: hidden;">
+                                                <!-- BILLING ADDRESS SEARCH -->
+                                                <div style="display: flex; justify-content: center; height: 110px;">
+                                                    <!-- <input id="address-input" type="text" placeholder="Enter shipping address" style="text-align: center;">
+                                                    <button id="search-text-input-button">Search</button> -->
+                                                    <div id="autocomplete-container2"><gmp-place-autocomplete included-region-codes="us" value=""></gmp-place-autocomplete></div>
+                                                </div> 
+                                                <!-- ADDRESS FINISH BTN CONTAINER -->
+                                                <p style="text-align: center">Once you've entered your address above press the 'Verify' button below to continue</p>
+                                                <div style="display: flex; width: 100%; justify-content: center; overflow: hidden;">
+                                                    <!-- ADDRESS FINISH BTN -->
+                                                    <div id="finish-userAddress-button-id" class="btnType-3-class" style="width: auto;">re-verify</div>
+                                                </div>
+                                                <!-- VERIFICATION COMPLETE MESSAGE - DISPLAY:NONE/FLEX -->
+                                                <div id="shippingAddress-verification-container1-id" style="display: flex; overflow: hidden; justify-content: center;">
+                                                    <!-- ICON -->
+                                                    <img width="25px" height="25px" style="margin: 0 5px 0 0;" src="images/check_9068908.png">
+                                                    <!-- TXT -->
+                                                    <b>Address Verification Complete!</b>
+                                                </div>
+                                            </div>
+                                            <!-- VERIFICATION COMPLETE MESSAGE - DISPLAY:NONE/FLEX -->
+                                            <div id="billingAddress-verification-container-id" style="display: flex; overflow: hidden; justify-content: center;">
+                                                <!-- ICON -->
+                                                <img width="25px" height="25px" style="margin: 0 5px 0 0;" src="images/check_9068908.png">
+                                                <!-- TXT -->
+                                                <b>Address Verification Complete!</b>
+                                            </div>
                                             <!-- 2ND COLUMN - STREET / CITY / STATE INPUTS -->
-                                            <div class="grid-responsive-class-2" style="margin: 30px 0;">
+                                            <div class="grid-responsive-class-2" style="margin: 10px 0;">
                                                 <!-- 2ND COLUMN - STREET ADDRESS INPUT -->
                                                 <div class="col3-w40pr-h100pr-container-class" style="display: block; padding: 15px; overflow: hidden;">
                                                     <label style="display: block;" for="billingAddress-user-street-id">Street Address:</label>
-                                                    <input class="textInput-type1-class" type="text" id="billingAddress-user-street-id" name="street">
+                                                    <input class="textInput-type1-class" type="text" id="billingAddress-user-street-id" name="street" style="border: silver solid; color: gray;" readonly>
                                                 </div>
                                                 <!-- 2ND COLUMN - CITY INPUT -->
                                                 <div class="col3-w40pr-h100pr-container-class" style="display: block; justify-content: center; padding: 15px; overflow: hidden;">
                                                     <label style="display: block;" for="billingAddress-user-city-id">City:</label>
-                                                    <input class="textInput-type1-class" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" style="width: 100%; height: 40px; border-radius: 10px; border: #2F9C95 solid; text-align: center;" type="text" id="billingAddress-user-city-id" name="billingAddress_city">
+                                                    <input class="textInput-type1-class" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" style="width: 100%; height: 40px; border-radius: 10px; text-align: center; border: silver solid; color: gray;" type="text" id="billingAddress-user-city-id" name="billingAddress_city" readonly>
                                                 </div>
                                                 <!-- 2ND COLUMN - STATE INPUT -->
                                                 <div class="col3-w20pr-h100pr-container2-class" style="display: block; padding: 15px; font-size: auto;">
-                                                    <label style="display: block;" for="billingAddress-user-city-id">State:</label>
-                                                    <select name="billingAddress_state" id="billingAddress-user-state-id" class="textInput-type1-class">
+                                                    <label style="display: block;" for="billingAddress-user-state-id">State:</label>
+                                                    <input name="billingAddress_state" id="billingAddress-user-state-id" class="textInput-type1-class" style="border: silver solid; color: gray;" readonly>
+                                                    <!-- <select name="billingAddress_state" id="billingAddress-user-state-id" class="textInput-type1-class"> -->
                                                         <!-- BLANK OPTION -->
-                                                        <option value=""></option>
+                                                        <!-- <option value=""></option>
                                                         <option value="AL">Alabama</option>
                                                         <option value="AK">Alaska</option>
                                                         <option value="AZ">Arizona</option>
@@ -4899,7 +4928,7 @@
                                                         <option value="WV">West Virginia</option>
                                                         <option value="WI">Wisconsin</option>
                                                         <option value="WY">Wyoming</option>
-                                                    </select>
+                                                    </select> -->
                                                 </div> <!-- END - 2ND COLUMN - STATE INPUT -->
                                             </div> <!-- END - 2ND COLUMN - STREET / CITY / STATE INPUTS -->
                                             <!-- 3RD COLUMN - ZIP / BUILDING/APT # INPUT -->
@@ -4907,7 +4936,7 @@
                                                 <!-- 3RD COLUMN - ZIP CODE INPUT -->
                                                 <div class="col3-w20pr-h100pr-container2-class" style=" display: block;justify-content: center; padding: 15px; overflow: hidden;">
                                                     <label style="display: block; font-size: small;" for="billingAddress-user-zipcode-id">Zipcode:</label>
-                                                    <input class="textInput-type1-class" maxlength="5" oninput="this.value = this.value.replace(/\D/g, '')" style="width: 100%; height: 40px; border-radius: 10px; border: #2F9C95 solid; text-align: center;" type="text" id="billingAddress-user-zipcode-id" name="billingAddress_zipcode">
+                                                    <input class="textInput-type1-class" maxlength="5" oninput="this.value = this.value.replace(/\D/g, '')" style="width: 100%; height: 40px; border-radius: 10px; border: silver solid; color: gray; text-align: center;" type="text" id="billingAddress-user-zipcode-id" name="billingAddress_zipcode" readonly>
                                                 </div>
                                                 <!-- 3RD COLUMN - BUILDING/APT # INPUT -->
                                                 <div class="col3-w40pr-h100pr-container-class" style="display: block; justify-content: center; padding: 15px; overflow: hidden;">
@@ -5068,7 +5097,90 @@
                 version: "weekly",
                 libraries: ["places"]
             });
+
+            //BILLING ADDRESS AUTOCOMPLETE 2
+            async function initAutocomplete2() {
+                await loader.load();
+                const { PlaceAutocompleteElement } = await google.maps.importLibrary('places');
         
+                // Note: New API uses includedRegionCodes for country filtering
+                const autocompleteElement = new PlaceAutocompleteElement({
+                    includedRegionCodes: ['us']
+                });
+        
+                const container = document.getElementById('autocomplete-container2');
+                if (container) {
+                    container.appendChild(autocompleteElement);
+                }
+        
+                // 1. Correct event name: 'gmp-select'
+                // 2. Extract placePrediction and convert to a Place instance
+                autocompleteElement.addEventListener('gmp-select', async (event) => {
+                    if (event.placePrediction) {
+                        selectedPlace = event.placePrediction.toPlace();
+                    }
+                });
+        
+                // VERIFY BTN 2 HANDLER
+                const finishBtn2 = document.getElementById('finish-userAddress-button2-id');
+                if (finishBtn2) {
+                    finishBtn2.addEventListener('click', async (e) => {
+                        e.preventDefault();
+        
+                        if (!selectedPlace) {
+                            alert("Please select an address from the search dropdown first.");
+                            //CLEAR - USER ADDRESS INPUTS
+                            document.getElementById("billingAddress-user-street-id").value = ""; 
+                            document.getElementById("billingAddress-user-city-id").value = ""; 
+                            document.getElementById("billingAddress-user-state-id").value = ""; 
+                            document.getElementById("billingAddress-user-zipcode-id").value = ""; 
+                            document.getElementById("billingAddress-user-buildingApt-id").value = "";
+                            //REMOVE - ADDRESS VERIFICATION CONTAINER
+                            document.getElementById("shippingAddress-verification-container-id").style.display = "none";
+                            //UPDATE - VERIFY BTN TXT
+                            document.getElementById("finish-userAddress-button2-id").innerHTML = "verify";
+                            return;
+                        } 
+                        try {
+                            // Request addressComponents field from the selected place
+                            await selectedPlace.fetchFields({
+                                fields: ['addressComponents']
+                            });
+        
+                            if (selectedPlace.addressComponents) {
+                                fillAddressFields2(selectedPlace.addressComponents);
+                            } else {
+                                console.error("No address components returned:", selectedPlace);
+                                //CLEAR - USER ADDRESS INPUTS
+                                document.getElementById("billingAddress-user-street-id").value = ""; 
+                                document.getElementById("billingAddress-user-city-id").value = ""; 
+                                document.getElementById("billingAddress-user-state-id").value = ""; 
+                                document.getElementById("billingAddress-user-zipcode-id").value = ""; 
+                                document.getElementById("billingAddress-user-buildingApt-id").value = "";
+                                //REMOVE - ADDRESS VERIFICATION CONTAINER
+                                document.getElementById("billingAddress-verification-container-id").style.display = "none";
+                                //UPDATE - VERIFY BTN TXT
+                                document.getElementById("finish-userAddress-button2-id").innerHTML = "verify";
+                            }
+                        } catch (err) {
+                            console.error("Error fetching place details:", err);
+                            //CLEAR - USER ADDRESS INPUTS
+                            document.getElementById("billingAddress-user-street-id").value = ""; 
+                            document.getElementById("billingAddress-user-city-id").value = ""; 
+                            document.getElementById("billingAddress-user-state-id").value = ""; 
+                            document.getElementById("billingAddress-user-zipcode-id").value = ""; 
+                            document.getElementById("billingAddress-user-buildingApt-id").value = "";
+                            //REMOVE - ADDRESS VERIFICATION CONTAINER
+                            document.getElementById("billingAddress-verification-container-id").style.display = "none";
+                            //UPDATE - VERIFY BTN TXT
+                            document.getElementById("finish-userAddress-button2-id").innerHTML = "verify";
+                        }
+                    });
+                }
+            }//END - BILLING ADDRESS AUTOCOMPLETE 2
+            
+
+            //SHIPPING ADDRESS AUTOCOMPLETE 1
             async function initAutocomplete() {
                 await loader.load();
                 const { PlaceAutocompleteElement } = await google.maps.importLibrary('places');
@@ -5091,7 +5203,7 @@
                     }
                 });
         
-                // Finish button handler
+                // VERIFY BTN 1 HANDLER
                 const finishBtn = document.getElementById('finish-userAddress-button-id');
                 if (finishBtn) {
                     finishBtn.addEventListener('click', async (e) => {
@@ -5147,9 +5259,10 @@
                             document.getElementById("finish-userAddress-button-id").innerHTML = "verify";
                         }
                     });
-                }
-            }
-        
+                } //END - VERIFY BTN 1 HANDLER
+            } //END - SHIPPING ADDRESS AUTOCOMPLETE 1
+
+            //FILL ADDRESS FIELDS 1
             function fillAddressFields(components) {
                 let streetNumber = '';
                 let route = '';
@@ -5201,9 +5314,64 @@
                         input.dispatchEvent(new Event('change', { bubbles: true }));
                     }
                 });
-            }
+            } //END - FILL ADDRESS FIELDS 1
+
+            //FILL ADDRESS FIELDS 2
+            function fillAddressFields2(components) {
+                let streetNumber = '';
+                let route = '';
+                let city = '';
+                let state = '';
+                let zip = '';
+        
+                for (const component of components) {
+                    const types = component.types || [];
+                    
+                    // Support modern (longText/shortText) and classic (long_name/short_name) properties
+                    const longVal = component.longText || component.long_name || '';
+                    const shortVal = component.shortText || component.short_name || '';
+        
+                    if (types.includes('street_number')) {
+                        streetNumber = longVal;
+                    } else if (types.includes('route')) {
+                        route = shortVal || longVal;
+                    } else if (types.includes('locality')) {
+                        city = longVal;
+                    } else if (types.includes('sublocality_level_1') && !city) {
+                        city = longVal;
+                    } else if (types.includes('administrative_area_level_1')) {
+                        state = shortVal;
+                    } else if (types.includes('postal_code')) {
+                        zip = longVal;
+                    }
+                    //ADD - ADDRESS VERIFICATION CONTAINER
+                    document.getElementById("billingAddress-verification-container-id").style.display = "flex";
+                    //UPDATE - VERIFY BTN TXT
+                    document.getElementById("finish-userAddress-button2-id").innerHTML = "re-verify";
+                }
+        
+                // Match input element IDs
+                const streetInput = document.getElementById("billingAddress-user-street-id");
+                const cityInput = document.getElementById("billingAddress-user-city-id");
+                const stateInput = document.getElementById("billingAddress-user-state-id");
+                const zipInput = document.getElementById("billingAddress-user-zipcode-id");
+        
+                if (streetInput) streetInput.value = `${streetNumber} ${route}`.trim();
+                if (cityInput) cityInput.value = city;
+                if (stateInput) stateInput.value = state;
+                if (zipInput) zipInput.value = zip;
+        
+                // Trigger change events so UI frameworks reflect the new values
+                [streetInput, cityInput, stateInput, zipInput].forEach(input => {
+                    if (input) {
+                        input.dispatchEvent(new Event('input', { bubbles: true }));
+                        input.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+                });
+            } //END - FILL ADDRESS FIELDS 2
         
             initAutocomplete().catch(console.error);
+            initAutocomplete2().catch(console.error);
         </script>
         
     </body>
