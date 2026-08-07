@@ -3713,6 +3713,7 @@
                 //CHECK FOR EACH SELECTED ITEM SLOT
                 //  //CHECK FOR SERVICE SLOT 1
                 if (serviceItem_slot1.style.display == "none" && serviceItem_slot2.style.display == "none" && serviceItem_slot3.style.display == "none" && serviceItem_slot4.style.display == "none" && serviceItem_slot5.style.display == "none" && productItem_slot1.style.display == "none" && productItem_slot2.style.display == "none" && productItem_slot3.style.display == "none" && productItem_slot4.style.display == "none" && productItem_slot5.style.display == "none") {
+                        aler("Ahhh!");
                     //CHECK - DATA TABLE FOR SERVICE/PRODUCT 
                     if (serviceID1_table.value == "" && productID1_table.value == "") {
                         //REMOVE - ALL SERVICE ITEM SELECTIONS CONTAINER
