@@ -1053,7 +1053,8 @@
                         serviceID1_table.value = ""; 
                         serviceID_2 = null; 
                         serviceID2_table.value = ""; 
-                        
+                        //CHECK FOR - EMPTY SELECTED ITEMS SLOTS
+                        checkFor_emptySelectedItems_allSlots();
                 } else {
                    //DO NOTHING
                 }
@@ -1067,6 +1068,8 @@
                         //RESET - PRODUCT ID 1 = null
                         prodID1 = null; 
                         productID1_table.value = ""; 
+                        //CHECK FOR - EMPTY SELECTED ITEMS SLOTS
+                        checkFor_emptySelectedItems_allSlots();
                 } else {
                    //DO NOTHING
                 }
