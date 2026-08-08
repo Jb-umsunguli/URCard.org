@@ -2387,7 +2387,7 @@
             //  //  //ONCLICK EVENT LISTENER - URCARD BTN PRESSED
             urCard_btn.addEventListener("click", () => {
                 //OEPN LOADING CONTAINER
-                loadingContainer.style.display = "block"; 
+                // loadingContainer.style.display = "block"; 
                 //LOG - 'VIEW URCARD SELECTIONS' Button was clicked!
                 console.log("'VIEW URCARD SELECTIONS' Button was clicked!");
                 //CHECK FOR - EMPTY SELECTED ITEMS IN ALL SLOTS
@@ -2401,7 +2401,7 @@
 
             urSelection_btn.addEventListener("click", () => {
                 //OEPN LOADING CONTAINER
-                loadingContainer.style.display = "block"; 
+                // loadingContainer.style.display = "block"; 
                 //LOG - 'VIEW URCARD SELECTIONS' Button was clicked!
                 console.log("'VIEW URCARD SELECTIONS' Button was clicked!");
                 //OPEN OVERLAY CONTAINER
@@ -3666,6 +3666,8 @@
                         overlayContainer.style.display = "block";
                     } 
                     else {
+                        //OEPN LOADING CONTAINER
+                        loadingContainer.style.display = "block"; 
                         //3 SECOND DELAY TO LOAD ASSETS
                         setTimeout(() => {
                             //CLOSE LOADING CONTAINER
