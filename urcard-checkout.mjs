@@ -1044,6 +1044,30 @@
             }
 
 
+            //RESET - SERVICE ID 1 & 2 FUNCTION 
+            function reset_allServiceID() {
+                //CHECK IF SERVICE ITEM SLOTS ARE EMPTY
+                if (serviceItem_slot1.style.display == "none" && serviceItem_slot2.style.display == "none" && serviceItem_slot3.style.display == "none" && serviceItem_slot4.style.display == "none" && serviceItem_slot5.style.display == "none") {
+                   //RESET - SERVICE ID 1 & 2 = null
+                   serviceID_1 = null; 
+                   serviceID_2 = null; 
+                } else {
+                   //DO NOTHING
+                }
+             } //END - RESET - SERVICE ID 1 & 2 FUNCTION 
+
+
+             //RESET - PRODUCT ID 1 FUNCTION 
+             function reset_allProductID() {
+                //CHECK IF PRODUCT ITEM SLOTS ARE EMPTY
+                if (productItem_slot1.style.display == "none" && productItem_slot2.style.display == "none" && productItem_slot3.style.display == "none" && productItem_slot4.style.display == "none" && productItem_slot5.style.display == "none") {
+                   //RESET - PRODUCT ID 1 = null
+                   prodID1 = null; 
+                } else {
+                   //DO NOTHING
+                }
+             } //END - RESET - PRODUCT ID 1 FUNCTION 
+
             
             //  //INNER OVERLAY CONTAINER 2
             const inner_overlayContainer_2 = document.getElementById("inner-overlayContainer-2-id"); 
@@ -1688,11 +1712,10 @@
 
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
+                    //RESET - SERVICE VENDOR ID IF NEEDED
+                    reset_allServiceID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
                     checkFor_emptySelectedItems_allSlots(); 
-
-                    //RESET - SERVICE VENDOR 1 
-                    serVendor1 = Number(0); 
 
                     // //RESET - URCARD SELECTION DATA TABLE
                     // //  //RESET - SERVICE ID 1 = 0 serviceID_1
@@ -1714,6 +1737,8 @@
                     //MAKE - SLOT 2 COST = 0 selectedService_item1_slot1_cost_number
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
+                    //RESET - SERVICE VENDOR ID IF NEEDED
+                    reset_allServiceID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
                     checkFor_emptySelectedItems_allSlots(); 
                 }
@@ -1727,6 +1752,8 @@
 
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
+                    //RESET - SERVICE VENDOR ID IF NEEDED
+                    reset_allServiceID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
                     checkFor_emptySelectedItems_allSlots(); 
                 }
@@ -1740,6 +1767,8 @@
 
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
+                    //RESET - SERVICE VENDOR ID IF NEEDED
+                    reset_allServiceID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
                     checkFor_emptySelectedItems_allSlots(); 
                 }
@@ -1753,6 +1782,8 @@
 
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
+                    //RESET - SERVICE VENDOR 1 IF NEEDED
+                    reset_allServiceID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
                     checkFor_emptySelectedItems_allSlots(); 
                 }
@@ -1767,6 +1798,8 @@
 
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal();
+                    //RESET - PRODUCT VENDOR 1 IF NEEDED
+                    reset_allProductID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
                     checkFor_emptySelectedItems_allSlots();  
                 }
@@ -1780,6 +1813,8 @@
 
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
+                    //RESET - PRODUCT VENDOR 1 IF NEEDED
+                    reset_allProductID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
                     checkFor_emptySelectedItems_allSlots(); 
                 }
@@ -1830,7 +1865,7 @@
             });
 
             
-            //OPEN URCARD ALL USER SELECTIONS
+            //OPEN - URCARD ALL USER SELECTIONS
             async function open_allSelected_productItems_urcard() {
                 //OPEN ALL SELECTED ITEMS CONTAINER
                 allURCARD_selections_container.style.display = "block";
@@ -2219,6 +2254,8 @@
                         }
                     }
                 }//END - IF prodID1 == "nubianRepublic_p_vendor"
+
+                //  //  //**** ADD NEW PRODUCT VENDOR HERE - PRODUCT ID ****
             }
 
 
@@ -3602,7 +3639,7 @@
             });
 
 
-            //GET PRODUCT SHIPPING/DELIVERY DATA 
+            //GET PRODUCT SHIPPING/DELIVERY DATA - THIS WILL BE NEEDED FOR PROCESSING ITEMS TO BE SHIPPED THRU OUR PLATFORM
             function get_productShipping_delivery_data() {
                 //CHECK FOR OPEN PRODUCT SLOT
                 //  //CHECK - SELECTED PRODUCT SLOT 1
@@ -3713,7 +3750,6 @@
                 //CHECK FOR EACH SELECTED ITEM SLOT
                 //  //CHECK FOR SERVICE SLOT 1
                 if (serviceItem_slot1.style.display == "none" && serviceItem_slot2.style.display == "none" && serviceItem_slot3.style.display == "none" && serviceItem_slot4.style.display == "none" && serviceItem_slot5.style.display == "none" && productItem_slot1.style.display == "none" && productItem_slot2.style.display == "none" && productItem_slot3.style.display == "none" && productItem_slot4.style.display == "none" && productItem_slot5.style.display == "none") {
-                        alert("Ahhh!");
                     //CHECK - DATA TABLE FOR SERVICE/PRODUCT 
                     if (serviceID1_table.value == "" && productID1_table.value == "") {
                         //REMOVE - ALL SERVICE ITEM SELECTIONS CONTAINER
