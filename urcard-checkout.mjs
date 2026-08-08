@@ -1722,7 +1722,7 @@
                     //RESET - SERVICE VENDOR ID IF NEEDED
                     reset_allServiceID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
-                    checkFor_emptySelectedItems_allSlots(); 
+                    // checkFor_emptySelectedItems_allSlots(); 
 
                     // //RESET - URCARD SELECTION DATA TABLE
                     // //  //RESET - SERVICE ID 1 = 0 serviceID_1
@@ -1747,7 +1747,7 @@
                     //RESET - SERVICE VENDOR ID IF NEEDED
                     reset_allServiceID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
-                    checkFor_emptySelectedItems_allSlots(); 
+                    // checkFor_emptySelectedItems_allSlots(); 
                 }
                 //  //IF DELETE TXT = SERVICE ITEM 3 NAME
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedService_item3_name_txt.innerHTML) {
@@ -1762,7 +1762,7 @@
                     //RESET - SERVICE VENDOR ID IF NEEDED
                     reset_allServiceID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
-                    checkFor_emptySelectedItems_allSlots(); 
+                    // checkFor_emptySelectedItems_allSlots(); 
                 }
                 //  //IF DELETE TXT = SERVICE ITEM 4 NAME
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedService_item4_name_txt.innerHTML) {
@@ -1777,7 +1777,7 @@
                     //RESET - SERVICE VENDOR ID IF NEEDED
                     reset_allServiceID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
-                    checkFor_emptySelectedItems_allSlots(); 
+                    // checkFor_emptySelectedItems_allSlots(); 
                 }
                 //  //IF DELETE TXT = SERVICE ITEM 5 NAME
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedService_item5_name_txt.innerHTML) {
@@ -1792,7 +1792,7 @@
                     //RESET - SERVICE VENDOR 1 IF NEEDED
                     reset_allServiceID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
-                    checkFor_emptySelectedItems_allSlots(); 
+                    // checkFor_emptySelectedItems_allSlots(); 
                 }
 
                 //  //IF DELETE TXT = PRODUCT ITEM 1 NAME 
@@ -1808,7 +1808,7 @@
                     //RESET - PRODUCT VENDOR 1 IF NEEDED
                     reset_allProductID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
-                    checkFor_emptySelectedItems_allSlots();  
+                    // checkFor_emptySelectedItems_allSlots();  
                 }
                 //  //IF DELETE TXT = PRODUCT ITEM 2 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item2_name_txt.innerHTML) {
@@ -1823,7 +1823,7 @@
                     //RESET - PRODUCT VENDOR 1 IF NEEDED
                     reset_allProductID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
-                    checkFor_emptySelectedItems_allSlots(); 
+                    // checkFor_emptySelectedItems_allSlots(); 
                 }
                 //  //IF DELETE TXT = PRODUCT ITEM 3 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item3_name_txt.innerHTML) {
@@ -1835,8 +1835,10 @@
 
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
+                    //RESET - PRODUCT VENDOR 1 IF NEEDED
+                    reset_allProductID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
-                    checkFor_emptySelectedItems_allSlots(); 
+                    // checkFor_emptySelectedItems_allSlots(); 
                 }
                 //  //IF DELETE TXT = PRODUCT ITEM 4 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item4_name_txt.innerHTML) {
@@ -1848,8 +1850,10 @@
 
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
+                    //RESET - PRODUCT VENDOR 1 IF NEEDED
+                    reset_allProductID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
-                    checkFor_emptySelectedItems_allSlots(); 
+                    // checkFor_emptySelectedItems_allSlots(); 
                 }
                 //  //IF DELETE TXT = PRODUCT ITEM 5 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item5_name_txt.innerHTML) {
@@ -1861,8 +1865,10 @@
 
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
+                    //RESET - PRODUCT VENDOR 1 IF NEEDED
+                    reset_allProductID(); 
                     //CHECK FOR - EMPTY ITEM SLOTS
-                    checkFor_emptySelectedItems_allSlots(); 
+                    // checkFor_emptySelectedItems_allSlots(); 
                 }
                 //IF DELETE TXT NOT DEFINED
                 else {
