@@ -1048,9 +1048,12 @@
             function reset_allServiceID() {
                 //CHECK IF SERVICE ITEM SLOTS ARE EMPTY
                 if (serviceItem_slot1.style.display == "none" && serviceItem_slot2.style.display == "none" && serviceItem_slot3.style.display == "none" && serviceItem_slot4.style.display == "none" && serviceItem_slot5.style.display == "none") {
-                   //RESET - SERVICE ID 1 & 2 = null
-                   serviceID_1 = null; 
-                   serviceID_2 = null; 
+                        //RESET - SERVICE ID 1 & 2 = null
+                        serviceID_1 = null; 
+                        serviceID1_table.value = ""; 
+                        serviceID_2 = null; 
+                        serviceID2_table.value = ""; 
+                        
                 } else {
                    //DO NOTHING
                 }
@@ -1061,8 +1064,9 @@
              function reset_allProductID() {
                 //CHECK IF PRODUCT ITEM SLOTS ARE EMPTY
                 if (productItem_slot1.style.display == "none" && productItem_slot2.style.display == "none" && productItem_slot3.style.display == "none" && productItem_slot4.style.display == "none" && productItem_slot5.style.display == "none") {
-                   //RESET - PRODUCT ID 1 = null
-                   prodID1 = null; 
+                        //RESET - PRODUCT ID 1 = null
+                        prodID1 = null; 
+                        productID1_table.value = ""; 
                 } else {
                    //DO NOTHING
                 }
