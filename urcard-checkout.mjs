@@ -1055,6 +1055,9 @@
                         serviceID2_table.value = ""; 
                         //CHECK FOR - EMPTY SELECTED ITEMS SLOTS
                         checkFor_emptySelectedItems_allSlots();
+                        //RESET - SERVICE VENDOR 1 & 2
+                        serVendor1 == null; 
+                        serVendor2 == null; 
                 } else {
                    //DO NOTHING
                 }
@@ -1070,6 +1073,8 @@
                         productID1_table.value = ""; 
                         //CHECK FOR - EMPTY SELECTED ITEMS SLOTS
                         checkFor_emptySelectedItems_allSlots();
+                        //RESET - PRODUCT VENDOR 1
+                        prdVendor1 == null; 
                 } else {
                    //DO NOTHING
                 }
@@ -1711,32 +1716,49 @@
                 //ITEM REMOVAL ALGORITHM
                 //  //IF DELETE TXT = SERVICE ITEM 1 NAME
                 if (selectedItem_itemName_deleteTxt.innerHTML == selectedService_item1_name_txt.innerHTML) {
+                    // //RESET - SERVICE VENDOR 1 0R 2 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
+                    if (selectedService_item1_name_txt.innerText == urStart_serviceItem_name) {
+                        //CHECK SERVICE VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
+                        if (serVendor1 == "urStart_bookP_vendor" || serVendor2 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 1 
+                            serVendor1 = null;
+                        } 
+                        //CHECK SERVICE VENDOR 2 FOR AN ANDDITIONAL INFO VENDOR
+                        else if (serVendor2 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 2 
+                            serVendor2 = null;
+                        }
+                        else {
+                            //DO NOTHING
+                        }
+                    }
                     //REMOVE - SERVICE ITEM SLOT 1
                     serviceItem_slot1.style.display = "none";
                     //RESET - SERVICE ITEM SLOT 1 CONTENT
                     clear_serviceItem1_slot(); 
-                    //MAKE - SLOT 1 COST = 0 
-
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
-                    //RESET - SERVICE VENDOR ID IF NEEDED
+                    //RESET - SERVICE ID IF NEEDED
                     reset_allServiceID(); 
-                    //CHECK FOR - EMPTY ITEM SLOTS
-                    // checkFor_emptySelectedItems_allSlots(); 
-
-                    // //RESET - URCARD SELECTION DATA TABLE
-                    // //  //RESET - SERVICE ID 1 = 0 serviceID_1
-                    // serviceID_1 = Number(0); 
-                    // //  //RESET - SERVICE VENDOR 1 = 0
-                    // serVendor1 = Number(0);
-                    // //  //RUN - URL PARAMS DATA INPUT FUNCTION 
-                    // urlParams_dateInput(); 
-                    // //  //RUN - GET SERVICE CODE 1  get_serviceCode1_assignment
-                    // get_serviceCode1_assignment(); 
-                    //  //
                 } 
                 //  //IF DELETE TXT = SERVICE ITEM 2 NAME
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedService_item2_name_txt.innerHTML) {
+                    // //RESET - SERVICE VENDOR 2 0R 2 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
+                    if (selectedService_item2_name_txt.innerText == urStart_serviceItem_name) {
+                        //CHECK SERVICE VENDOR 1 OR 2 FOR AN ADDITIONAL INFO VENDOR 
+                        if (serVendor2 == "urStart_bookP_vendor" || serVendor2 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 2 
+                            serVendor2 = null;
+                        } 
+                        //CHECK SERVICE VENDOR 2 FOR AN ANDDITIONAL INFO VENDOR
+                        else if (serVendor2 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 2 
+                            serVendor2 = null;
+                        }
+                        else {
+                            //DO NOTHING
+                        }
+                    }
                     //REMOVE - SERVICE ITEM SLOT 2
                     serviceItem_slot2.style.display = "none";
                     //RESET - SERVICE ITEM SLOT 2 CONTENT
@@ -1744,131 +1766,226 @@
                     //MAKE - SLOT 2 COST = 0 selectedService_item1_slot1_cost_number
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
-                    //RESET - SERVICE VENDOR ID IF NEEDED
+                    //RESET - SERVICE ID IF NEEDED
                     reset_allServiceID(); 
-                    //CHECK FOR - EMPTY ITEM SLOTS
-                    // checkFor_emptySelectedItems_allSlots(); 
+                    // //RESET - SERVICE VENDOR 1 
+                    // reset_serviceVendor1(); 
+                    // //RESET - SERVICE VENDOR 2
+                    // reset_serviceVendor2();
                 }
                 //  //IF DELETE TXT = SERVICE ITEM 3 NAME
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedService_item3_name_txt.innerHTML) {
+                    // //RESET - SERVICE VENDOR 1 0R 2 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
+                    if (selectedService_item3_name_txt.innerText == urStart_serviceItem_name) {
+                        //CHECK SERVICE VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
+                        if (serVendor1 == "urStart_bookP_vendor" || serVendor2 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 1 
+                            serVendor1 = null;
+                        } 
+                        //CHECK SERVICE VENDOR 2 FOR AN ANDDITIONAL INFO VENDOR
+                        else if (serVendor2 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 2 
+                            serVendor2 = null;
+                        }
+                        else {
+                            //DO NOTHING
+                        }
+                    }
                     //REMOVE - SERVICE ITEM SLOT 3
                     serviceItem_slot3.style.display = "none";
                     //RESET - SERVICE ITEM SLOT 3 CONTENT
                     clear_serviceItem3_slot(); 
-                    //MAKE - SLOT 3 COST = 0 
-
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
-                    //RESET - SERVICE VENDOR ID IF NEEDED
+                    //RESET - SERVICE ID IF NEEDED
                     reset_allServiceID(); 
-                    //CHECK FOR - EMPTY ITEM SLOTS
-                    // checkFor_emptySelectedItems_allSlots(); 
+                    // //RESET - SERVICE VENDOR 1 
+                    // reset_serviceVendor1(); 
+                    // //RESET - SERVICE VENDOR 2
+                    // reset_serviceVendor2();
                 }
                 //  //IF DELETE TXT = SERVICE ITEM 4 NAME
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedService_item4_name_txt.innerHTML) {
+                    // //RESET - SERVICE VENDOR 1 0R 2 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
+                    if (selectedService_item4_name_txt.innerText == urStart_serviceItem_name) {
+                        //CHECK SERVICE VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
+                        if (serVendor1 == "urStart_bookP_vendor" || serVendor2 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 1 
+                            serVendor1 = null;
+                        } 
+                        //CHECK SERVICE VENDOR 2 FOR AN ANDDITIONAL INFO VENDOR
+                        else if (serVendor2 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 2 
+                            serVendor2 = null;
+                        }
+                        else {
+                            //DO NOTHING
+                        }
+                    }
                     //REMOVE - SERVICE ITEM SLOT 4
                     serviceItem_slot4.style.display = "none";
                     //RESET - SERVICE ITEM SLOT 4 CONTENT
                     clear_serviceItem4_slot(); 
-                    //MAKE - SLOT 4 COST = 0 
-
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
-                    //RESET - SERVICE VENDOR ID IF NEEDED
+                    //RESET - SERVICE ID IF NEEDED
                     reset_allServiceID(); 
-                    //CHECK FOR - EMPTY ITEM SLOTS
-                    // checkFor_emptySelectedItems_allSlots(); 
+                    // //RESET - SERVICE VENDOR 1 
+                    // reset_serviceVendor1(); 
+                    // //RESET - SERVICE VENDOR 2
+                    // reset_serviceVendor2();
                 }
                 //  //IF DELETE TXT = SERVICE ITEM 5 NAME
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedService_item5_name_txt.innerHTML) {
+                    // //RESET - SERVICE VENDOR 1 0R 2 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
+                    if (selectedService_item5_name_txt.innerText == urStart_serviceItem_name) {
+                        //CHECK SERVICE VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
+                        if (serVendor1 == "urStart_bookP_vendor" || serVendor2 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 1 
+                            serVendor1 = null;
+                        } 
+                        //CHECK SERVICE VENDOR 2 FOR AN ANDDITIONAL INFO VENDOR
+                        else if (serVendor2 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 2 
+                            serVendor2 = null;
+                        }
+                        else {
+                            //DO NOTHING
+                        }
+                    }
                     //REMOVE - SERVICE ITEM SLOT 5
                     serviceItem_slot5.style.display = "none";
                     //RESET - SERVICE ITEM SLOT 5 CONTENT
                     clear_serviceItem5_slot(); 
-                    //MAKE - SLOT 5 COST = 0 
-
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
-                    //RESET - SERVICE VENDOR 1 IF NEEDED
+                    //RESET - SERVICE ID IF NEEDED
                     reset_allServiceID(); 
-                    //CHECK FOR - EMPTY ITEM SLOTS
-                    // checkFor_emptySelectedItems_allSlots(); 
+                    // //RESET - SERVICE VENDOR 1 
+                    // reset_serviceVendor1(); 
+                    // //RESET - SERVICE VENDOR 2
+                    // reset_serviceVendor2();
                 }
 
                 //  //IF DELETE TXT = PRODUCT ITEM 1 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item1_name_txt.innerHTML) {
+                    // //RESET - PRODUCT VENDOR 1 0R 2 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
+                    if (selectedPervice_item1_name_txt.innerText == urStart_serviceItem_name) {
+                        //CHECK PRODUCT VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
+                        if (prdVendor1 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 1 
+                            prdVendor1 = null;
+                        } 
+                        else {
+                            //DO NOTHING
+                        }
+                    }
                     //REMOVE - PRODUCT ITEM SLOT 1
                     productItem_slot1.style.display = "none";
                     //RESET - SERVICE ITEM SLOT 1 CONTENT
                     clear_productItem1_slot(); 
-                    //MAKE - SLOT 1 COST = 0 
-
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal();
-                    //RESET - PRODUCT VENDOR 1 IF NEEDED
+                    //RESET - PRODUCT ID IF NEEDED
                     reset_allProductID(); 
-                    //CHECK FOR - EMPTY ITEM SLOTS
-                    // checkFor_emptySelectedItems_allSlots();  
+                    // //RESET - PRODUCT VENDOR 1 
+                    // reset_productVendor1();
                 }
                 //  //IF DELETE TXT = PRODUCT ITEM 2 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item2_name_txt.innerHTML) {
+                    // //RESET - PRODUCT VENDOR 1 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
+                    if (selectedPervice_item2_name_txt.innerText == urStart_serviceItem_name) {
+                        //CHECK PRODUCT VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
+                        if (prdVendor1 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 1 
+                            prdVendor1 = null;
+                        } 
+                        else {
+                            //DO NOTHING
+                        }
+                    }
                     //REMOVE - PRODUCT ITEM SLOT 2
                     productItem_slot2.style.display = "none";
                     //RESET - SERVICE ITEM SLOT 2 CONTENT
                     clear_productItem2_slot(); 
-                    //MAKE - SLOT 2 COST = 0 
-
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
-                    //RESET - PRODUCT VENDOR 1 IF NEEDED
+                    //RESET - PRODUCT ID IF NEEDED
                     reset_allProductID(); 
-                    //CHECK FOR - EMPTY ITEM SLOTS
-                    // checkFor_emptySelectedItems_allSlots(); 
+                    // //RESET - PRODUCT VENDOR 1
+                    // reset_productVendor1(); 
                 }
                 //  //IF DELETE TXT = PRODUCT ITEM 3 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item3_name_txt.innerHTML) {
+                    // //RESET - PRODUCT VENDOR 1 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
+                    if (selectedPervice_item3_name_txt.innerText == urStart_serviceItem_name) {
+                        //CHECK PRODUCT VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
+                        if (prdVendor1 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 1 
+                            prdVendor1 = null;
+                        } 
+                        else {
+                            //DO NOTHING
+                        }
+                    }
                     //REMOVE - PRODUCT ITEM SLOT 3
                     productItem_slot3.style.display = "none";
                     //RESET - SERVICE ITEM SLOT 3 CONTENT
                     clear_productItem3_slot(); 
-                    //MAKE - SLOT 3 COST = 0 
-
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
-                    //RESET - PRODUCT VENDOR 1 IF NEEDED
+                    //RESET - PRODUCT ID IF NEEDED
                     reset_allProductID(); 
-                    //CHECK FOR - EMPTY ITEM SLOTS
-                    // checkFor_emptySelectedItems_allSlots(); 
+                    // //RESET - PRODUCT VENDOR 1 
+                    // reset_productVendor1();
                 }
                 //  //IF DELETE TXT = PRODUCT ITEM 4 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item4_name_txt.innerHTML) {
+                    // //RESET - PRODUCT VENDOR 1 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
+                    if (selectedPervice_item4_name_txt.innerText == urStart_serviceItem_name) {
+                        //CHECK PRODUCT VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
+                        if (prdVendor1 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 1 
+                            prdVendor1 = null;
+                        } 
+                        else {
+                            //DO NOTHING
+                        }
+                    }
                     //REMOVE - PRODUCT ITEM SLOT 4
                     productItem_slot4.style.display = "none";
                     //RESET - SERVICE ITEM SLOT 4 CONTENT
                     clear_productItem4_slot(); 
-                    //MAKE - SLOT 4 COST = 0 
-
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
-                    //RESET - PRODUCT VENDOR 1 IF NEEDED
+                    //RESET - PRODUCT ID IF NEEDED
                     reset_allProductID(); 
-                    //CHECK FOR - EMPTY ITEM SLOTS
-                    // checkFor_emptySelectedItems_allSlots(); 
+                    // //RESET - PRODUCT VENDOR 1 
+                    // reset_productVendor1();
                 }
                 //  //IF DELETE TXT = PRODUCT ITEM 5 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item5_name_txt.innerHTML) {
+                    // //RESET - PRODUCT VENDOR 1 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
+                    if (selectedPervice_item5_name_txt.innerText == urStart_serviceItem_name) {
+                        //CHECK PRODUCT VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
+                        if (prdVendor1 == "urStart_bookP_vendor") {
+                            //RESET SERVICE VENDOR 1 
+                            prdVendor1 = null;
+                        } 
+                        else {
+                            //DO NOTHING
+                        }
+                    }
                     //REMOVE - PRODUCT ITEM SLOT 5
                     productItem_slot5.style.display = "none";
                     //RESET - SERVICE ITEM SLOT 5 CONTENT
                     clear_productItem5_slot(); 
-                    //MAKE - SLOT 5 COST = 0 
-
                     //RUN - BOTTOM BTN ORDER TOTAL
                     get_bottomBtn_orderTotal(); 
                     //RESET - PRODUCT VENDOR 1 IF NEEDED
                     reset_allProductID(); 
-                    //CHECK FOR - EMPTY ITEM SLOTS
-                    // checkFor_emptySelectedItems_allSlots(); 
+                    // //RESET - PRODUCT VENDOR 1 
+                    // reset_productVendor1();
                 }
                 //IF DELETE TXT NOT DEFINED
                 else {
@@ -2934,7 +3051,7 @@
                 finalCheck_all_remainingInputs(); 
             }); 
 
-            //CHECK FOR SINGLE SERVICE VENDOR - FUNCTION
+            //CHECK FOR SINGLE SERVICE VENDOR - FUNCTION (JUST INCASE THERE IS ONLY 1 SERVICE VENDOR SELECTED & MORE INFO IS NEEDED FROM THE USER)
             function checkFor_singleServiceVendor() {
                 //IF ORDER TOTAL TXT = PENDING && SERVICE SLOTS ARE PRESENT
                 if (order_total_txt.innerHTML == "Pending" && grand_total_txt.innerHTML == "Pending" && final_selectedService_item1.style.display == "block") {
@@ -2948,7 +3065,7 @@
                     //ADD - PAYEMENT OPTIONS CONTAINER 
                     paymentOptions_container.style.display = "block";
                 }
-            } 
+            } //END - CHECK FOR SINGLE SERVICE VENDOR
 
 
             //PAYMENT OPTIONS CONTAINER 
@@ -3765,7 +3882,6 @@
                 //CHECK FOR EACH SELECTED ITEM SLOT
                 //  //CHECK FOR SERVICE SLOT 1
                 if (serviceItem_slot1.style.display == "none" && serviceItem_slot2.style.display == "none" && serviceItem_slot3.style.display == "none" && serviceItem_slot4.style.display == "none" && serviceItem_slot5.style.display == "none" && productItem_slot1.style.display == "none" && productItem_slot2.style.display == "none" && productItem_slot3.style.display == "none" && productItem_slot4.style.display == "none" && productItem_slot5.style.display == "none") {
-                            alert("AHHH!"); 
                     //CHECK - DATA TABLE FOR SERVICE/PRODUCT 
                     if (serviceID1_table.value == "" && productID1_table.value == "") {
                         //REMOVE - ALL SERVICE ITEM SELECTIONS CONTAINER
