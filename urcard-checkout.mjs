@@ -1,4 +1,4 @@
-            //CLICK ABOVE CARD TXT
+//CLICK ABOVE CARD TXT
             const clickAbove_card_txt = document.getElementById("clickAbove-card-txt-id");
             const mediaQuery = window.matchMedia("(max-width: 650px)");
 
@@ -35,6 +35,8 @@
             const allAssets_pos_container = document.getElementById("allAssets-pos-container-id");
             //  //  //USER ADDRESS TXT user-address-txt-id
             const user_address_txt = document.getElementById("user-address-txt-id");
+            //  //  //ORDER CONFIRMATION CONTAINER
+            const orderConfirmation_allAssets_container = document.getElementById("orderConfirmation-allAssets-container-id"); 
 
 
             //PRIMARY BUTTONS
@@ -49,24 +51,24 @@
 
             //GET URL STRING
             // const queryString = window.location.serach; //PULL FROM BROSWER
-            const queryString = "https://www.urcard.org/urmarket/checkout&&servid1=1&servid2=2&servcode1=1001171170&servcode2=1234&prodid1=1&prodcode1=122000111000112&urcardid=tm1v1000001a"; //TEST URL
+            const queryString = "https://www.urcard.org/urmarket/checkout?&s1=1&s2=2&sc1=1001171170&sc2=1234&p1=1&pc1=122000111000112&urcid=v1001a"; //TEST URL
             //PARSE THE URL PARAMETERS
             const urlParams = new URLSearchParams(queryString);
             //EXTRACT SPECIFIC PARAMETER VALUES
             //  //SERVICE ID 1
-            var serviceID_1 = urlParams.get('servid1');
+            var serviceID_1 = urlParams.get('s1');
             //  //SERVICE ID 2
-            var serviceID_2 = urlParams.get('servid2');
+            var serviceID_2 = urlParams.get('s2');
             //  //SERVICE CODE 1
-            var serviceCODE_1 = urlParams.get('servcode1');
+            var serviceCODE_1 = urlParams.get('sc1');
             //  //SERVICE CODE 2
-            var serviceCODE_2 = urlParams.get('servcode2');
+            var serviceCODE_2 = urlParams.get('sc2');
             //  //PRODUCT ID 1
-            var prodID1 = urlParams.get('prodid1');
+            var prodID1 = urlParams.get('p1');
             //  //PRODUCT CODE 1
-            var productCODE_1 = urlParams.get('prodcode1');
+            var productCODE_1 = urlParams.get('pc1');
             //  //UR CARD ID
-            var urCardID = urlParams.get('urcardid'); 
+            var urCardID = urlParams.get('urcid'); 
 
             //UR CARD SELECTION 'LOOK UP' TABLE
             //  //VENDOR VARIABLE:
@@ -1870,7 +1872,7 @@
                 //  //IF DELETE TXT = PRODUCT ITEM 1 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item1_name_txt.innerHTML) {
                     // //RESET - PRODUCT VENDOR 1 0R 2 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
-                    if (selectedPervice_item1_name_txt.innerText == urStart_serviceItem_name) {
+                    if (selectedProduct_item1_name_txt.innerText == urStart_serviceItem_name) {
                         //CHECK PRODUCT VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
                         if (prdVendor1 == "urStart_bookP_vendor") {
                             //RESET SERVICE VENDOR 1 
@@ -1894,7 +1896,7 @@
                 //  //IF DELETE TXT = PRODUCT ITEM 2 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item2_name_txt.innerHTML) {
                     // //RESET - PRODUCT VENDOR 1 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
-                    if (selectedPervice_item2_name_txt.innerText == urStart_serviceItem_name) {
+                    if (selectedProduct_item2_name_txt.innerText == urStart_serviceItem_name) {
                         //CHECK PRODUCT VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
                         if (prdVendor1 == "urStart_bookP_vendor") {
                             //RESET SERVICE VENDOR 1 
@@ -1918,7 +1920,7 @@
                 //  //IF DELETE TXT = PRODUCT ITEM 3 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item3_name_txt.innerHTML) {
                     // //RESET - PRODUCT VENDOR 1 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
-                    if (selectedPervice_item3_name_txt.innerText == urStart_serviceItem_name) {
+                    if (selectedProduct_item3_name_txt.innerText == urStart_serviceItem_name) {
                         //CHECK PRODUCT VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
                         if (prdVendor1 == "urStart_bookP_vendor") {
                             //RESET SERVICE VENDOR 1 
@@ -1942,7 +1944,7 @@
                 //  //IF DELETE TXT = PRODUCT ITEM 4 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item4_name_txt.innerHTML) {
                     // //RESET - PRODUCT VENDOR 1 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
-                    if (selectedPervice_item4_name_txt.innerText == urStart_serviceItem_name) {
+                    if (selectedProduct_item1_name_txt.innerText == urStart_serviceItem_name) {
                         //CHECK PRODUCT VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
                         if (prdVendor1 == "urStart_bookP_vendor") {
                             //RESET SERVICE VENDOR 1 
@@ -1966,7 +1968,7 @@
                 //  //IF DELETE TXT = PRODUCT ITEM 5 NAME 
                 else if (selectedItem_itemName_deleteTxt.innerHTML == selectedProduct_item5_name_txt.innerHTML) {
                     // //RESET - PRODUCT VENDOR 1 - IF VENDOR IS AN ADDITIONAL INFO VENDOR
-                    if (selectedPervice_item5_name_txt.innerText == urStart_serviceItem_name) {
+                    if (selectedProduct_item5_name_txt.innerText == urStart_serviceItem_name) {
                         //CHECK PRODUCT VENDOR 1 FOR AN ADDITIONAL INFO VENDOR 
                         if (prdVendor1 == "urStart_bookP_vendor") {
                             //RESET SERVICE VENDOR 1 
@@ -2509,15 +2511,22 @@
            
             //  //  //ONCLICK EVENT LISTENER - URCARD BTN PRESSED
             urCard_btn.addEventListener("click", () => {
-                //OEPN LOADING CONTAINER
-                // loadingContainer.style.display = "block"; 
+                //TESTING SESSION
+                //  //open order confirmation
+                // orderConfirmation_allAssets_container.style.display = "flex"; 
+                // bottomBtns_container1.style.display = "none"; 
+                // overlayContainer.style.display = "block";
+
+                //UNCOMMENT ALL BELOW ASSETS:
                 //LOG - 'VIEW URCARD SELECTIONS' Button was clicked!
                 console.log("'VIEW URCARD SELECTIONS' Button was clicked!");
                 //CHECK FOR - EMPTY SELECTED ITEMS IN ALL SLOTS
                 checkFor_emptySelectedItems_allSlots(); 
                 //OPEN OVERLAY CONTAINER
                 open_overlayContainer(); 
-                open_stuff();
+                open_stuff(); 
+                
+
                 //SCROLL TO THE TOP OF - OVERLAY INNER CONTAINER
                 let overlayContainer_inner = document.querySelector('.all-SelectedItems-inner-class').scrollTop = 0;
             }); 
@@ -2659,6 +2668,10 @@
                     pos_lastName_input.value = user_lastName.value;
                     //PLACE - USER PHONE # INPUT DATA = POS PHONE #
                     pos_phoneNumber_input.value = user_phoneNumber.value;
+                    //PLACE - USER EMAIL INPUT DATA = POS EMAIL 
+                    pos_userEmail_input.value = user_email.value; 
+                    //CHECK - TERMS OF SERVICE CHECKBOX = CHECKED
+                    pos_user_tosAgreeCheckbox.checked = true; 
                 }
             }); //END - BOTTOM BUTTONS - NEXT BTN - EVENT LISTENER
             
@@ -2668,6 +2681,12 @@
             const user_lastName = document.getElementById("user-lastName-id");
             //USER PHONE NUMBER INPUT
             const user_phoneNumber = document.getElementById("user-phoneNumber-id");
+            //USER EMAIL INPUT
+            const user_email = document.getElementById("user-email-id"); 
+            //TERMS OF SERVICE CHECKBOX CONTAINER 
+            const tosAgreeCheckbox_container = document.getElementById("tosAgreeCheckbox-container-id"); 
+            //USER TERMS OF SERVICE CHECKBOX 
+            const user_tosAgreeCheckbox_input = document.getElementById("user-tosAgreeCheckbox-input-id"); 
             //USER STREET ADDRESS INPUT 
             const user_streetAddress = document.getElementById("user-street-id");
             //USER CITY INPUT 
@@ -2698,6 +2717,18 @@
                 }
                 user_phoneNumber.addEventListener('keydown', disallowNonNumericInput);
                 user_phoneNumber.addEventListener('keyup', formatToPhone);
+            }); 
+            //USER EMAIL INPUT EVENT LISTENER
+            user_email.addEventListener('input', (e) => {
+                if (e.target.value.trim() !== '') { 
+                    e.target.style.border = '2px #2F9C95 solid'
+                }
+            }); 
+            //TERMS OF SERVICE INPUT EVENT LISTENER
+            user_tosAgreeCheckbox_input.addEventListener('input', (e) => {
+                if (e.target.value.trim() !== '') { 
+                    tosAgreeCheckbox_container.style.border = "white solid";
+                }
             }); 
             const disallowNonNumericInput = (evt) => {
                 if (evt.ctrlKey) { return; }
@@ -2747,7 +2778,7 @@
                 if (user_firstName.value == "") {
                     alert("Please enter your first name to continue");
                     //CHANGE INPUT BORDER RED
-                    user_firstName.style.border = " solid 4px red"; 
+                    user_firstName.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
                     document.getElementById("deliveryShipping-innerContainer-id").scrollTop = 0;
                 }
@@ -2755,7 +2786,7 @@
                 else if (user_lastName.value == "") {
                     alert("Please enter your last name to continue");
                     //CHANGE INPUT BORDER RED
-                    user_lastName.style.border = " solid 4px red"; 
+                    user_lastName.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
                     document.getElementById("deliveryShipping-innerContainer-id").scrollTop = 0;
                 }
@@ -2763,7 +2794,23 @@
                 else if (user_phoneNumber.value == "") {
                     alert("Please enter your phone number to continue");
                     //CHANGE INPUT BORDER RED
-                    user_phoneNumber.style.border = " solid 4px red"; 
+                    user_phoneNumber.style.border = "solid 4px red"; 
+                    //SCROLL TO INPUT
+                    document.getElementById("deliveryShipping-innerContainer-id").scrollTop = 0;
+                }
+                //  //CHECK - USER EMAIL INPUT
+                else if (user_email.value == "") {
+                    alert("Please enter your email to continue");
+                    //CHANGE INPUT BORDER RED
+                    user_email.style.border = "solid 4px red";
+                    //SCROLL TO INPUT
+                    document.getElementById("deliveryShipping-innerContainer-id").scrollTop = 0;
+                }
+                //  //CHECK - USER TERMS OF SERVICE CHECKBOX
+                else if (!user_tosAgreeCheckbox_input.checked) {
+                    alert("Please check the Terms of Service checkbox to continue");
+                    //CHANGE INPUT BORDER RED
+                    tosAgreeCheckbox_container.style.border = "solid 4px red";
                     //SCROLL TO INPUT
                     document.getElementById("deliveryShipping-innerContainer-id").scrollTop = 0;
                 }
@@ -2771,7 +2818,7 @@
                 else if (user_streetAddress.value == "") {
                     alert("Please enter your street address to continue");
                     //CHANGE INPUT BORDER RED
-                    user_streetAddress.style.border = " solid 4px red"; 
+                    user_streetAddress.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
                     document.getElementById("deliveryShipping-innerContainer-id").scrollTo(0, 400);
                 }
@@ -2779,7 +2826,7 @@
                 else if (user_city.value == "") {
                     alert("Please enter your city to continue");
                     //CHANGE INPUT BORDER RED
-                    user_city.style.border = " solid 4px red"; 
+                    user_city.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
                     document.getElementById("deliveryShipping-innerContainer-id").scrollTo(0, 400);
                 }
@@ -2787,7 +2834,7 @@
                 else if (user_state.value == "") {
                     alert("Please enter your state to continue");
                     //CHANGE INPUT BORDER RED
-                    user_state.style.border = " solid 4px red"; 
+                    user_state.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
                     document.getElementById("deliveryShipping-innerContainer-id").scrollTo(0, 800);
                 }
@@ -2795,7 +2842,7 @@
                 else if (user_zipcode.value == "") {
                     alert("Please enter your zipcode to continue");
                     //CHANGE INPUT BORDER RED
-                    user_zipcode.style.border = " solid 4px red"; 
+                    user_zipcode.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
                     document.getElementById("deliveryShipping-innerContainer-id").scrollTo(0, 800);
                 }
@@ -2821,7 +2868,7 @@
             const final_userSelections_serviceItems_container = document.getElementById("final-userSelections-serviceItems-container-id");
             //FINAL - ITEM 1 
             //FINAL SELECTED SERVICE ITEM - ITEM 1
-            const final_selectedService_item1 = document.getElementById("final-selectedService-item1-container-id");
+            const final_selectedService_item1 = document.getElementById("final-selectedService-item1-container-id"); 
             //  //FINAL SELECTED SERVICE ITEM NAME - ITEM 1
             const final_selectedService_item1_name = document.getElementById("final-selectedService-item1-name-id"); 
             //  //FINAL SELECTED SERVICE ITEM PROVIDER - ITEM 1
@@ -3007,14 +3054,20 @@
             //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
             //USER ADDRESS CONTAINER
             const userAddress_container = document.getElementById("userAddress-main-container-id"); 
-            //USER NAME & PHONE NUMBER CONTAINER userName-phone-container-id
+            //USER NAME & PHONE NUMBER CONTAINER
             const userName_phone_container = document.getElementById("userName-phone-container-id"); 
-            //USER FIRST NAME INPUT
+            //USER FIRST NAME INPUT - POS
             const pos_firstName_input = document.getElementById("user-firstName-pos-id"); 
-            //USER LAST NAME INPUT 
+            //USER LAST NAME INPUT - POS
             const pos_lastName_input = document.getElementById("user-lastName-pos-id"); 
-            //USER PHONE NUMBER INPUT 
+            //USER PHONE NUMBER INPUT - POS 
             const pos_phoneNumber_input = document.getElementById("user-phoneNumber-pos-id"); 
+            //USER EMAIL INPUT - POS
+            const pos_userEmail_input = document.getElementById("user-email-pos-id"); 
+            //USER TERMS OF SERVICE CONTAINER - POS
+            const pos_tosAgreeCheckbox_container = document.getElementById("tosAgreeCheckbox-container-pos-id"); 
+            //USER TERMS OF SERVICE CHECKBOX - POS 
+            const pos_user_tosAgreeCheckbox = document.getElementById("user-tosAgreeCheckbox-input-pos-id"); 
             //SUBTOTAL TXT
             const subtotal_text = document.getElementById("subtotal-text-id"); 
             //SHIPPING COST TXT 
@@ -3124,7 +3177,7 @@
                 check_pos_firstLastname_phoneNum_inputs(); 
 
                 //IF POS USER NAME INPUT IS EMPTY
-                if (pos_firstName_input.value == "" || pos_lastName_input.value == "" || pos_phoneNumber_input.value == "" && userName_phone_container.style.display == "block") {
+                if (pos_firstName_input.value == "" || pos_lastName_input.value == "" || pos_phoneNumber_input.value == "" || pos_userEmail_input.value == "" || pos_user_tosAgreeCheckbox.checked == false && userName_phone_container.style.display == "block") {
                     //REMOVE - DEBIT/CREDIT CONTAINER
                     debitCredit_container.style.display = "none";  
                     //OPEN - PAYMENT OPTIONS CONTAINER
@@ -3152,7 +3205,7 @@
                 check_pos_firstLastname_phoneNum_inputs(); 
 
                 //IF POS USER NAME INPUT IS EMPTY
-                if (pos_firstName_input.value == "" || pos_lastName_input.value == "" || pos_phoneNumber_input.value == "" && userName_phone_container.style.display == "block") {
+                if (pos_firstName_input.value == "" || pos_lastName_input.value == "" || pos_phoneNumber_input.value == "" || pos_userEmail_input.value == "" || pos_user_tosAgreeCheckbox.checked == false && userName_phone_container.style.display == "block") {
                     //REMOVE - GOOGLE PAY CONTAINER
                     googlePay_container.style.display = "none";  
                     //OPEN - PAYMENT OPTIONS CONTAINER
@@ -3189,7 +3242,7 @@
                 check_pos_firstLastname_phoneNum_inputs(); 
 
                 //IF POS USER NAME INPUT IS EMPTY
-                if (pos_firstName_input.value == "" || pos_lastName_input.value == "" || pos_phoneNumber_input.value == "" && userName_phone_container.style.display == "block") {
+                if (pos_firstName_input.value == "" || pos_lastName_input.value == "" || pos_phoneNumber_input.value == "" || pos_userEmail_input.value == "" || pos_user_tosAgreeCheckbox.checked == false && userName_phone_container.style.display == "block") {
                     //REMOVE - GOOGLE PAY CONTAINER
                     applePay_container.style.display = "none";  
                     //OPEN - PAYMENT OPTIONS CONTAINER
@@ -3277,7 +3330,7 @@
                 }
             });
 
-            //PHONE NUMBER INPUT EVENT LISTENER
+            //POS PHONE NUMBER INPUT EVENT LISTENER
             pos_phoneNumber_input.addEventListener('input', (e) => {
                 if (e.target.value.trim() !== '') { 
                     e.target.style.border = '2px #2F9C95 solid'
@@ -3287,9 +3340,23 @@
                 }
             });
 
+            //POS USER EMAIL INPUT EVENT LISTENER
+            pos_userEmail_input.addEventListener('input', (e) => {
+                if (e.target.value.trim() !== '') { 
+                    e.target.style.border = '2px #2F9C95 solid'
+                }
+            });
+
+            //POS TERMS OF SERVICE EVENT LISTENER
+            pos_user_tosAgreeCheckbox.addEventListener('click', (e) => {
+                if (e.target.value.trim() !== '') { 
+                    pos_tosAgreeCheckbox_container.style.border = 'white solid'
+                }
+            });
+
             //CHECK POS FIRST/LAST NAME & PHONE NUMBER INPUTS FUNCTION
             function check_pos_firstLastname_phoneNum_inputs() {
-                //CHECK - FIRST NAME INPUT VALUES
+                //CHECK - POS FIRST NAME INPUT VALUES
                 if (pos_firstName_input.value == "" && user_firstName.value == "") {
                     alert("Please enter your first name to checkout");
                     //CHANGE INPUT BORDER RED
@@ -3298,7 +3365,7 @@
                     document.getElementById("pos-container-inner-id").scrollTop = 0;
                 }
 
-                //CHECK - LAST NAME INPUT VALUES
+                //CHECK - POS LAST NAME INPUT VALUES
                 else if (pos_lastName_input.value == "" && user_lastName.value == "") {
                     alert("Please enter your last name to checkout");
                     //CHANGE INPUT BORDER RED
@@ -3307,11 +3374,29 @@
                     document.getElementById("pos-container-inner-id").scrollTop = 0;
                 }
 
-                //CHECK - PHONE NUMBER VALUES
+                //CHECK - POS PHONE NUMBER VALUES
                 else if (pos_phoneNumber_input.value == "" && user_phoneNumber.value == "") {
                     alert("Please enter your phone number to checkout");
                     //CHANGE INPUT BORDER RED
                     pos_phoneNumber_input.style.border = " solid 4px red"; 
+                    //SCROLL TO INPUT
+                    document.getElementById("pos-container-inner-id").scrollTop = 0;
+                }
+
+                //CHECK - POS USER EMAIL VALUES
+                else if (pos_userEmail_input.value == "" && user_email.value == "") {
+                    alert("Please enter your email to checkout"); 
+                    //CHANGE INPUT BORDER RED
+                    pos_userEmail_input.style.border = " solid 4px red"; 
+                    //SCROLL TO INPUT
+                    document.getElementById("pos-container-inner-id").scrollTop = 0;
+                }
+
+                //CHECK - POS TERMS OF SERVICE CHECKBOX
+                else if (pos_user_tosAgreeCheckbox.checked == false && user_tosAgreeCheckbox_input.checked == false) {
+                    alert("Please agree to our Terms of Service to checkout"); 
+                    //CHANGE INPUT BORDER RED
+                    pos_tosAgreeCheckbox_container.style.border = " solid 4px red"; 
                     //SCROLL TO INPUT
                     document.getElementById("pos-container-inner-id").scrollTop = 0;
                 }
@@ -3345,6 +3430,8 @@
                     pos_lastName_input.value = user_lastName.value;
                     //MAKE - POS PHONE # VALUE = USER PHONE # VALUE 
                     pos_phoneNumber_input.value = user_phoneNumber.value;
+                    //MAKE - POS USER EMAIL VALUE = USER EMAIL VALUE
+                    pos_userEmail_input.value = user_email.value; 
                 } else {
                     //ADD - SHIPPING COSTS
                     shippingCost_text.innerHTML = shippingCost_number.toFixed(2);
@@ -4214,14 +4301,406 @@
                 }
             } //END - FINAL CHECK - ALL REMAINING INPUTS - FUNCTION
 
+            //ORDER CONFIRMATION CONTAINER VARIABLE
+            //  //SHIPPED PRODUCTS CONTAINER - ORDER CONFIRMATION 
+            const orderConfirm_shippedProducts_container = document.getElementById("orderConfirm-shippedProducts-container-id"); 
+            //  //SHIPPED PRODUCTS
+            //  //  //ITEM 1
+            const shippedProduct_item1 = document.getElementById("shippedProduct-item1-id"); 
+            const shippedProduct_item1_name_txt = document.getElementById("shippedProduct-item1-name-txt-id"); 
+            const shippedProduct_item1_qty_txt = document.getElementById("shippedProduct-item1-qty-txt-id"); 
+            const shippedProduct_item1_cost_txt = document.getElementById("shippedProduct-item1-cost-txt-id"); 
+            //  //  //ITEM 2 
+            const shippedProduct_item2 = document.getElementById("shippedProduct-item2-id"); 
+            const shippedProduct_item2_name_txt = document.getElementById("shippedProduct-item2-name-txt-id"); 
+            const shippedProduct_item2_qty_txt = document.getElementById("shippedProduct-item2-qty-txt-id"); 
+            const shippedProduct_item2_cost_txt = document.getElementById("shippedProduct-item2-cost-txt-id"); 
+            //  //  //ITEM 3 
+            const shippedProduct_item3 = document.getElementById("shippedProduct-item3-id"); 
+            const shippedProduct_item3_name_txt = document.getElementById("shippedProduct-item3-name-txt-id");
+            const shippedProduct_item3_qty_txt = document.getElementById("shippedProduct-item3-qty-txt-id");
+            const shippedProduct_item3_cost_txt = document.getElementById("shippedProduct-item3-cost-txt-id");
+            //  //  //ITEM 4
+            const shippedProduct_item4 = document.getElementById("shippedProduct-item4-id"); 
+            const shippedProduct_item4_name_txt = document.getElementById("shippedProduct-item4-name-txt-id");
+            const shippedProduct_item4_qty_txt = document.getElementById("shippedProduct-item4-qty-txt-id");
+            const shippedProduct_item4_cost_txt = document.getElementById("shippedProduct-item4-name-txt-id");
+            //  //  //ITEM 5
+            const shippedProduct_item5 = document.getElementById("shippedProduct-item5-id"); 
+            const shippedProduct_item5_name_txt = document.getElementById("shippedProduct-item5-name-txt-id");
+            const shippedProduct_item5_qty_txt = document.getElementById("shippedProduct-item5-qty-txt-id");
+            const shippedProduct_item5_cost_txt = document.getElementById("shippedProduct-item5-name-txt-id");
+            //  //SERVICE ITEMS
+            //  //  //SERVICE ITEM 1 
+            const confirmedService_item1 = document.getElementById("confirmedService-item1-id"); 
+            const confirmedService_item1_name_txt = document.getElementById("confirmedService-item1-name-txt-id");
+            const confirmedService_item1_provider_txt = document.getElementById("confirmedService-item1-provider-txt-id"); 
+            const confirmedService_item1_cost_txt = document.getElementById("confirmedService-item1-cost-txt-id");
+            //  //  //SERVICE ITEM 2
+            const confirmedService_item2 = document.getElementById("confirmedService-item2-id"); 
+            const confirmedService_item2_name_txt = document.getElementById("confirmedService-item2-name-txt-id");
+            const confirmedService_item2_provider_txt = document.getElementById("confirmedService-item2-provider-txt-id"); 
+            const confirmedService_item2_cost_txt = document.getElementById("confirmedService-item2-cost-txt-id");
+            //  //  //SERVICE ITEM 3
+            const confirmedService_item3 = document.getElementById("confirmedService-item3-id"); 
+            const confirmedService_item3_name_txt = document.getElementById("confirmedService-item3-name-txt-id");
+            const confirmedService_item3_provider_txt = document.getElementById("confirmedService-item3-provider-txt-id"); 
+            const confirmedService_item3_cost_txt = document.getElementById("confirmedService-item3-cost-txt-id");
+            //  //  //SERVICE ITEM 4
+            const confirmedService_item4 = document.getElementById("confirmedService-item4-id"); 
+            const confirmedService_item4_name_txt = document.getElementById("confirmedService-item4-name-txt-id");
+            const confirmedService_item4_provider_txt = document.getElementById("confirmedService-item4-provider-txt-id"); 
+            const confirmedService_item4_cost_txt = document.getElementById("confirmedService-item4-cost-txt-id");
+            //  //  //SERVICE ITEM 5
+            const confirmedService_item5 = document.getElementById("confirmedService-item5-id"); 
+            const confirmedService_item5_name_txt = document.getElementById("confirmedService-item5-name-txt-id");
+            const confirmedService_item5_provider_txt = document.getElementById("confirmedService-item5-provider-txt-id"); 
+            const confirmedService_item5_cost_txt = document.getElementById("confirmedService-item5-cost-txt-id");
+            //  //SUBTOTAL - ORDER CONFIRMATION
+            const subtotal_text_orderConfirm = document.getElementById("subtotal-text-orderConfirm-id"); 
+            //  //SHIPPING - ORDER CONFIRMATION
+            const shippingCost_text_orderConfirm = document.getElementById("shippingCost-text-orderConfirm-id");
+            //  //TAXES - ORDER CONFIRMATION 
+            const taxes_text_orderConfirm = document.getElementById("taxes-text-orderConfirm-id"); 
+            //  //FEES - ORDER CONFIRMATION
+            const fees_text_orderConfirm = document.getElementById("fees-text-orderConfirm-id"); 
+            //  //GRAND TOTAL - ORDER CONFIRMATION
+            const grand_total_txt_orderConfirm = document.getElementById("grand-total-txt-orderConfirm-id"); 
+            //  //CONTINUED SERVICES CONTAINER - VENDOR 1
+            const serviceVendor1_contServices_container = document.getElementById("serviceVendor1-contServices-container-id"); 
+            //  //ORDER CONFIRMATION - SERVICE NAME TXT 1
+            const orderConfirm_serviceName_txt1 = document.getElementById("orderConfirm-serviceName-txt1-id"); 
+            //  //ORDER CONFIRMATION - SERVICE PRODIVER TXT 1
+            const orderConfirm_providerName_txt1 = document.getElementById("orderConfirm-providerName-txt1-id");
+            //  //ORDER CONFIRMATION BTN - SERVICE VENDOR 1
+            const orderConfirm_btn_serviceVendor1 = document.getElementById("orderConfirm-btn-serviceVendor1-id");
+            //  //SHIPPING ADDRESS CONTAINER - ORDER CONFIRMATION
+            const userAddress_container_orderConfirm = document.getElementById("userAddress-container-orderConfirm-id"); 
+            //  //SHIPPING ADDRESS - ORDER CONFIRMATION
+            const user_address_txt_orderConfirm = document.getElementById("user-address-txt-orderConfirm-id"); 
+            //  //USER NAME - ORDER CONFIRMATION 
+            const userName_orderConfirm = document.getElementById("userName-orderConfirm-id"); 
+            //  //USER PHONE NUMBER - ORDER CONFIRMATION 
+            const userPhoneNum_orderConfirm = document.getElementById("userPhoneNum-orderConfirm-id"); 
+            //  //USER EMAIL - ORDER CONFIRMATION   
+            const userEmail_orderConfirm = document.getElementById("userEmail-orderConfirm-id"); 
+            //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 
+            //  //DEBIT/CREDIT - ORDER CONFIRMATION CONTAINER 
+            const debitCredit_orderConfirm_container = document.getElementById("debitCredit-orderConfirm-container-id"); 
+            //  //GOOGLE PAY - ORDER CONFIRMATION CONTAINER
+            const googlePay_orderConfirm_container = document.getElementById("googlePay-orderConfirm-container-id"); 
+            //  //APPLE PAY - ORDER CONFIRMATION CONTAINER
+            const applePay_orderConfirm_container = document.getElementById("applePay-orderConfirm-container-id"); 
+            //  //CARDHOLDER NAME - ORDER CONFIRMATION 
+            const cardholderName_orderConfirmation = document.getElementById("cardholderName-orderConfirmation-id"); 
+            //  //CARD NUMBER LAST 4 - ORDER CONFIRMATION 
+            const cardholder_numberLast4_orderConfirm = document.getElementById("cardholder-numberLast4-orderConfirm-id"); 
+            //  //BILLING ADDRESS - ORDER CONFIRMATION
+            const billingAddress_orderConfirm = document.getElementById("billingAddress-orderConfirm-id"); 
+            //  //PURCHASE DATE - ORDER CONFIRMATION
+            const purchaseDate = document.getElementById("purchaseDate-id");
+            //  //PURCHASE DATE DT INPUT
+            const purchaseDate_input = document.getElementById("purchaseDate-input-id");  
+            //  //PURCHASE TIME - ORDER CONFIRMATION
+            const purchaseTime = document.getElementById("purchaseTime-id"); 
+            //  //PURCHASE TIME DT INPUT
+            const purchaseTime_input = document.getElementById("purchaseTime-input-id");  
+            //  //MODIFY BTN - ORDER CONFIRMATION 
+            const modifyOrder_btn = document.getElementById("modifyOrder-btn-id"); 
+            modifyOrder_btn.addEventListener("click", () => {
+                //CHECK - PURCHASE DATE FOR EXPIRATION
+                //  //CHECK - PURCHASE TIME FOR EXPIRATION
+                //  //  //OPEN - ORDER MODIFICATION CONTAINER
+                alert("It's working my nigga!"); 
+            });
+            //  //CANCEL BTN - ORDER CONFIRMATION
+            const cancelOrder_btn = document.getElementById("cancelOrder-btn-id"); 
+            cancelOrder_btn.addEventListener("click", () => {
+                //CHECK - PURCHASE DATE FOR EXPIRATION
+                //  //CHECK - PURCHASE TIME FOR EXPIRATION
+                //  //  //OPEN - ORDER MODIFICATION CONTAINER
+                alert("It's working my nigga!"); 
+            });
+
+            
             //  //DEBIT/CREDIT CARD VERIFICATION
             function debitCredit_cardVerification() {
-                alert("Ready for debit/credit card verification!"); 
+                //PERFORM POS CARD VERIFICATION & TOKENIZATION
+                //  //IF SUCCESSFUL 
+                //  //  //OPEN - ORDER CONFIRMATION CONTAINER
+                open_orderConfirmation(); 
             }
-
 
             //  //POS INPUT TOKENIZATION 
             function pos_inputTokenization() {
-                alert("Ready to tokenize input data for payment processor!"); 
+                //PERFORM POS PAYMENT VERIFICATION & TOKENIZATION
+                //  //IF SUCCESSFUL 
+                //  //  //OPEN - ORDER CONFIRMATION CONTAINER
+                open_orderConfirmation(); 
+            }
+
+            //  //ORDER CONFIRMATION FUNCTION 
+            function open_orderConfirmation() {
+                //GET - ORDER DETAILS 
+                get_orderDetails_orderConfirmation(); 
+                //OPEN - LOADING CONTAINER
+                loadingContainer.style.display = "block";
+                //3 SECOND DELAY TO LOAD ASSETS
+                setTimeout(() => {
+                    //CLOSE - LOADING CONTAINER
+                    loadingContainer.style.display = "none";
+                    //CLOSE - CURRENT CONTAINER 
+                    allAssets_pos_container.style.display = "none"; 
+                    //REMOVE - OVERLAY HEADER BACK BTN 
+                    back_overlayContainer_btn.style.display = "none"; 
+                    //ADD - OVERLAY HEADER CLOSE BTN
+                    close_overlayContainer_btn.style.display = "flex"
+                    //OPEN - ORDER CONFIRMATION CONTAINER
+                    orderConfirmation_allAssets_container.style.display = "flex";
+                    //UPDATE - OVERLAY HEADER TXT
+                    mainHeader_txt.innerHTML = "Order Confirmed!"; 
+                }, 2000);  
+            }
+
+            //CHECK FOR - CONTINUED SERVICE VENDOR FUNCTION
+            function checkFor_continuedService_vendor() {
+                    //CHECK - SERVICE VENDOR 1 & 2 FOR CONTIUNED SERVICE VENDOR
+                    if (serVendor1 == urStart_bookP_vendor || serVendor2 == urStart_bookP_vendor) {
+                        //CHECK FOR - URSTART VENDOR IN SERVICE ITEM SLOT 1
+                        if (selectedService_item1_name_txt.innerHTML == urStart_serviceItem_name) {
+                            //GET - SERVICE NAME 
+                            orderConfirm_serviceName_txt1.innerHTML = urStart_serviceItem_name; 
+                            //GET - SERVICE PROVIDER
+                            orderConfirm_providerName_txt1.innerHTML = urStart_providerName;
+                            //OPEN - CONTINUED SERVICE VENDOR CONTAINER - VENDOR 1
+                            serviceVendor1_contServices_container.style.display = "block";
+                        } 
+                        //CHECK FOR - URSTART VENDOR IN SERVICE ITEM SLOT 2
+                        else if (selectedService_item2_name_txt.innerHTML == urStart_serviceItem_name) {
+                            //GET - SERVICE NAME 
+                            orderConfirm_serviceName_txt1.innerHTML = urStart_serviceItem_name; 
+                            //GET - SERVICE PROVIDER
+                            orderConfirm_providerName_txt1.innerHTML = urStart_providerName;
+                            //OPEN - CONTINUED SERVICE VENDOR CONTAINER - VENDOR 1
+                            serviceVendor1_contServices_container.style.display = "block";
+                        }
+                        //**** ADD NEW VENDOR - CHECK FOR CONTINUED SERVICE VENDOR ***
+                    }
+                }
+
+                //CONTINUED SERVICE VENDOR 1 - BTN EVENT LISTENER
+                orderConfirm_btn_serviceVendor1.addEventListener("click", () => {
+                    //OPEN - NEW WINDOW FOR EXTERNAL VENDOR
+                    alert("It's working my nigga!");
+                }); 
+
+            //  //GET ORDER DETAILS - FOR ORDER DETAILS CONTAINER 
+            function get_orderDetails_orderConfirmation() {
+                //GET - SUBTOTAL 
+                subtotal_text_orderConfirm.innerHTML = subtotal_text.innerHTML; 
+                //GET - SHIPPING COST
+                shippingCost_text_orderConfirm.innerHTML = shippingCost_text.innerHTML;  
+                //GET - TAXES 
+                taxes_text_orderConfirm.innerHTML = taxes_text.innerHTML; 
+                //GET - FEES
+                fees_text_orderConfirm.innerHTML = taxes_text.innerHTML; 
+                //GET - GRAND TOTAL
+                grand_total_txt_orderConfirm.innerHTML = grand_total_txt.innerHTML; 
+                //GET - SHIPPING ADDRESS
+                //  //IF THERE THE 'USER ADDRESS MAIN CONTAINER' IS PRESENT
+                if (userAddress_container.style.display == "block") {
+                    //OPEN - USER ADDRESS CONTAINER - ORDER CONFIRMATION 
+                    userAddress_container_orderConfirm.style.display = "block"; 
+                    //MAKE - USER SHIPPING ADDRESS ORDER CONFIRM = USER ADDRESS
+                    user_address_txt_orderConfirm.innerHTML = user_address_txt.innerHTML; 
+                }
+                //GET - USER NAME 
+                //  //IF THERE IS NO VALUES IN USER FIRST/LAST NAME INPUTS
+                if (user_firstName.value == "" || user_lastName.value == "") {
+                    userName_orderConfirm.innerHTML = pos_firstName_input.value + " " + pos_lastName_input.value;
+                }
+                //  //IF THERE ARE VALUES IN USER FIRST/LAST NAME INPUTS
+                if (user_firstName.value !== "" || user_lastName.value !== "") {
+                    userName_orderConfirm.innerHTML = user_firstName.value + " " + user_lastName.value;
+                } 
+                //GET - USER PHONE NUMBER
+                //  //IF USER PHONE NUMBER INPUT HAS NO VALUES
+                if (user_phoneNumber.value == "") {
+                    userPhoneNum_orderConfirm.innerHTML = pos_phoneNumber_input.value; 
+                }
+                //  //IF USER PHONE NUMBER INPUT VALUES
+                if (user_phoneNumber.value !== "") {
+                    userPhoneNum_orderConfirm.innerHTML = user_phoneNumber.value; 
+                }
+                //GET - USER EMAIL 
+                //  //IF USER EMAIL INPUT HAS NO VALUES
+                if (user_email.value == "") {
+                    userEmail_orderConfirm.innerHTML = pos_userEmail_input.value; 
+                }
+                //  //IF USER EMAIL INPUT HAS VALUES
+                if (user_email.value !== "") {
+                    userEmail_orderConfirm.innerHTML = user_email.value; 
+                }
+
+                //IF DEBIT/CREDIT CARD IS SELECTED BY USER
+                if (debitCredit_container.style.display == "block") {
+                    debitCredit_orderConfirm_container.style.display = "block";
+                    //GET - CARDHOLDER'S NAME 
+                    cardholderName_orderConfirmation.innerHTML = cardHolder_name_input.value; 
+                    //GET - CARD NUMBER LAST 
+                    const accountNumber = cardholder_number_input.value;
+                    const lastFourDigits = accountNumber.toString().slice(-4);
+                    cardholder_numberLast4_orderConfirm.innerHTML = lastFourDigits; 
+                    //GET - BILLING ADDRESS
+                    billingAddress_orderConfirm.innerHTML = billingAddress_user_street.value + "," + " " + billingAddress_user_city.value + "," + " " + billingAddress_user_state.value + " " + billingAddress_user_zipcode.value;
+                }
+
+                //IF GOOGLE PAY IS SELECTED BY USER
+                if (googlePay_container.style.display == "block") {
+                    //OPEN - GOOGLE PAY - ORDER CONFIRMATION CONTAINER
+                    googlePay_orderConfirm_container.style.display = "block";
+                }
+
+                //IF APPLE PAY IS SELECTED BY USER
+                if (applePay_container.style.display == "block") {
+                    //OPEN - APPLE PAY - ORDER CONFIRMATION CONTAINER
+                    applePay_orderConfirm_container.style.display = "block";
+                }
+
+                //GET - DATE OF PURCHASE
+                purchaseDate.innerHTML = new Date().toISOString().split('T')[0];
+                purchaseDate_input.value = purchaseDate.innerHTML; 
+                //GET - TIME OF PURCHASE
+                const currentTime = new Date();
+                purchaseTime.innerHTML = currentTime.toLocaleTimeString(); 
+                purchaseTime_input.value = purchaseTime.innerHTML;
+
+                //CHECK FOR - CONTINUED SERVICE VENDOR 
+                checkFor_continuedService_vendor(); 
+
+                //GET - SHIPPED PRODUCTS DETAILS
+                //  //CHECK FOR FINAL SELECTED PRODUCT ITEMS
+                //  //  //CHECK final-userSelections-productItems-container IS PRESENT
+                if (final_userSelections_productItems_container.style.display == "block") {
+                    //OPEN - SHIPPED PRODUCTS CONTAINER 
+                    orderConfirm_shippedProducts_container.style.display = "block";
+
+                    //CHECK - PRODUCT ITEM 1
+                    if (final_selectedProduct_item1.style.display == "block") {
+                        //ADD - SHIPPING ITEM 1 CONTAINER
+                        shippedProduct_item1.style.display = "flex"; 
+                        //GET - PRODUCT NAME
+                        shippedProduct_item1_name_txt.innerHTML = final_selectedProduct_item1_name.innerHTML; 
+                        //GET - QTY 
+                        shippedProduct_item1_qty_txt.innerHTML = "Qty. " + selectedProduct_item1_quantity_txt.innerHTML;
+                        //GET - COST
+                        shippedProduct_item1_cost_txt.innerHTML = "Cost: " + selectedProduct_item1_slot1_cost.innerHTML;
+                    }
+                    //CHECK - PRODUCT ITEM 2
+                    if (final_selectedProduct_item2.style.display == "block") {
+                        //ADD - SHIPPING ITEM 2 CONTAINER
+                        shippedProduct_item2.style.display = "flex"; 
+                        //GET - PRODUCT NAME
+                        shippedProduct_item2_name_txt.innerHTML = final_selectedProduct_item2_name.innerHTML; 
+                        //GET - QTY 
+                        shippedProduct_item2_qty_txt.innerHTML = "Qty. " + selectedProduct_item2_quantity_txt.innerHTML;
+                        //GET - COST
+                        shippedProduct_item2_cost_txt.innerHTML = "Cost: " + selectedProduct_item2_slot2_cost.innerHTML;
+                    }
+                    //CHECK - PRODUCT ITEM 3
+                    if (final_selectedProduct_item3.style.display == "block") {
+                        //ADD - SHIPPING ITEM 3 CONTAINER
+                        shippedProduct_item3.style.display = "flex"; 
+                        //GET - PRODUCT NAME
+                        shippedProduct_item3_name_txt.innerHTML = final_selectedProduct_item3_name.innerHTML; 
+                        //GET - QTY 
+                        shippedProduct_item3_qty_txt.innerHTML = "Qty. " + selectedProduct_item3_quantity_txt.innerHTML;
+                        //GET - COST
+                        shippedProduct_item3_cost_txt.innerHTML = "Cost: " + selectedProduct_item3_slot3_cost.innerHTML;
+                    }
+                    //CHECK - PRODUCT ITEM 4
+                    if (final_selectedProduct_item4.style.display == "block") {
+                        //ADD - SHIPPING ITEM 4 CONTAINER
+                        shippedProduct_item4.style.display = "flex"; 
+                        //GET - PRODUCT NAME
+                        shippedProduct_item4_name_txt.innerHTML = final_selectedProduct_item4_name.innerHTML; 
+                        //GET - QTY 
+                        shippedProduct_item4_qty_txt.innerHTML = "Qty. " + selectedProduct_item4_quantity_txt.innerHTML;
+                        //GET - COST
+                        shippedProduct_item4_cost_txt.innerHTML = "Cost: " + selectedProduct_item4_slot4_cost.innerHTML;
+                    }
+                    //CHECK - PRODUCT ITEM 5
+                    if (final_selectedProduct_item5.style.display == "block" || final_selectedProduct_item5.style.display == "flex") {
+                        //ADD - SHIPPING ITEM 5 CONTAINER
+                        shippedProduct_item5.style.display = "flex"; 
+                        //GET - PRODUCT NAME
+                        shippedProduct_item5_name_txt.innerHTML = final_selectedProduct_item5_name.innerHTML; 
+                        //GET - QTY 
+                        shippedProduct_item5_qty_txt.innerHTML = "Qty. " + selectedProduct_item5_quantity_txt.innerHTML;
+                        //GET - COST
+                        shippedProduct_item5_cost_txt.innerHTML = "Cost: " + selectedProduct_item5_slot5_cost.innerHTML;
+                    }
+                } 
+                //  //  //CHECK final_userSelections_serviceItems_container IS PRESENT
+                if (final_userSelections_serviceItems_container.style.display == "block") {
+                    //CHECK - SERVICE ITEM 1
+                    if (final_selectedService_item1.style.display == "block" || final_selectedService_item1.style.display == "flex") {
+                        //ADD - SERVICE ITEM 1 CONTAINER
+                        confirmedService_item1.style.display = "flex"; 
+                        //GET - SERVICE NAME
+                        confirmedService_item1_name_txt.innerHTML = final_selectedService_item1_name.innerHTML; 
+                        //GET - PROVIDER 
+                        confirmedService_item1_provider_txt.innerHTML = final_selectedService_item1_provider.innerHTML;
+                        //GET - COST
+                        confirmedService_item1_cost_txt.innerHTML = "Cost: " + final_selectedService_item1_cost.innerHTML;
+                    }
+                    //CHECK - PRODUCT ITEM 2
+                    if (final_selectedService_item2.style.display == "block" || final_selectedService_item2.style.display == "flex") {
+                        //ADD - SERVICE ITEM 2 CONTAINER
+                        confirmedService_item2.style.display = "flex"; 
+                        //GET - SERVICE NAME
+                        confirmedService_item2_name_txt.innerHTML = final_selectedService_item2_name.innerHTML; 
+                        //GET - PROVIDER 
+                        confirmedService_item2_provider_txt.innerHTML = final_selectedService_item2_provider.innerHTML;
+                        //GET - COST
+                        confirmedService_item2_cost_txt.innerHTML = "Cost: " + final_selectedService_item2_cost.innerHTML;
+                    }
+                    //CHECK - PRODUCT ITEM 3
+                    if (final_selectedService_item3.style.display == "block" || final_selectedService_item3.style.display == "flex") {
+                        //ADD - SERVICE ITEM 3 CONTAINER
+                        confirmedService_item3.style.display = "flex"; 
+                        //GET - SERVICE NAME
+                        confirmedService_item3_name_txt.innerHTML = final_selectedService_item3_name.innerHTML; 
+                        //GET - PROVIDER 
+                        confirmedService_item3_provider_txt.innerHTML = final_selectedService_item3_provider.innerHTML;
+                        //GET - COST
+                        confirmedService_item3_cost_txt.innerHTML = "Cost: " + final_selectedService_item3_cost.innerHTML;
+                    }
+                    //CHECK - PRODUCT ITEM 4
+                    if (final_selectedService_item4.style.display == "block" || final_selectedService_item4.style.display == "flex") {
+                        //ADD - SERVICE ITEM 4 CONTAINER
+                        confirmedService_item4.style.display = "flex"; 
+                        //GET - SERVICE NAME
+                        confirmedService_item4_name_txt.innerHTML = final_selectedService_item4_name.innerHTML; 
+                        //GET - PROVIDER 
+                        confirmedService_item4_provider_txt.innerHTML = final_selectedService_item4_provider.innerHTML;
+                        //GET - COST
+                        confirmedService_item4_cost_txt.innerHTML = "Cost: " + final_selectedService_item4_cost.innerHTML;
+                    }
+                    //CHECK - PRODUCT ITEM 5
+                    if (final_selectedService_item5.style.display == "block" || final_selectedService_item5.style.display == "flex") {
+                        //ADD - SERVICE ITEM 5 CONTAINER
+                        confirmedService_item5.style.display = "flex"; 
+                        //GET - SERVICE NAME
+                        confirmedService_item5_name_txt.innerHTML = final_selectedService_item5_name.innerHTML; 
+                        //GET - PROVIDER 
+                        confirmedService_item5_provider_txt.innerHTML = final_selectedService_item5_provider.innerHTML;
+                        //GET - COST
+                        confirmedService_item5_cost_txt.innerHTML = "Cost: " + final_selectedService_item5_cost.innerHTML;
+                    }
+                } else {
+                    //ERROR: NO PRODUCTS OR SERVICES SELECTED
+                    alert("Error: No products or services selected!"); 
+                }
             }
