@@ -15,7 +15,7 @@
     <!-- <script src="https://kit.fontawesome.com/250d29013c.js" crossorigin="anonymous"></script> -->
     <title>UR Market Checkout</title>
     <!-- LINK TO EXTERNAL JS FILE -->
-    <script src="urcard-checkout.mjs" defer></script>
+    <!-- <script src="urcard-checkout.js" defer></script> -->
     <!-- <script type="module" src="urcard-checkout.mjs"></script> -->
 </head>
 
@@ -256,7 +256,8 @@
                 left: 0; 
                 right: 0;
                 position: absolute;
-                z-index: 2000;
+                z-index: 10000;
+
             }
             #loading-inner-container-id {
                 width: 100%; 
@@ -526,7 +527,6 @@
                 display: flex;
                 width: 100%;
                 height: 500px;
-                border: dotted;
                 overflow: hidden;
             }
             #search-card {
@@ -565,17 +565,6 @@
                     width: 70%;
                 }
             }
-            #selected-details {
-                padding: 12px;
-                background: #f4f4f4;
-                border-radius: 6px;
-                max-width: 400px;
-            }
-            #autocomplete-container {
-                width: 100%;
-                height: 90px; 
-                margin-bottom: 15px;
-            }
             /* END - ADDRESS SEARCH ASSETS */
 
         </style> <!-- END OF PRIMARY STYLESHEET -->
@@ -588,7 +577,6 @@
                 width: 100%; 
                 height: 100%; 
                 overflow: hidden; 
-                border: dotted;
             }
             /* UR CARD SELECTED ITEMS TABLE ASSETS - OVERLAY CONTENT */
             #urcard-ALLselectedItems-container-id {
@@ -1173,7 +1161,6 @@
             /* POS ASSETS */
             #userAddress-container-id {
                 display: flex; 
-                justify-content: center;
                 overflow: hidden; 
                 text-align: center; 
                 margin: 20px 0 30px 0;
@@ -1333,10 +1320,212 @@
                 }
             }
 
+            /* ORDER CONFIRMATION CONTAINER ASSETS */
+            .orderConfirmation-container-class {
+                width: 100%; 
+                height: 90%; 
+                flex-direction: column; 
+                justify-content: flex-end; 
+                overflow: hidden;
+            }
+            .continueServices-vendor-container-class {
+                width: 100%; 
+                overflow: hidden; 
+                text-align: center; 
+                border-radius: 20px; 
+                -webkit-box-shadow: 0px 0px 5px 0px #000000; 
+                box-shadow: 0px 0px 5px 0px #000000;
+                margin: 20px 0 20px 0;
+            }
+
+            .shippingStatus-StatusBar-class {
+                display: block;
+                width: 100%;
+                height: 60%;
+                border-radius: 60px;
+                padding: 3px;
+                overflow: hidden;
+                /* background: rgb(245,220,112);
+                background: -moz-linear-gradient(90deg, rgba(245,220,112,1) 0%, rgba(204,103,102,1) 100%);
+                background: -webkit-linear-gradient(90deg, rgba(245,220,112,1) 0%, rgba(204,103,102,1) 100%);
+                background: linear-gradient(90deg, rgba(245,220,112,1) 0%, rgba(204,103,102,1) 100%); */
+            }
+
+            .charOverview-icon-container-class-2 {
+                width: 100%;
+                height: 60%;
+                overflow: hidden;
+            }
+            @media screen and (max-width: 800px) {
+	        .charOverview-icon-container-class-2 {
+                    /* max-width: 450px; */
+                    margin: auto;
+                }
+            }
+            .shippingProduct-serviceItem-class {
+                display: flex; 
+                width: 100%; 
+                height: auto; 
+                overflow: hidden; 
+                background-color: rgb(218, 218, 218);
+            } 
+            .statusBar-class {
+                width: 50%; 
+                height: 100%; 
+                overflow: hidden; 
+            }
+            .shippingProduct-serviceItem-container-class {
+                display: flex;
+                width: 100%; 
+                height: auto; 
+                overflow: hidden;
+            }
+            .shippingProduct-serviceItem-class1 {
+                width: 42%; 
+                display: flex; 
+                justify-content: left;
+            }
+            .shippingProduct-serviceItem-class2 {
+                width: 16%; 
+                display: flex; 
+                justify-content: center;
+            }
+            .serviceItem-container-class {
+                width: 33.3%; 
+                display: flex; 
+                justify-content: left; 
+                overflow: hidden; 
+                font-size: medium;
+            }
+            .modifyCancel-btn-container-class {
+                display: flex; 
+                width: 100%; 
+                overflow: hidden;
+            }
+            .orderConfirm-modifyDelete-btn-class {
+                display: block; 
+                width: 50%; 
+                overflow: hidden; 
+                padding: 20px;
+            }
+
+            @media screen and (max-width: 800px) {
+                .statusBar-class {
+                    width: 100%;
+                }
+            }
+            @media screen and (max-width: 600px) {
+                /* SHIPPED PRODUCT ITEM ID'S */
+                #shippedProduct-item1-id {
+                    margin: 0 0 20px 0;
+                }
+                #shippedProduct-item2-id {
+                    margin: 0 0 20px 0;
+                }
+                #shippedProduct-item3-id {
+                    margin: 0 0 20px 0;
+                }
+                #shippedProduct-item4-id {
+                    margin: 0 0 20px 0;
+                }
+                #shippedProduct-item5-id {
+                    margin: 0 0 20px 0;
+                }
+                /* CONFIRMED SERVICE ITEM ID'S */
+                #confirmedService-item1-id {
+                    margin: 0 0 20px 0;
+                }
+                #confirmedService-item2-id {
+                    margin: 0 0 20px 0;
+                }
+                #confirmedService-item3-id {
+                    margin: 0 0 20px 0;
+                }
+                #confirmedService-item4-id {
+                    margin: 0 0 20px 0;
+                }
+                #confirmedService-item5-id {
+                    margin: 0 0 20px 0;
+                }
+                .shippingProduct-serviceItem-container-class {
+                    display: block;
+                    text-align: center;
+                }
+                .serviceItem-container-class {
+                    width: 100%; 
+                }
+                .shippingProduct-serviceItem-class1 {
+                    width: 100%;
+                }
+                .shippingProduct-serviceItem-class2 {
+                    width: 100%;
+                }
+                .modifyCancel-btn-container-class {
+                    display: block;
+                }
+                .orderConfirm-modifyDelete-btn-class {
+                    width: 100%;
+                }
+            }
+
+            /* STATUS BAR ASSETS */
+            @keyframes flickerAnimation1 {
+                0% {
+                    opacity: 1;
+                }
+
+                50% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            .animate-flicker-1 {
+                -webkit-animation: flickerAnimation1 1.5s infinite;
+                -moz-animation: flickerAnimation1 1.5s infinite;
+                -o-animation: flickerAnimation1 1.5s infinite;
+                animation: flickerAnimation1 1.5s infinite;
+            }
+            .shippingStatus-inner-class {
+                display: flex; 
+                width: 100%; 
+                justify-content: center;
+                overflow: hidden;
+            }
+            .shippingStatus-icon-class {
+                width: 80px; 
+                height: 100%; 
+                overflow: hidden; 
+                justify-content: center; 
+                margin: 0 10px 0 0;
+            }
+            .shippingStatus-txt-class {
+                display: flex; 
+                justify-content: center;
+                text-align: center;
+                width: auto; 
+                height: auto; 
+                overflow: hidden;
+            }
+
+            @media screen and (max-width: 600px) {
+                .shippingStatus-inner-class {
+                    display: block;
+                }
+                .shippingStatus-icon-class {
+                    width: 100%;
+                }
+                .shippingStatus-txt-class {
+                    width: 100%;
+                }
+            }
         </style>
-
-
+        
     </head>
+    
 
     <body>
         <!-- ALL CONTENT CONTAINER -->
@@ -1356,7 +1545,7 @@
                 <div id="urcard-graphic-container-id" class="bounce-in-right">
                     <div class="pulse" style="display: flex; justify-content: center; overflow: hidden;"> 
                         <!-- CHANGE IMG SOURCE!!! -->
-                        <img id="urcard-graphic-id" src="images/UR Card Graphic.png" />
+                        <img id="urcard-graphic-id" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/UR Card Graphic.png" />
                     </div>
                 </div>
             </div> <!-- END - CHECKOUT - START PAGE CONTAINER - FROM URCARD -->
@@ -2468,7 +2657,19 @@
                                             <input oninput="this.value = this.value.replace(/\D/g, '')" placeholder="(123) 456 - 7890" maxlength="16" class="textInput-type1-class" type="tel" id="user-phoneNumber-id" name="phoneNumber">
                                         </div>
                                     </div>
-
+                                    <!-- 2ND COLUMN - USER EMAIL CONTAINER -->
+                                    <div class="grid-responsive-class-2" style="display: block; padding: 15px; margin: 20px 0 0 0;">
+                                        <label style="display: block;" for="user-email-id">Email:</label>
+                                        <input placeholder="UR_Email@email.com" class="textInput-type1-class" type="text" id="user-email-id" name="email">
+                                    </div>
+                                    <!-- 3RD COLUMN - TERMS OF SERVICE AGREEMENT - CONTAINER -->
+                                    <div class="grid-responsive-class-2" style="display: block; padding: 15px; margin: 20px 0 0 0;">
+                                        <!-- TERMS OF SERVICE CHECKBOX -->
+                                        <div id="tosAgreeCheckbox-container-id" style="border-radius: 20px; padding: 10px;">
+                                            <input id="user-tosAgreeCheckbox-input-id" type="checkbox" style="width: 35px; height: 35px; cursor: pointer;">
+                                            <p style="display: block;">Please check the box to Agree to our <a href><b>Terms of Service</b></a></p>
+                                        </div>
+                                    </div>
                                     <!-- LINE -->
                                     <div class="line-container-class" style="margin: 40px 0 20px 0;">
                                         <div class="line-2-class"></div>
@@ -2661,7 +2862,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item1-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -2676,7 +2877,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item1-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -2753,7 +2954,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item2-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -2768,7 +2969,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item2-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -2845,7 +3046,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item3-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -2860,7 +3061,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item3-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -2937,7 +3138,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item4-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -2952,7 +3153,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item4-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3029,7 +3230,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item5-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3044,7 +3245,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item5-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3121,7 +3322,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item6-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3136,7 +3337,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item6-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3213,7 +3414,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item7-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3228,7 +3429,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item7-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3305,7 +3506,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item8-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3320,7 +3521,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item8-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3397,7 +3598,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item9-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3412,7 +3613,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item9-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3489,7 +3690,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item10-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3504,7 +3705,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item10-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3581,6 +3782,19 @@
                                         <div class="col-w33pr-h100pr-container-class">
                                             <label style="display: block;" for="user-phoneNumber-pos-id">Phone Number:</label>
                                             <input oninput="this.value = this.value.replace(/\D/g, '')" placeholder="(123) 456 - 7890" maxlength="16" class="textInput-type1-class" type="tel" id="user-phoneNumber-pos-id" name="phoneNumber-pos">
+                                        </div>
+                                    </div>
+                                    <!-- 2ND COLUMN - EMAIL INPUT FOR POS -->
+                                    <div class="grid-responsive-class-2" style="display: block; padding: 15px; margin: 20px 0 0 0;">
+                                        <label style="display: block;" for="user-email-pos-id">Email:</label>
+                                        <input placeholder="UR_Email@email.com" class="textInput-type1-class" type="text" id="user-email-pos-id" name="email">
+                                    </div>
+                                    <!-- 3RD COLUMN - TERMS OF SERVICE CHECKBOX FOR POS -->
+                                    <div class="grid-responsive-class-2" style="display: block; padding: 15px; margin: 20px 0 0 0;">
+                                        <!-- TERMS OF SERVICE CHECKBOX -->
+                                        <div id="tosAgreeCheckbox-container-pos-id" style="border-radius: 20px; padding: 10px;">
+                                            <input id="user-tosAgreeCheckbox-input-pos-id" type="checkbox" style="width: 35px; height: 35px; cursor: pointer;">
+                                            <p style="display: block;">Please check the box to Agree to our <a href=""><b>Terms of Service</b></a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -4569,6 +4783,26 @@
                                 <div class="line-2-class"></div>
                             </div>
 
+                            <!-- CREATE URMARKET ACCOUNT CONTAINER -->
+                            <div id="create-account-container-id" style="display: block; text-align: center; width: 100%; overflow: hidden;">
+                                <!-- 'WANT FREE SHIPPING' TXT - DISPLAY:BLOCK -->
+                                <div id="want-free-shipping-txt-id" style="display: block;"><h1>Want free shipping?</h1></div>
+                                <p>Create an account to qualify</p>
+
+                                <div style="display: flex; width: 100%; justify-content: center; overflow: hidden;">
+                                    <!-- CREATE AN ACCOUNT BTN -->
+                                    <div id="create-UrCard-account-btn-id" class="btnType-1-class" style="max-width: 100%; min-width: 60%; background: linear-gradient(0deg, rgba(233, 62, 58, 0.8) 0%, rgba(237, 104, 60, 1) 10%, rgba(243, 144, 63, 1) 39%, rgba(255, 243, 59, 0.8) 100%);
+                                padding: 20px 30px 20px 30px; justify-content: center;">
+                                        <b style="font-size: x-large;">Create UR Account</b>
+                                    </div>
+                                </div>
+                            </div> <!-- END - CREATE URMARKET ACCOUNT CONTAINER -->
+
+                            <!-- LINE -->
+                            <div class="line-container-class" style="margin: 10px 0 0 0;">
+                                <div class="line-2-class"></div>
+                            </div>
+
                             <!-- PAYMENT PROCESSOR CONTAINER -->
                             <div id="paymentProcessor-container-id" style="width: 100%; overflow: hidden; margin: 0 0 100px 0;">
                                 <!-- PAYMENT OPTIONS CONTAINER - DISPLAY: BLOCK -->
@@ -4772,7 +5006,7 @@
                                     <div style="display: flex; justify-content: center; width: 100%; overflow: hidden; margin: 0 0 20px 0;">
                                         <!-- CARD EXPIRATION - INNER CONTAINER -->
                                         <div class="width-100per-class">
-                                            <label style="display: block;" for="cardExpiration-date-id">Expiration Date</label>
+                                            <label style="display: block;" for="cardExpiration-date-id">Expiration Date <b style="font: 15px;">(press calendar icon to select dates)</b></label>
                                             <input class="textInput-type1-class" type="date" id="cardExpiration-date-id" name="cardholderName">
                                         </div>
                                     </div> <!-- END - CARDHOLDER NAME INPUT -->
@@ -4945,10 +5179,519 @@
                         </div> <!-- END - ALL FINAL SELECTIONS INNER CLASS -->
                     </div> <!-- END - POS ALL ASSETS CONTAINER -->
 
+                    <!-- ORDER CONFIRMATION CONTAINER - DISPLAY:NONE/DISPLAY: FLEX -->
+                    <div id="orderConfirmation-allAssets-container-id" class="orderConfirmation-container-class" style="display: none;">
+                        <div class="all-SelectedItems-inner-class" style="padding: 20px 20px 0 20px;">
+                            <center><h1 style="color: #2F9C95;">Thank you for <b>UR</b> order</h1></center>
+                            <!-- CONTINUE WITH SERVICE VENDOR CONTAINER - DISPLAY:NONE/BLOCK -->
+                            <div id="continueServices-container-id" class="continueServices-container-class">
+                                <!-- SERVICE VENDOR 1 - CONTINUE SERVICES CONTAINER - DISPLAY:NONE/BLOCK -->
+                                <div id="serviceVendor1-contServices-container-id" class="continueServices-vendor-container-class" style="display: none;">
+                                    <div style="display: flex; justify-content: center; width: 100%; padding: 10px; overflow: hidden; font-size: large;">
+                                        <p>To continue with the following service, click the button below:</p>
+                                    </div>
+                                    <!-- LINE CONTAINER-->
+                                    <div class="line-container-class" style="margin: -20px 0 0 0;">
+                                        <!-- LINE -->
+                                        <div class="line-2-class" style="width: 80%; background-color: #2F9C95;"></div>
+                                    </div>
+                                    <!-- ORDER CONFIRM - SERVICE NAME -->
+                                    <h2><b id="orderConfirm-serviceName-txt1-id">Service Name Here</b></h2>
+                                    <!-- ORDER CONFIRM - PROVIDER NAME -->
+                                    <p id="orderConfirm-providerName-txt1-id" style="margin: -10px 0 0 0;">Provider Name</p>
+                                    <!-- ORDER CONFIRM - 'BEGIN SERVICE' BTN -->
+                                    <div style="display: flex; width: 100%; justify-content: center; overflow: hidden;">
+                                        <div id="orderConfirm-btn-serviceVendor1-id" class="btnType-1-class" style="width: auto; background: linear-gradient(0deg, rgba(233, 62, 58, 0.8) 0%, rgba(237, 104, 60, 1) 10%, rgba(243, 144, 63, 1) 39%, rgba(255, 243, 59, 0.8) 100%); justify-content: center; padding: 20px 40px 20px 40px;"><b style="font-size: x-large;">Begin Services</b></div>
+                                    </div>
+                                </div>
+                            </div> <!-- END - CONTINUE WITH SERVICE VENDOR CONTAINER -->
+
+                            <!-- SHIPPING STATUS CONTAINER -->
+                            <div id="shippingStatus-container-id" style="display: block; width: 100%; overflow: hidden;">
+                                <!-- LINE CONTAINER-->
+                                <div class="line-container-class">
+                                    <!-- LINE -->
+                                    <div class="line-2-class" style="background-color: #2F9C95;"></div>
+                                </div>
+
+                                <!-- SHIPPING STATUS BAR -->
+                                <div class="shippingStatus-StatusBar-class">
+                                    <div style="display: block; width: 100%; height: 100%; border-radius: 60px; background-color: white; overflow: hidden; padding: 10px 15px 5px 10px; text-align: center;">
+                                        <h2>Shipping Status</h2>
+                                        <!-- STATUS BAR CONTAINER - USED TO BE: progStatus-btn-char1-id-->
+                                        <div id="shippingStatus-statusBar-container-id" class="charOverview-icon-container-class-2" style="display: flex; justify-content: center;">
+                                            <div class="statusBar-class">
+                                                <!-- STATUS BAR SVG -->
+                                                <svg style="width: 100%; height: 100%;" id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 283.41 57.1">
+                                                    <defs>
+                                                    <linearGradient id="linear-gradient" x1="-60.7" y1="322.77" x2="214.41" y2="322.77" gradientTransform="translate(69 350.53) scale(1 -1)" gradientUnits="userSpaceOnUse">
+                                                        <stop offset="0" stop-color="#2F9C95"></stop>
+                                                        <stop offset=".8" stop-color="#b4ffc0"></stop>
+                                                    </linearGradient>
+                                                    </defs>
+                                                    <!-- STATUS PROGRESSION 17 GROUP - SHIPPING STATUS - USED TO BE: status_progSEQ17_char1_id -->
+                                                    <g id="status_progSEQ17_shippingStatus_id" style="display: none;">
+                                                        <rect x="28.93" y="9.02" width="236.86" height="38.2" style="fill: #25ce06; stroke-width: 0px;"></rect>
+                                                        <path d="m29.14,42.02V13.82c-5.08,1.26-11.81,6.5-11.74,14.1h0c-.32,9.37,8.25,13.31,11.74,14.1Z" style="fill: #25ce06; stroke-width: 0px;"></path>
+                                                        <path d="m265.36,41.87V13.67c5.08,1.26,11.81,6.5,11.74,14.1h0c.32,9.37-8.25,13.31-11.74,14.1Z" style="fill: #25ce06; stroke-width: 0px;"></path>
+                                                        <text transform="translate(82.79 35.05)" style="fill: #1a7201; font-family: Virgo01; font-size: 20px;"><tspan x="0" y="0">ALL DONE!</tspan></text>
+                                                      </g>
+                                                      <!-- STATUS PROGRESSION 15 GROUP - SHIPPING STATUS - USED TO BE: status_progSEQ15_char1_id -->
+                                                      <g id="status_progSEQ15_shippingStatus_id" style="display: none;">
+                                                        <rect class="animate-flicker-1" x="249.61" y="9.02" width="15.75" height="38.2" style="fill: #9adb93; stroke-width: 0px;"></rect>
+                                                        <rect x="29.14" y="9.02" width="220.47" height="38.2" style="fill: #25ce06; stroke-width: 0px;"></rect>
+                                                        <path d="m29.14,42.02V13.82c-5.08,1.26-11.81,6.5-11.74,14.1h0c-.32,9.37,8.25,13.31,11.74,14.1Z" style="fill: #25ce06; stroke-width: 0px;"></path>
+                                                      </g>
+                                                      <!-- STATUS PROGRESSION 12 GROUP - SHIPPING STATUS - USED TO BE: status_progSEQ12_char1_id -->
+                                                      <g id="status_progSEQ12_shippingStatus_id" style="display: none;">
+                                                        <rect class="animate-flicker-1" x="202.34" y="9.02" width="15.75" height="38.2" style="fill: #9adb93; stroke-width: 0px;"></rect>
+                                                        <rect x="29.14" y="9.02" width="173.21" height="38.2" style="fill: #25ce06; stroke-width: 0px;"></rect>
+                                                        <path d="m29.14,42.02V13.82c-5.08,1.26-11.81,6.5-11.74,14.1h0c-.32,9.37,8.25,13.31,11.74,14.1Z" style="fill: #25ce06; stroke-width: 0px;"></path>
+                                                      </g>
+                                                      <!-- STATUS PROGRESSION 7 GROUP - SHIPPING STATUS - USED TO BE: status_progSEQ7_char1_id -->
+                                                      <g id="status_progSEQ7_shippingStatus_id" style="display: none;">
+                                                        <rect class="animate-flicker-1" x="123.58" y="9.02" width="15.75" height="38.2" style="fill: #9adb93; stroke-width: 0px;"></rect>
+                                                        <rect x="29.14" y="9.02" width="94.44" height="38.2" style="fill: #25ce06; stroke-width: 0px;"></rect>
+                                                        <path d="m29.14,42.02V13.82c-5.08,1.26-11.81,6.5-11.74,14.1h0c-.32,9.37,8.25,13.31,11.74,14.1Z" style="fill: #25ce06; stroke-width: 0px;"></path>
+                                                      </g>
+                                                      <!-- STATUS PROGRESSION 3 GROUP - SHIPPING STATUS - USED TO BE: status_progSEQ3_char1_id -->
+                                                      <g id="status_progSEQ3_shippingStatus_id" style="display: none;">
+                                                        <rect class="animate-flicker-1" x="60.56" y="9.02" width="15.75" height="38.2" style="fill: #9adb93; stroke-width: 0px;"></rect>
+                                                        <rect x="29.14" y="9.02" width="31.42" height="38.2" style="fill: #25ce06; stroke-width: 0px;"></rect>
+                                                        <path d="m29.14,42.02V13.82c-5.08,1.26-11.81,6.5-11.74,14.1h0c-.32,9.37,8.25,13.31,11.74,14.1Z" style="fill: #25ce06; stroke-width: 0px;"></path>
+                                                      </g>
+                                                      <!-- STATUS PROGRESSION 1 GROUP - SHIPPING STATUS - USED TO BE: status_progSEQ1_char1_id -->
+                                                      <g id="status_progSEQ1_shippingStatus_id" style="display: block;">
+                                                        <path d="m29.08,41.78V13.91c-4.98,1.25-11.59,6.42-11.52,13.94h0c-.31,9.27,8.1,13.16,11.52,13.94Z" style="fill: #25ce06; stroke-width: 0px;"></path>
+                                                        <rect class="animate-flicker-1" x="29.08" y="12.97" width="15.73" height="29.59" style="fill: #9adb93; stroke-width: 0px;"></rect>
+                                                      </g>  
+                                                      <!-- STATUS PROGRESSION 0 GROUP - SHIPPING STATUS - USED TO BE: status_progSEQ0_char1_id -->
+                                                      <g id="status_progSEQ0_shippingStatus_id" style="display: none;">
+                                                            <!-- NOTHIN HOMIE -->
+                                                      </g>                                                       
+
+                                                    <!-- STATUS BAR OUTLINE -->
+                                                    <path d="m36.05,8.77c-29.33,0-31.32,38,0,38h220.55c29.02.01,29.14-37.99,0-38H36.05Z" style="fill: none; stroke: url(#linear-gradient); stroke-miterlimit: 10; stroke-width: 10px;"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <!-- STATUS TEXT -->
+                                        <div style="display: block; width: 100%; height: 40%; overflow: hidden; justify-content: center;">
+                                            <!-- CRITICAL WARNING - STATUS UPDATE - DISPLAY:FLEX - USED TO BE: statusUpdate-criticalWarn-char1-id -->
+                                            <div id="statusUpdate-criticalWarn-shippingStatus-id" class="shippingStatus-icon-container-class-1" style="display: none; width: 100%; overflow: hidden; justify-content: center;">
+                                                <!-- LEFT SIDE - ICON -->
+                                                <div style="width: 60px; height: 100%; overflow: hidden; justify-content: center;">
+                                                    <div style="display: flex; width: 45px; height: 40px; overflow: hidden; margin: 5px 0px 0px 0px;">
+                                                        <!-- // RED ALERT ICON // -->
+                                                        <div id="redAlert-icon-shippingStatus-id" style="display: block; width: 100%;" class="alert-icon-class-red"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- RIGHT SIDE - TEXT -->
+                                                <div style="display: flex; width: auto; max-width: 80%; height: 55px; overflow: hidden;">
+                                                    <!-- CRITICAL ALERT TEXT -->
+                                                    <p class="h4 charOverview-statusTxt-class-2" style="color: #DC143C; margin: auto;"><b id="criticalAlert-txt-shippingStatus-id">Shipping Delayed!</b></p>
+                                                </div>
+                                            </div>
+                                            <!-- NORMAL UPDATE - STATUS UPDATE - DISPLAY:NONE/FLEX - USED TO BE: statusUpdate-NORMAL-char1-id -->
+                                            <div id="statusUpdate-NORMAL-shippingStatus-id" class="shippingStatus-icon-container-class-1" style="display: block;">
+                                                <div class="shippingStatus-inner-class">
+                                                    <!-- LEFT SIDE - ICON -->
+                                                    <div class="shippingStatus-icon-class">
+                                                        <div style="display: flex; justify-content: center; width: 100%; overflow: hidden; margin: 10px 0;">
+                                                            <!-- SHIPPING STATUS ICON -->
+                                                            <div style="width: 50px; height: 50px;">
+                                                                <img id="shippingStatus-icon-id" width="100%" height="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTufnRe2GfQ_X2gpZh6tRzB4D6dzi0wHWPmwC0giGq4Jw&s=10"/>
+                                                            </div>
+                                                            <!-- // OTHER ICONS BELOW // -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- RIGHT SIDE - TEXT -->
+                                                    <div class="shippingStatus-txt-class">
+                                                        <!-- NORMAL ALERT TEXT -->
+                                                        <p style="color: #1a9504; margin: auto; font-size: x-large;"><b id="normalStatus-shippingStatus-txt-id">We're processing the order</b></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- END - SHIPPING STATUS BAR -->
+
+                                <!-- LINE CONTAINER-->
+                                <div class="line-container-class">
+                                    <!-- LINE -->
+                                    <div class="line-2-class" style="background-color: #2F9C95;"></div>
+                                </div>
+
+                                <!-- ORDER CONFIRMATION NUMBER CONTAINER -->
+                                <div id="orderConfirm-number-container-id" style="display: flex; justify-content: center; width: 100%; overflow: hidden; text-align: center;">
+                                    <h2>Order Confirmation #: <b id="orderConfirm-numType-txt-id">URCP</b>-<b id="orderConfirm-number-txt-id">0001a</b></h2>
+                                </div>
+
+                                <!-- ORDER DETAILS CONTAINER -->
+                                <div id="orderConfirm-orderDetails-container-id" style="display: block; width: 100%; overflow: hidden; text-align: center; margin: 20px 0 0 0;">
+                                    <b style="font-size: large;">Order Details</b>
+                                    <!-- LINE CONTAINER-->
+                                    <div class="line-container-class" style="margin: -10px 0 0 0;">
+                                        <!-- LINE -->
+                                        <div class="line-2-class" style="width: 80%; background-color: #2F9C95;"></div>
+                                    </div>
+                                    <!-- SHIPPED ITEMS - PRODUCTS - DISPLAY:NONE/BLOCK -->
+                                    <div id="orderConfirm-shippedProducts-container-id" style="display: none; width: 100%; overflow: hidden;">
+                                        <p style="margin: -0.5px 0;">items being shipped:</p>
+                                        <div style="display: block; width: 100%; overflow: hidden;">
+                                            <!-- SHIPPED PRODUCT - ITEM 1 - DISPLAY:NONE/FLEX -->
+                                            <div id="shippedProduct-item1-id" style="display: none; justify-content: center; background: #dadada;">
+                                                <div class="shippingProduct-serviceItem-container-class">
+                                                    <!-- SHIPPED PRODUCT ITEM 1 - NAME -->
+                                                    <div class="shippingProduct-serviceItem-class1" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item1-name-txt-id" style="margin: 0 auto;">Product Item 1 - Name</p>
+                                                    </div>
+                                                    <!-- SHIPPED PRODUCT ITEM 1 - QTY -->
+                                                    <div class="shippingProduct-serviceItem-class2" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item1-qty-txt-id" style="margin: 0 auto;">Qty: 000</p>
+                                                    </div>
+                                                    <!-- SHIPPED PRODUCT ITEM 1 - COST -->
+                                                    <div class="shippingProduct-serviceItem-class1" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item1-cost-txt-id" style="margin: 0 auto;">Cost: 000.00</p>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- END - SHIPPED PRODUCT ITEM 1 - NAME -->
+
+                                            <!-- SHIPPED PRODUCT - ITEM 2 - DISPLAY:NONE/FLEX -->
+                                            <div id="shippedProduct-item2-id" style="display: none;  background-color: white;">
+                                                <div class="shippingProduct-serviceItem-container-class">
+                                                    <!-- SHIPPED PRODUCT ITEM 2 - NAME -->
+                                                    <div class="shippingProduct-serviceItem-class1" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item2-name-txt-id" style="margin: 0 auto;">Product Item 2 - Name</p>
+                                                    </div>
+                                                    <!-- SHIPPED PRODUCT ITEM 2 - QTY -->
+                                                    <div class="shippingProduct-serviceItem-class2" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item2-qty-txt-id" style="margin: 0 auto;">Qty: 000</p>
+                                                    </div>
+                                                    <!-- SHIPPED PRODUCT ITEM 2 - COST -->
+                                                    <div class="shippingProduct-serviceItem-class1" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item2-cost-txt-id" style="margin: 0 auto;">Cost: 000.00</p>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- END - SHIPPED PRODUCT ITEM 2 - NAME -->
+
+                                            <!-- SHIPPED PRODUCT - ITEM 3 - DISPLAY:NONE/FLEX -->
+                                            <div id="shippedProduct-item3-id" style="display: none; background: rgb(218, 218, 218);">
+                                                <div class="shippingProduct-serviceItem-container-class">
+                                                    <!-- SHIPPED PRODUCT ITEM 3 - NAME -->
+                                                    <div class="shippingProduct-serviceItem-class1" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item3-name-txt-id" style="margin: 0 auto;">Product Item 3 - Name</p>
+                                                    </div>
+                                                    <!-- SHIPPED PRODUCT ITEM 3 - QTY -->
+                                                    <div class="shippingProduct-serviceItem-class2" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item3-qty-txt-id" style="margin: 0 auto;">Qty: 000</p>
+                                                    </div>
+                                                    <!-- SHIPPED PRODUCT ITEM 3 - COST -->
+                                                    <div class="shippingProduct-serviceItem-class1" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item3-cost-txt-id" style="margin: 0 auto;">Cost: 000.00</p>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- END - SHIPPED PRODUCT ITEM 3 - NAME -->
+
+                                            <!-- SHIPPED PRODUCT - ITEM 4 - DISPLAY:NONE/FLEX -->
+                                            <div id="shippedProduct-item4-id" style="display: none; background-color: white;">
+                                                <div class="shippingProduct-serviceItem-container-class">
+                                                    <!-- SHIPPED PRODUCT ITEM 4 - NAME -->
+                                                    <div class="shippingProduct-serviceItem-class1" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item4-name-txt-id" style="margin: 0 auto;">Product Item 4 - Name</p>
+                                                    </div>
+                                                    <!-- SHIPPED PRODUCT ITEM 4 - QTY -->
+                                                    <div class="shippingProduct-serviceItem-class2" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item4-qty-txt-id" style="margin: 0 auto;">Qty: 000</p>
+                                                    </div>
+                                                    <!-- SHIPPED PRODUCT ITEM 4 - COST -->
+                                                    <div class="shippingProduct-serviceItem-class1" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item4-cost-txt-id" style="margin: 0 auto;">Cost: 000.00</p>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- END - SHIPPED PRODUCT ITEM 4 - NAME -->
+
+                                            <!-- SHIPPED PRODUCT - ITEM 5 - DISPLAY:NONE/FLEX -->
+                                            <div id="shippedProduct-item5-id" style="display: none; background-color: rgb(218, 218, 218);">
+                                                <div class="shippingProduct-serviceItem-container-class">
+                                                    <!-- SHIPPED PRODUCT ITEM 5 - NAME -->
+                                                    <div class="shippingProduct-serviceItem-class1" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item5-name-txt-id" style="margin: 0 auto;">Product Item 5 - Name</p>
+                                                    </div>
+                                                    <!-- SHIPPED PRODUCT ITEM 5 - QTY -->
+                                                    <div class="shippingProduct-serviceItem-class2" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item5-qty-txt-id" style="margin: 0 auto;">Qty: 000</p>
+                                                    </div>
+                                                    <!-- SHIPPED PRODUCT ITEM 5 - COST -->
+                                                    <div class="shippingProduct-serviceItem-class1" style="overflow: hidden; font-size: medium;">
+                                                        <p id="shippedProduct-item5-cost-txt-id" style="margin: 0 auto;">Cost: 000.00</p>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- END - SHIPPED PRODUCT ITEM 5 - NAME -->
+                                        </div>
+                                        <!-- LINE -->
+                                        <div class="line-container-class" style="margin: 10px 0 10px 0;">
+                                            <!-- LINE -->
+                                            <div class="line-2-class" style="background-color: #2F9C95;"></div>
+                                        </div>
+                                    </div> <!-- END - SHIPPED ITEMS - PRODUCTS - DISPLAY:NONE/BLOCK -->
+
+
+                                    <!-- SELECTED SERVICES CONTAINER -->
+                                    <div id="orderConfirm-services-container-id" style="display: block; width: 100%; overflow: hidden;">
+                                        <p style="margin: -0.5px 0;">services:</p>
+                                        <!-- INNER CONTAINER -->
+                                        <div style="display: block; width: 100%; overflow: hidden;">
+                                            <!-- CONFIRMED SERVICE - ITEM 1 - DISPLAY:NONE/FLEX -->
+                                            <div id="confirmedService-item1-id" style="display: none; background-color: rgb(218, 218, 218);">
+                                                <div class="shippingProduct-serviceItem-container-class">
+                                                    <!-- CONFIRMED SERVICE ITEM 1 - NAME -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item1-name-txt-id" style="margin: 0 auto;">Service Item 1 - Name</p>
+                                                    </div>
+                                                    <!-- CONFIRMED SERVICE ITEM 1 - PROVIDER -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item1-provider-txt-id" style="margin: 0 auto;">Provider</p>
+                                                    </div>
+                                                    <!-- CONFIRMED SERVICE ITEM 1 - COST -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item1-cost-txt-id" style="margin: 0 auto;">Cost: 000.00</p>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- END - CONFIRMED SERVICE ITEM 1 - NAME -->
+
+                                            <!-- CONFIRMED SERVICE - ITEM 2 - DISPLAY:NONE/FLEX -->
+                                            <div id="confirmedService-item2-id" style="display: none; background-color: white;">
+                                                <div class="shippingProduct-serviceItem-container-class">
+                                                    <!-- CONFIRMED SERVICE ITEM 2 - NAME -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item2-name-txt-id" style="margin: 0 auto;">Service Item 2 - Name</p>
+                                                    </div>
+                                                    <!-- CONFIRMED SERVICE ITEM 2 - PROVIDER -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item2-provider-txt-id" style="margin: 0 auto;">Provider</p>
+                                                    </div>
+                                                    <!-- CONFIRMED SERVICE ITEM 2 - COST -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item2-cost-txt-id" style="margin: 0 auto;">Cost: 000.00</p>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- END - CONFIRMED SERVICE - ITEM 2 -->
+
+                                            <!-- CONFIRMED SERVICE - ITEM 3 - DISPLAY:NONE/FLEX -->
+                                            <div id="confirmedService-item3-id" style="display: none; background-color: rgb(218, 218, 218);">
+                                                <div class="shippingProduct-serviceItem-container-class">
+                                                    <!-- CONFIRMED SERVICE ITEM 3 - NAME -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item3-name-txt-id" style="margin: 0 auto;">Service Item 3 - Name</p>
+                                                    </div>
+                                                    <!-- CONFIRMED SERVICE ITEM 3 - PROVIDER -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item3-provider-txt-id" style="margin: 0 auto;">Provider</p>
+                                                    </div>
+                                                    <!-- CONFIRMED SERVICE ITEM 3 - COST -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item3-cost-txt-id" style="margin: 0 auto;">Cost: 000.00</p>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- END - CONFIRMED SERVICE ITEM 3 - NAME -->
+
+                                            <!-- CONFIRMED SERVICE - ITEM 4 - DISPLAY:NONE/FLEX -->
+                                            <div id="confirmedService-item4-id" style="display: none; background-color: white;">
+                                                <div class="shippingProduct-serviceItem-container-class">
+                                                    <!-- CONFIRMED SERVICE ITEM 4 - NAME -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item4-name-txt-id" style="margin: 0 auto;">Service Item 4 - Name</p>
+                                                    </div>
+                                                    <!-- CONFIRMED SERVICE ITEM 4 - PROVIDER -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item4-provider-txt-id" style="margin: 0 auto;">Provider</p>
+                                                    </div>
+                                                    <!-- CONFIRMED SERVICE ITEM 4 - COST -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item4-cost-txt-id" style="margin: 0 auto;">Cost: 000.00</p>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- END - CONFIRMED SERVICE ITEM 4 - DISPLAY:NONE/FLEX -->
+
+                                            <!-- CONFIRMED SERVICE - ITEM 5 - DISPLAY:NONE/FLEX -->
+                                            <div id="confirmedService-item5-id" style="display: none; background-color: rgb(218, 218, 218);">
+                                                <div class="shippingProduct-serviceItem-container-class">
+                                                    <!-- CONFIRMED SERVICE ITEM 5 - NAME -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item5-name-txt-id" style="margin: 0 auto;">Service Item 5 - Name</p>
+                                                    </div>
+                                                    <!-- CONFIRMED SERVICE ITEM 5 - PROVIDER -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item5-qty-txt-id" style="margin: 0 auto;">Provider</p>
+                                                    </div>
+                                                    <!-- CONFIRMED SERVICE ITEM 5 - COST -->
+                                                    <div class="serviceItem-container-class" style="overflow: hidden; font-size: medium;">
+                                                        <p id="confirmedService-item5-cost-txt-id" style="margin: 0 auto;">Cost: 000.00</p>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- END - CONFIRMED SERVICE - ITEM 5 - DISPLAY:NONE/FLEX -->
+                                        </div> <!-- END - INNER CONTAINER -->
+                                    </div> <!-- END - SELECTED SERVICES CONTAINER -->
+                                </div> <!-- END - ORDER DETAILS CONTAINER -->
+                            </div> <!-- END - SHIPPING STATUS CONTAINER -->
+
+                            <!-- ORDER CONFIRMATION - GRAND TOTAL CONTAINER -->
+                            <div style="display: block; width: 100%; height: auto; overflow: hidden; font-size: 25px; text-align: center; margin: 60px 0 40px 0;">
+                                <!-- LINE -->
+                                <div class="bottomContainer-line-class" style="display: flex; justify-content: center; width: 100%; height: 20px; padding: 10px;">
+                                    <div style="height: 3px; width: 100%; background-color: gray;"></div>
+                                </div>
+                                <!-- SUBTOTAL/TAXES/SHIPPING/FEES - CONTAINER -->
+                                <div style="display: block; width: 100%; overflow: hidden;">
+                                    <!-- SUBTOTAL -->
+                                    <div class="item-content-container-class" style="height: 40px;">
+                                        <!-- SUBTOTAL TEXT -->
+                                        <div class="selected-item-content-class" style="width: 50%; border: 0;">
+                                            Subtotal
+                                        </div>
+                                        <!-- SUBTOTAL CONTENT -->
+                                        <div class="selected-item-content-class" style="display: flex; justify-content: center; width: 50%; border: 0;">
+                                            <p id="subtotal-text-orderConfirm-id">000.00</p>
+                                        </div>
+                                    </div> <!-- END - SUBTOTAL TEXT -->
+
+                                    <!-- LINE -->
+                                    <div class="line-container-class">
+                                        <div class="line-2-class" style="width: 70%;"></div>
+                                    </div>
+
+                                    <!-- SHIPPING COST -->
+                                    <div class="item-content-container-class" style="height: 40px;">
+                                        <!-- SHIPPING TEXT -->
+                                        <div class="selected-item-content-class" style="width: 50%; border: 0;">
+                                            Shipping
+                                        </div>
+                                        <!-- SHIPPING COST CONTENT -->
+                                        <div class="selected-item-content-class" style="display: flex; justify-content: center; width: 50%; border: 0;">
+                                            <p id="shippingCost-text-orderConfirm-id">000.00</p>
+                                        </div>
+                                    </div> <!-- END - SHPPING TEXT -->
+
+                                    <!-- TAXES COST -->
+                                    <div class="item-content-container-class" style="height: 40px;">
+                                        <!-- TAXES TEXT -->
+                                        <div class="selected-item-content-class" style="width: 50%; border: 0;">
+                                            Taxes
+                                        </div>
+                                        <!-- TAXES COST CONTENT -->
+                                        <div class="selected-item-content-class" style="display: flex; justify-content: center; width: 50%; border: 0;">
+                                            <p id="taxes-text-orderConfirm-id">000.00</p>
+                                        </div>
+                                    </div> <!-- END - TAXES TEXT -->
+
+                                    <!-- FEES COST -->
+                                    <div class="item-content-container-class" style="height: 40px;">
+                                        <!-- FEES TEXT -->
+                                        <div class="selected-item-content-class" style="width: 50%; border: 0;">
+                                            Fees
+                                        </div>
+                                        <!-- FEES CONTENT -->
+                                        <div class="selected-item-content-class" style="display: flex; justify-content: center; width: 50%; border: 0;">
+                                            <p id="fees-text-orderConfirm-id">000.00</p>
+                                        </div>
+                                    </div> <!-- END - FEES TEXT -->
+                                </div> <!-- END - SUBTOTAL/TAXES/SHIPPING/FEES - CONTAINER -->
+                                <!-- ORDER TOTAL TXT -->
+                                <p>Grand Total: <b id="grand-total-txt-orderConfirm-id">000.00</b></p>
+                            </div> <!-- END - ORDER CONFIRMATION - GRAND TOTAL CONTAINER -->
+
+                            <!-- LINE -->
+                            <div class="line-container-class">
+                                <div class="line-2-class"></div>
+                            </div>
+
+                            <!-- ORDER CONFIRMATION - USER SHIPPING INFO -->
+                            <div id="userShipping-info-container-id" style="display: block; width: 100%; overflow: hidden; text-align: center;">
+                                <b style="font-size: large;">Purchase Details:</b>
+                                <!-- LINE -->
+                                <div class="line-container-class">
+                                    <div class="line-2-class"></div>
+                                </div>
+                                <!-- USER ADDRESS - DISPLAY:NONE/BLOCK -->
+                                <div id="userAddress-container-orderConfirm-id" style="display: none;">
+                                    <p style="margin: -2px 0 0 0;">shipping address:</p>
+                                    <b style="color: black; font-size: 25px;" id="user-address-txt-orderConfirm-id">#### Street Address, City, State ZIP</b>
+                                    <!-- LINE -->
+                                    <div class="line-container-class">
+                                        <div style="width: 80%;" class="line-2-class"></div>
+                                    </div>
+                                </div>
+                                <!-- USER PAYMENT METHOD -->
+                                <div id="orderConfirm-debitCredit-info-container-id" style="display: block; width: 100%; overflow: hidden;">
+                                    <!-- USER NAME -->
+                                    <p>User Name: <b id="userName-orderConfirm-id">User Name Here</b></p>
+                                    <!-- USER PHONE NUMBER -->
+                                    <p>User Phone Number: <b id="userPhoneNum-orderConfirm-id">000-000-0000</b></p>
+                                    <!-- USER EMAIL -->
+                                    <p>User Email: <b id="userEmail-orderConfirm-id">UserEmail@email.com</b></p>
+                                    <!-- LINE -->
+                                    <div class="line-container-class">
+                                        <div style="width: 50%;" class="line-2-class"></div>
+                                    </div>
+                                    <!-- DEBIT/CREDIT CARD CONTAINER - ORDER CONFIRMATION - DISPLAY:NONE/BLOCK -->
+                                    <div id="debitCredit-orderConfirm-container-id" style="display: none;">
+                                        <p>Approved Payment Method: <b>Debit/Credit Card</b></p>
+                                        <!-- CARDHOLDER NAME -->
+                                        <p>Cardholder's Name: <b id="cardholderName-orderConfirmation-id">Cardholder Name Here</b></p>
+                                        <!-- CARD NUMBER - LAST 4 -->
+                                        <p>Card Number: xxxx-xxxx-xxxx-<b id="cardholder-numberLast4-orderConfirm-id">0000</b></p>
+                                        <!-- BILLING ADDRESS -->
+                                        <p>Billing address: <b id="billingAddress-orderConfirm-id">#### Street Address, City, State ZIP</b></p>
+                                    </div>
+                                    <!-- GOOGLE PAY CONTAINER - ORDER CONFIRMATION - DISPLAY:NONE/BLOCK -->
+                                    <div id="googlePay-orderConfirm-container-id" style="display: none;">
+                                        <p>Approved Payment Method: <b>Google Pay</b></p>
+                                    </div>
+                                    <!-- APPLE PAY CONTAINER - ORDER CONFIRMATION - DISPLAY:NONE/BLOCK -->
+                                    <div id="applePay-orderConfirm-container-id" style="display: none;">
+                                        <p>Approved Payment Method: <b>Apple Pay</b></p>
+                                    </div>
+                                    <!-- DATE OF PURCHASE -->
+                                    <p>Date of Purchase: <b id="purchaseDate-id">00/00/0000</b></p>
+                                    <!-- TIME OF PURCHASE -->
+                                    <p>Time of Purchase: <b id="purchaseTime-id">00:00:00</b></p>
+                                </div>
+                            </div> <!-- END - ORDER CONFIRMATION - USER SHIPPING INFO -->
+                            <!-- LINE -->
+                            <div class="line-container-class">
+                                <div style="width: 80%;" class="line-2-class"></div>
+                            </div>
+
+                            <!-- ORDER CONFIRMATION - MODIFICATION/CANCEL ORDER CONTAINER -->
+                            <div style="display: block; width: 100%; overflow: hidden; text-align: center; margin: 20px 0 40px 0;">
+                                <i><b style="color: red;">You have (2) hours after the time of purchase to modify or cancel this order</b></i>
+                                <div class="modifyCancel-btn-container-class">
+                                    <!-- MODIFY ORDER BTN CONTAINER -->
+                                    <div class="orderConfirm-modifyDelete-btn-class">
+                                        <!-- MODIFY ORDER BTN -->
+                                        <div id="modifyOrder-btn-id" class="btnType-2-class" style="font-size: x-large;">
+                                            Modify Order
+                                        </div>
+                                    </div> <!-- END - MODIFY ORDER BTN CONTAINER -->
+
+                                    <!-- CANCEL ORDER BTN CONTAINER -->
+                                    <div class="orderConfirm-modifyDelete-btn-class">
+                                        <!-- CANCEL ORDER BTN -->
+                                        <div id="cancelOrder-btn-id" class="btnType-3-class" style="background-color: red; width: auto;
+                                        height: 50px; font-size: x-large;">
+                                            Cancel Order 
+                                        </div>
+                                    </div> <!-- END - CANCEL ORDER BTN CONTAINER -->
+                                </div>
+                            </div>
+
+                        </div> <!-- END - INNER CONTAINER -->
+                    </div> <!-- END - ORDER CONFIRMATION CONTAINER -->
+
                 </div><!-- END - MAIN OVERLAY INNER CONTAINER -->
 
             </div>
-            <!-- CHECKOUT CONTAINER -->
 
         </div>
         <!-- FOOTER -->
@@ -4985,6 +5728,14 @@
 
         <!-- URCARD SELECTION DATA TABLE - DISPLAY: NONE/BLOCK -->
         <div style="display: none; position: absolute; height: 100%; top: 0; z-index: 1000; border: dotted;">
+            <!-- PURCHASE DATE -->
+            <div style="border: dotted">
+                <input id="purchaseDate-input-id" type="text" readonly>
+            </div>
+            <!-- PURCHASE TIME -->
+            <div style="border: dotted">
+                <input id="purchaseTime-input-id" type="text" readonly>
+            </div>
             <!-- SERVICE ID 1 -->
             <div style="border: dotted;">
                 <input id="serviceID1-input-id" type="text" readonly>
