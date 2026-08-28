@@ -50,7 +50,7 @@
             const back_overlayContainer_btn = document.getElementById("overlay1-back-btn-id");
 
             //GET URL STRING
-            const queryString = window.location.serach; //PULL FROM BROSWER
+            const queryString = window.location.search; //PULL FROM BROSWER
             // const queryString = "https://www.urcard.org/urmarket/checkout?&s1=1&s2=2&sc1=1001171170&sc2=1234&p1=1&pc1=122000111000112&urcid=v1001a"; //TEST URL
             //PARSE THE URL PARAMETERS
             const urlParams = new URLSearchParams(queryString);
