@@ -5879,6 +5879,9 @@
             
 
             //SHIPPING ADDRESS AUTOCOMPLETE 1
+            //USER ADDRESS INPUTS CONTAINER
+            const address_inputs_container = document.getElementById("address-inputs-container-id");
+            
             async function initAutocomplete() {
                 await loader.load();
                 const { PlaceAutocompleteElement } = await google.maps.importLibrary('places');
@@ -5903,8 +5906,7 @@
         
                 // VERIFY BTN 1 HANDLER
                 const finishBtn = document.getElementById('finish-userAddress-button-id');
-                //USER ADDRESS INPUTS CONTAINER
-                const address_inputs_container = document.getElementById("address-inputs-container-id"); 
+                
                 if (finishBtn) {
                     finishBtn.addEventListener('click', async (e) => {
                         e.preventDefault();
