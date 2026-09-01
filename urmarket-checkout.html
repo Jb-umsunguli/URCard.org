@@ -5903,6 +5903,8 @@
         
                 // VERIFY BTN 1 HANDLER
                 const finishBtn = document.getElementById('finish-userAddress-button-id');
+                //USER ADDRESS INPUTS CONTAINER
+                const address_inputs_container = document.getElementById("address-inputs-container-id"); 
                 if (finishBtn) {
                     finishBtn.addEventListener('click', async (e) => {
                         e.preventDefault();
@@ -5917,6 +5919,8 @@
                             document.getElementById("user-buildingApt-id").value = "";
                             //REMOVE - ADDRESS VERIFICATION CONTAINER
                             document.getElementById("shippingAddress-verification-container1-id").style.display = "none";
+                            //REMOVE - USER ADDRESS INPUTS CONTAINER 
+                            address_inputs_container.style.display = "none"; 
                             //UPDATE - VERIFY BTN TXT
                             document.getElementById("finish-userAddress-button-id").innerHTML = "verify";
                             return;
@@ -5991,6 +5995,8 @@
                     document.getElementById("shippingAddress-verification-container1-id").style.display = "flex";
                     //UPDATE - VERIFY BTN TXT
                     document.getElementById("finish-userAddress-button-id").innerHTML = "re-verify";
+                    //OPEN - USER ADDRESS INPUTS CONTAINER 
+                    address_inputs_container.style.display = "block"; 
                 }
         
                 // Match input element IDs
