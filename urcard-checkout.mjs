@@ -37,6 +37,8 @@
             const user_address_txt = document.getElementById("user-address-txt-id");
             //  //  //ORDER CONFIRMATION CONTAINER
             const orderConfirmation_allAssets_container = document.getElementById("orderConfirmation-allAssets-container-id"); 
+            //  //  //SHIPPING STATUS CONTAINER
+            const shippingStatus_container = document.getElementById("shippingStatus-container-id"); 
 
 
             //PRIMARY BUTTONS
@@ -50,8 +52,10 @@
             const back_overlayContainer_btn = document.getElementById("overlay1-back-btn-id");
 
             //GET URL STRING
-            const queryString = window.location.search; //PULL FROM BROSWER
+            // const queryString = window.location.search; //PULL FROM BROSWER
             // const queryString = "https://www.urcard.org/urmarket/checkout?&s1=1&s2=2&sc1=1001171170&sc2=1234&p1=1&pc1=122000111000112&urcid=v1001a"; //TEST URL
+            const queryString = "https://www.urcard.org/urmarket-checkout.html?&s1=1&s2=0&sc1=1001171170&sc2=0&p1=1&pc1=101000&urcid=v1001a"; //TEST URL
+
             //PARSE THE URL PARAMETERS
             const urlParams = new URLSearchParams(queryString);
             //EXTRACT SPECIFIC PARAMETER VALUES
@@ -2686,7 +2690,7 @@
             //TERMS OF SERVICE CHECKBOX CONTAINER 
             const tosAgreeCheckbox_container = document.getElementById("tosAgreeCheckbox-container-id"); 
             //USER TERMS OF SERVICE CHECKBOX 
-            const user_tosAgreeCheckbox_input = document.getElementById("user-tosAgreeCheckbox-input-id"); 
+            const user_tosAgreeCheckbox_input = document.getElementById("user-tosAgreeCheckbox-input-id");  
             //USER STREET ADDRESS INPUT 
             const user_streetAddress = document.getElementById("user-street-id");
             //USER CITY INPUT 
@@ -4251,8 +4255,8 @@
                         } else {
                             //CHECK - FOR GRAND TOTAL GREATER THAN 0 
                             if (grand_total_txt.innerHTML == "Pending") {
-                                //BEGIN - EXTERNAL SERVICE VENDOR PROCESSING 
-                                alert("Final check complete! Begin Service Vendor Processing");
+                                //OPEN - ORDER CONFIRMATION CONTAINER
+                                open_orderConfirmation();
                             } else {
                                 //BEGIN - POS INPUT TOKENIZATON
                                 pos_inputTokenization(); 
@@ -4280,6 +4284,18 @@
                             //CHANGE INPUT BORDER RED
                             pos_phoneNumber_input.style.border = " solid 4px red"; 
                         }
+                        //CHECK - POS USER EMAIL INPUT
+                        else if (pos_userEmail_input.value == "" || pos_userEmail_input.value == " ") {
+                            alert("Please enter your email address above to checkout"); 
+                            //CHANGE INPUT BORDER RED
+                            pos_userEmail_input.style.border = " solid 4px red"; 
+                        }
+                        //CHECK - POS TERMS OF SERVICE INPUT
+                        else if (pos_user_tosAgreeCheckbox.checked == false) {
+                            alert("Please agree to our Terms of Service above to checkout"); 
+                            //CHANGE INPUT BORDER RED
+                            pos_tosAgreeCheckbox_container.style.border = " solid 4px red"; 
+                        }
                         else {
                             //CHECK IF DEBIT/CREDIT CARD CONTAINER
                             //  //IF CONTAINER IS PRESENT...
@@ -4289,8 +4305,8 @@
                             } else {
                                 //CHECK - FOR GRAND TOTAL GREATER THAN 0 
                                 if (grand_total_txt.innerHTML == "Pending") {
-                                    //BEGIN - EXTERNAL SERVICE VENDOR PROCESSING 
-                                    alert("Final check complete! Begin Service Vendor Processing");
+                                    //OPEN - ORDER CONFIRMATION CONTAINER
+                                    open_orderConfirmation();
                                 } else {
                                     //BEGIN - POS INPUT TOKENIZATON
                                     pos_inputTokenization(); 
@@ -4507,6 +4523,11 @@
                 fees_text_orderConfirm.innerHTML = taxes_text.innerHTML; 
                 //GET - GRAND TOTAL
                 grand_total_txt_orderConfirm.innerHTML = grand_total_txt.innerHTML; 
+                //CHECK IF CONTINUE BTN CONTAINER IS PRESENT
+                if (continueBtn_container.style.display == "block") {
+                    //REMOVE - SHIPPING STATUS CONTAINER 
+                    shippingStatus_container.style.display = "none";
+                }
                 //GET - SHIPPING ADDRESS
                 //  //IF THERE THE 'USER ADDRESS MAIN CONTAINER' IS PRESENT
                 if (userAddress_container.style.display == "block") {
@@ -4641,8 +4662,8 @@
                         //GET - COST
                         shippedProduct_item5_cost_txt.innerHTML = "Cost: " + selectedProduct_item5_slot5_cost.innerHTML;
                     }
-                } 
-                //  //  //CHECK final_userSelections_serviceItems_container IS PRESENT
+                }
+                //  //  //CHECK IF final_userSelections_serviceItems_container IS PRESENT
                 if (final_userSelections_serviceItems_container.style.display == "block") {
                     //CHECK - SERVICE ITEM 1
                     if (final_selectedService_item1.style.display == "block" || final_selectedService_item1.style.display == "flex") {
@@ -4655,7 +4676,7 @@
                         //GET - COST
                         confirmedService_item1_cost_txt.innerHTML = "Cost: " + final_selectedService_item1_cost.innerHTML;
                     }
-                    //CHECK - PRODUCT ITEM 2
+                    //CHECK - SERVICE ITEM 2
                     if (final_selectedService_item2.style.display == "block" || final_selectedService_item2.style.display == "flex") {
                         //ADD - SERVICE ITEM 2 CONTAINER
                         confirmedService_item2.style.display = "flex"; 
@@ -4666,7 +4687,7 @@
                         //GET - COST
                         confirmedService_item2_cost_txt.innerHTML = "Cost: " + final_selectedService_item2_cost.innerHTML;
                     }
-                    //CHECK - PRODUCT ITEM 3
+                    //CHECK - SERVICE ITEM 3
                     if (final_selectedService_item3.style.display == "block" || final_selectedService_item3.style.display == "flex") {
                         //ADD - SERVICE ITEM 3 CONTAINER
                         confirmedService_item3.style.display = "flex"; 
@@ -4677,7 +4698,7 @@
                         //GET - COST
                         confirmedService_item3_cost_txt.innerHTML = "Cost: " + final_selectedService_item3_cost.innerHTML;
                     }
-                    //CHECK - PRODUCT ITEM 4
+                    //CHECK - SERVICE ITEM 4
                     if (final_selectedService_item4.style.display == "block" || final_selectedService_item4.style.display == "flex") {
                         //ADD - SERVICE ITEM 4 CONTAINER
                         confirmedService_item4.style.display = "flex"; 
@@ -4688,7 +4709,7 @@
                         //GET - COST
                         confirmedService_item4_cost_txt.innerHTML = "Cost: " + final_selectedService_item4_cost.innerHTML;
                     }
-                    //CHECK - PRODUCT ITEM 5
+                    //CHECK - SERVICE ITEM 5
                     if (final_selectedService_item5.style.display == "block" || final_selectedService_item5.style.display == "flex") {
                         //ADD - SERVICE ITEM 5 CONTAINER
                         confirmedService_item5.style.display = "flex"; 
@@ -4699,8 +4720,10 @@
                         //GET - COST
                         confirmedService_item5_cost_txt.innerHTML = "Cost: " + final_selectedService_item5_cost.innerHTML;
                     }
-                } else {
-                    //ERROR: NO PRODUCTS OR SERVICES SELECTED
-                    alert("Error: No products or services selected!"); 
-                }
+                } 
+                
+                // else {
+                //     //ERROR: NO PRODUCTS OR SERVICES SELECTED
+                //     alert("Error: No products or services selected!"); 
+                // }
             }
