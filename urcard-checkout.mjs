@@ -49,6 +49,8 @@
                         addressVerification_completeTxt.innerHTML = "Re-verification Complete";
                         //ADD - USER ADDRESS INPUTS
                         document.getElementById("userAddress-inner-container-id").style.display = "block"; 
+                        //SCROLL TO BOTTOM OF CONTAINER
+                        let overlayContainer_inner = document.querySelector('.all-SelectedItems-inner-class').scrollBottom = 0;
                     }
             });
 
