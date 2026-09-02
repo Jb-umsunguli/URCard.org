@@ -42,10 +42,11 @@
 
             //USER ADDRESS VERIFICATION BTN
             const finish_userAddress_button = document.getElementById("finish-userAddress-button-id"); 
+            const addressVerification_completeTxt = document.getElementById("addressVerification-completeTxt-id");
             finish_userAddress_button.addEventListener('click', (e) => {
                         if (document.getElementById("finish-userAddress-button-id").innerHTML == "re-verify") {
                         //UPDATE - VERIFICATION TEXT
-                        document.getElementById("addressVerification-completeTxt-id").innerHTML = "Re-verification Complete";
+                        addressVerification_completeTxt.innerHTML = "Re-verification Complete";
                         //ADD - USER ADDRESS INPUTS
                         document.getElementById("userAddress-inner-container-id").style.display = "block"; 
                     }
