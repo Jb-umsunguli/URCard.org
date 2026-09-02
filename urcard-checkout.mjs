@@ -23,6 +23,8 @@
             //MAIN CONTAINERS
             //  //  //LOADING SCREEN VARIABLE
             const loadingContainer = document.getElementById("loading-container-id");
+            //  //  //UR CARD AUDIO TONE
+            const urcard_audioTone = new Audio('');
             //  //  //OVERLAY CONTAINER
             const overlayContainer = document.getElementById("overlay-container-1-id");
             //  //  //SERVICE ITEM ADDTIONAL INFO ALERT
@@ -3894,6 +3896,16 @@
                         overlayContainer.style.display = "block";
                     } 
                     else {
+                        //PLAY URCARD TONE 
+                        urcard_audioTone.play()
+                        .then(() => {
+                        // Success: Audio is playing, remove listener to prevent re-triggering
+                        document.body.removeEventListener('click', playOnFirstInteraction);
+                        })
+                        .catch(error => {
+                                    console.log("UR Card Tone Playback Failed:", error);
+                        });
+                                
                         //OEPN LOADING CONTAINER
                         loadingContainer.style.display = "block"; 
                         //3 SECOND DELAY TO LOAD ASSETS
