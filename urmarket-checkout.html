@@ -2702,19 +2702,19 @@
                                                 <!-- USER ADDRESS INNER CONTANER -->
                                                 <div id="userAddress-inner-container-id" style="display: none; overflow: hidden;">
                                                     <!-- 2ND COLUMN - STREET ADDRESS INPUT -->
-                                                    <div class="col3-w40pr-h100pr-container-class form-group" style="display: none; padding: 15px; overflow: hidden;">
+                                                    <div class="col3-w40pr-h100pr-container-class form-group" style="display: block; width: 100%; padding: 15px; overflow: hidden;">
                                                         <label style="display: block; color: silver;" for="user-street-id">Street Address:</label>
-                                                        <input class="textInput-type1-class" type="text" id="user-street-id" name="street" style="border: silver solid; color: gray; cursor: not-allowed;" readonly>
+                                                        <input class="textInput-type1-class" type="text" id="user-street-id" name="street" style="border: 1px silver solid; color: gray; cursor: not-allowed;" readonly>
                                                     </div>
                                                     <!-- 2ND COLUMN - CITY INPUT -->
-                                                    <div class="col3-w40pr-h100pr-container-class form-group" style="display: none; justify-content: center; padding: 15px; overflow: hidden;">
+                                                    <div class="col3-w40pr-h100pr-container-class form-group" style="display: block; width: 100%; justify-content: center; padding: 15px; overflow: hidden;">
                                                         <label style="display: block; color: silver;" for="user-city-id">City:</label>
-                                                        <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" style="width: 100%; height: 40px; border-radius: 10px; border: silver solid; text-align: center; color: gray; cursor: not-allowed;" type="text" id="user-city-id" name="city" readonly>
+                                                        <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" style="width: 100%; height: 40px; border-radius: 10px; border: 1px silver solid; text-align: center; color: gray; cursor: not-allowed;" type="text" id="user-city-id" name="city" readonly>
                                                     </div>
                                                     <!-- 2ND COLUMN - STATE INPUT -->
-                                                    <div class="col3-w20pr-h100pr-container2-class form-group" style="display: none; padding: 15px; font-size: auto;">
+                                                    <div class="col3-w20pr-h100pr-container2-class form-group" style="display: block; width: 100%; padding: 15px; font-size: auto;">
                                                         <label style="display: block; color: silver;" for="user-state-id">State:</label>
-                                                        <input name="state" id="user-state-id" style="border: silver solid; color: gray; cursor: not-allowed;" class="textInput-type1-class" readonly></input>
+                                                        <input name="state" id="user-state-id" style="border: 1px silver solid; color: gray; cursor: not-allowed;" class="textInput-type1-class" readonly></input>
                                                         <!-- <select name="state" id="user-state-id" style="border: silver solid;" class="textInput-type1-class" readonly> -->
                                                             <!-- BLANK OPTION -->
                                                             <!-- <option value=""></option>
@@ -2772,15 +2772,15 @@
                                                         </select> -->
                                                     </div> <!-- END - 2ND COLUMN - STATE INPUT -->
                                                     <!-- 3RD COLUMN - ZIP CODE INPUT -->
-                                                    <div class="col3-w20pr-h100pr-container2-class form-group" style=" display: block; justify-content: center; padding: 15px; overflow: hidden;">
+                                                    <div class="col3-w20pr-h100pr-container2-class form-group" style="display: block; width: 100%; justify-content: center; padding: 15px; overflow: hidden;">
                                                         <label style="display: block; font-size: small; color: silver;" for="user-zipcode-id">Zipcode:</label>
-                                                        <input maxlength="5" oninput="this.value = this.value.replace(/\D/g, '')" class="textInput-type1-class" style="width: 100%; height: 40px; border-radius: 10px; border: silver solid; text-align: center; color: gray; cursor: not-allowed;" type="text" id="user-zipcode-id" name="zipcode" readonly>
+                                                        <input maxlength="5" oninput="this.value = this.value.replace(/\D/g, '')" class="textInput-type1-class" style="width: 100%; height: 40px; border-radius: 10px; border: 1px silver solid; text-align: center; color: gray; cursor: not-allowed;" type="text" id="user-zipcode-id" name="zipcode" readonly>
                                                     </div>
                                                 </div> <!-- END - USER ADDRESS INNER CONTANER -->
                                                 <!-- 3RD COLUMN - BUILDING/APT # INPUT -->
                                                 <div class="col3-w40pr-h100pr-container-class form-group" style="display: block; justify-content: center; padding: 15px; overflow: hidden;">
                                                     <label style="display: block; font-size: medium; margin: 0 0 20px 0;" for="user-buildingApt-id">Building/Apt #: <b><i>if applicable</i></b></label>
-                                                    <div style="display: flex; width: 100%; justify-content: center; overflow: hidden;">
+                                                    <div style="display: flex; width: 100%; justify-content: center; overflow: hidden; border: dotted;">
                                                         <input class="textInput-type1-class" style="width: 50%; height: 40px; border-radius: 10px; border: 4px solid #2F9C95; text-align: center;" type="text" id="user-buildingApt-id" name="buildingAppartmentNumber">
                                                     </div>
                                                 </div>
