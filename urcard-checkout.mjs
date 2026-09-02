@@ -49,7 +49,7 @@
                         //ADD - USER ADDRESS INPUTS
                         document.getElementById("userAddress-inner-container-id").style.display = "block"; 
                     }
-            }
+            });
 
             //PRIMARY BUTTONS
             //  //  //UR SELECTIONS BTN
