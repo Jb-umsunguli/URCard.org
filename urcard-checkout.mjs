@@ -24,7 +24,7 @@
             //  //  //LOADING SCREEN VARIABLE
             const loadingContainer = document.getElementById("loading-container-id");
             //  //  //UR CARD AUDIO TONE
-            const urcard_audioTone = new Audio('urCard_test_sound.mp3');
+            const urcard_audioTone = new Audio('audio/urCard_test_sound.mp3');
             //  //  //OVERLAY CONTAINER
             const overlayContainer = document.getElementById("overlay-container-1-id");
             //  //  //SERVICE ITEM ADDTIONAL INFO ALERT
