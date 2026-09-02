@@ -5929,7 +5929,7 @@
                             //REMOVE - USER ADDRESS INPUTS CONTAINER 
                             address_inputs_container.style.display = "none"; 
                             //UPDATE - VERIFY BTN TXT
-                            document.getElementById("finish-userAddress-button-id").innerHTML = "verify";
+                            document.getElementById("finish-userAddress-button-id").innerHTML = "verify UR address";
                             return;
                         } 
                         try {
@@ -5951,7 +5951,7 @@
                                 //REMOVE - ADDRESS VERIFICATION CONTAINER
                                 document.getElementById("shippingAddress-verification-container1-id").style.display = "none";
                                 //UPDATE - VERIFY BTN TXT
-                                document.getElementById("finish-userAddress-button-id").innerHTML = "verify";
+                                document.getElementById("finish-userAddress-button-id").innerHTML = "verify UR address";
                             }
                         } catch (err) {
                             console.error("Error fetching place details:", err);
@@ -5964,7 +5964,7 @@
                             //REMOVE - ADDRESS VERIFICATION CONTAINER
                             document.getElementById("shippingAddress-verification-container1-id").style.display = "none";
                             //UPDATE - VERIFY BTN TXT
-                            document.getElementById("finish-userAddress-button-id").innerHTML = "verify";
+                            document.getElementById("finish-userAddress-button-id").innerHTML = "verify UR address";
                         }
                     });
                 } //END - VERIFY BTN 1 HANDLER
