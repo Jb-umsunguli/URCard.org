@@ -2699,81 +2699,84 @@
                                             <b style="font-size: large; color: rgba(255, 0, 0, 0.6);"><i>UPDATE YOUR ADDRESS IN THE SEARCH ABOVE</i></b>
                                             <!-- 2ND COLUMN - STREET / CITY / STATE INPUTS -->
                                             <div class="grid-responsive-class-2">
-                                                <!-- 2ND COLUMN - STREET ADDRESS INPUT -->
-                                                <div class="col3-w40pr-h100pr-container-class form-group" style="display: none; padding: 15px; overflow: hidden;">
-                                                    <label style="display: block; color: silver;" for="user-street-id">Street Address:</label>
-                                                    <input class="textInput-type1-class" type="text" id="user-street-id" name="street" style="border: silver solid; color: gray;">
-                                                </div>
-                                                <!-- 2ND COLUMN - CITY INPUT -->
-                                                <div class="col3-w40pr-h100pr-container-class form-group" style="display: none; justify-content: center; padding: 15px; overflow: hidden;">
-                                                    <label style="display: block; color: silver;" for="user-city-id">City:</label>
-                                                    <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" style="width: 100%; height: 40px; border-radius: 10px; border: silver solid; text-align: center; color: gray;" type="text" id="user-city-id" name="city">
-                                                </div>
-                                                <!-- 2ND COLUMN - STATE INPUT -->
-                                                <div class="col3-w20pr-h100pr-container2-class form-group" style="display: none; padding: 15px; font-size: auto;">
-                                                    <label style="display: block; color: silver;" for="user-state-id">State:</label>
-                                                    <input name="state" id="user-state-id" style="border: silver solid; color: gray;" class="textInput-type1-class"></input>
-                                                    <!-- <select name="state" id="user-state-id" style="border: silver solid;" class="textInput-type1-class" readonly> -->
-                                                        <!-- BLANK OPTION -->
-                                                        <!-- <option value=""></option>
-                                                        <option value="AL">Alabama</option>
-                                                        <option value="AK">Alaska</option>
-                                                        <option value="AZ">Arizona</option>
-                                                        <option value="AR">Arkansas</option>
-                                                        <option value="CA">California</option>
-                                                        <option value="CO">Colorado</option>
-                                                        <option value="CT">Connecticut</option>
-                                                        <option value="DE">Delaware</option>
-                                                        <option value="DC">District Of Columbia</option>
-                                                        <option value="FL">Florida</option>
-                                                        <option value="GA">Georgia</option>
-                                                        <option value="HI">Hawaii</option>
-                                                        <option value="ID">Idaho</option>
-                                                        <option value="IL">Illinois</option>
-                                                        <option value="IN">Indiana</option>
-                                                        <option value="IA">Iowa</option>
-                                                        <option value="KS">Kansas</option>
-                                                        <option value="KY">Kentucky</option>
-                                                        <option value="LA">Louisiana</option>
-                                                        <option value="ME">Maine</option>
-                                                        <option value="MD">Maryland</option>
-                                                        <option value="MA">Massachusetts</option>
-                                                        <option value="MI">Michigan</option>
-                                                        <option value="MN">Minnesota</option>
-                                                        <option value="MS">Mississippi</option>
-                                                        <option value="MO">Missouri</option>
-                                                        <option value="MT">Montana</option>
-                                                        <option value="NE">Nebraska</option>
-                                                        <option value="NV">Nevada</option>
-                                                        <option value="NH">New Hampshire</option>
-                                                        <option value="NJ">New Jersey</option>
-                                                        <option value="NM">New Mexico</option>
-                                                        <option value="NY">New York</option>
-                                                        <option value="NC">North Carolina</option>
-                                                        <option value="ND">North Dakota</option>
-                                                        <option value="OH">Ohio</option>
-                                                        <option value="OK">Oklahoma</option>
-                                                        <option value="OR">Oregon</option>
-                                                        <option value="PA">Pennsylvania</option>
-                                                        <option value="RI">Rhode Island</option>
-                                                        <option value="SC">South Carolina</option>
-                                                        <option value="SD">South Dakota</option>
-                                                        <option value="TN">Tennessee</option>
-                                                        <option value="TX">Texas</option>
-                                                        <option value="UT">Utah</option>
-                                                        <option value="VT">Vermont</option>
-                                                        <option value="VA">Virginia</option>
-                                                        <option value="WA">Washington</option>
-                                                        <option value="WV">West Virginia</option>
-                                                        <option value="WI">Wisconsin</option>
-                                                        <option value="WY">Wyoming</option>
-                                                    </select> -->
-                                                </div> <!-- END - 2ND COLUMN - STATE INPUT -->
-                                                <!-- 3RD COLUMN - ZIP CODE INPUT -->
-                                                <div class="col3-w20pr-h100pr-container2-class form-group" style=" display: none; justify-content: center; padding: 15px; overflow: hidden;">
-                                                    <label style="display: block; font-size: small; color: silver;" for="user-zipcode-id">Zipcode:</label>
-                                                    <input maxlength="5" oninput="this.value = this.value.replace(/\D/g, '')" class="textInput-type1-class" style="width: 100%; height: 40px; border-radius: 10px; border: silver solid; text-align: center; color: gray;" type="text" id="user-zipcode-id" name="zipcode">
-                                                </div>
+                                                <!-- USER ADDRESS INNER CONTANER -->
+                                                <div id="userAddress-inner-container-id" style="display: none; overflow: hidden;">
+                                                    <!-- 2ND COLUMN - STREET ADDRESS INPUT -->
+                                                    <div class="col3-w40pr-h100pr-container-class form-group" style="display: none; padding: 15px; overflow: hidden;">
+                                                        <label style="display: block; color: silver;" for="user-street-id">Street Address:</label>
+                                                        <input class="textInput-type1-class" type="text" id="user-street-id" name="street" style="border: silver solid; color: gray; cursor: not-allowed;" readonly>
+                                                    </div>
+                                                    <!-- 2ND COLUMN - CITY INPUT -->
+                                                    <div class="col3-w40pr-h100pr-container-class form-group" style="display: none; justify-content: center; padding: 15px; overflow: hidden;">
+                                                        <label style="display: block; color: silver;" for="user-city-id">City:</label>
+                                                        <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" style="width: 100%; height: 40px; border-radius: 10px; border: silver solid; text-align: center; color: gray; cursor: not-allowed;" type="text" id="user-city-id" name="city" readonly>
+                                                    </div>
+                                                    <!-- 2ND COLUMN - STATE INPUT -->
+                                                    <div class="col3-w20pr-h100pr-container2-class form-group" style="display: none; padding: 15px; font-size: auto;">
+                                                        <label style="display: block; color: silver;" for="user-state-id">State:</label>
+                                                        <input name="state" id="user-state-id" style="border: silver solid; color: gray; cursor: not-allowed;" class="textInput-type1-class" readonly></input>
+                                                        <!-- <select name="state" id="user-state-id" style="border: silver solid;" class="textInput-type1-class" readonly> -->
+                                                            <!-- BLANK OPTION -->
+                                                            <!-- <option value=""></option>
+                                                            <option value="AL">Alabama</option>
+                                                            <option value="AK">Alaska</option>
+                                                            <option value="AZ">Arizona</option>
+                                                            <option value="AR">Arkansas</option>
+                                                            <option value="CA">California</option>
+                                                            <option value="CO">Colorado</option>
+                                                            <option value="CT">Connecticut</option>
+                                                            <option value="DE">Delaware</option>
+                                                            <option value="DC">District Of Columbia</option>
+                                                            <option value="FL">Florida</option>
+                                                            <option value="GA">Georgia</option>
+                                                            <option value="HI">Hawaii</option>
+                                                            <option value="ID">Idaho</option>
+                                                            <option value="IL">Illinois</option>
+                                                            <option value="IN">Indiana</option>
+                                                            <option value="IA">Iowa</option>
+                                                            <option value="KS">Kansas</option>
+                                                            <option value="KY">Kentucky</option>
+                                                            <option value="LA">Louisiana</option>
+                                                            <option value="ME">Maine</option>
+                                                            <option value="MD">Maryland</option>
+                                                            <option value="MA">Massachusetts</option>
+                                                            <option value="MI">Michigan</option>
+                                                            <option value="MN">Minnesota</option>
+                                                            <option value="MS">Mississippi</option>
+                                                            <option value="MO">Missouri</option>
+                                                            <option value="MT">Montana</option>
+                                                            <option value="NE">Nebraska</option>
+                                                            <option value="NV">Nevada</option>
+                                                            <option value="NH">New Hampshire</option>
+                                                            <option value="NJ">New Jersey</option>
+                                                            <option value="NM">New Mexico</option>
+                                                            <option value="NY">New York</option>
+                                                            <option value="NC">North Carolina</option>
+                                                            <option value="ND">North Dakota</option>
+                                                            <option value="OH">Ohio</option>
+                                                            <option value="OK">Oklahoma</option>
+                                                            <option value="OR">Oregon</option>
+                                                            <option value="PA">Pennsylvania</option>
+                                                            <option value="RI">Rhode Island</option>
+                                                            <option value="SC">South Carolina</option>
+                                                            <option value="SD">South Dakota</option>
+                                                            <option value="TN">Tennessee</option>
+                                                            <option value="TX">Texas</option>
+                                                            <option value="UT">Utah</option>
+                                                            <option value="VT">Vermont</option>
+                                                            <option value="VA">Virginia</option>
+                                                            <option value="WA">Washington</option>
+                                                            <option value="WV">West Virginia</option>
+                                                            <option value="WI">Wisconsin</option>
+                                                            <option value="WY">Wyoming</option>
+                                                        </select> -->
+                                                    </div> <!-- END - 2ND COLUMN - STATE INPUT -->
+                                                    <!-- 3RD COLUMN - ZIP CODE INPUT -->
+                                                    <div class="col3-w20pr-h100pr-container2-class form-group" style=" display: block; justify-content: center; padding: 15px; overflow: hidden;">
+                                                        <label style="display: block; font-size: small; color: silver;" for="user-zipcode-id">Zipcode:</label>
+                                                        <input maxlength="5" oninput="this.value = this.value.replace(/\D/g, '')" class="textInput-type1-class" style="width: 100%; height: 40px; border-radius: 10px; border: silver solid; text-align: center; color: gray; cursor: not-allowed;" type="text" id="user-zipcode-id" name="zipcode" readonly>
+                                                    </div>
+                                                </div> <!-- END - USER ADDRESS INNER CONTANER -->
                                                 <!-- 3RD COLUMN - BUILDING/APT # INPUT -->
                                                 <div class="col3-w40pr-h100pr-container-class form-group" style="display: block; justify-content: center; padding: 15px; overflow: hidden;">
                                                     <label style="display: block; font-size: medium; margin: 0 0 20px 0;" for="user-buildingApt-id">Building/Apt #: <b><i>if applicable</i></b></label>
@@ -5999,6 +6002,12 @@
                     document.getElementById("shippingAddress-verification-container1-id").style.display = "flex";
                     //UPDATE - VERIFY BTN TXT
                     document.getElementById("finish-userAddress-button-id").innerHTML = "re-verify";
+                    if (document.getElementById("finish-userAddress-button-id").innerHTML == "re-verify") {
+                        //UPDATE - VERIFICATION TEXT
+                        document.getElementById("addressVerification-completeTxt-id").innerHMTL = "Re-verification Complete";
+                        //ADD - USER ADDRESS INPUTS
+                        document.getElementById("userAddress-inner-container-id").style.display = "block"; 
+                    }
                     //OPEN - USER ADDRESS INPUTS CONTAINER 
                     address_inputs_container.style.display = "block"; 
                 }
@@ -6055,6 +6064,9 @@
                     document.getElementById("billingAddress-verification-container-id").style.display = "flex";
                     //UPDATE - VERIFY BTN TXT
                     document.getElementById("finish-userAddress-button2-id").innerHTML = "re-verify";
+                    // if (document.getElementById("finish-userAddress-button2-id").innerHTML == "re-verify") {
+                        
+                    // }
                 }
         
                 // Match input element IDs
