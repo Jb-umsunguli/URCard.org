@@ -2775,9 +2775,11 @@
                                                     <input maxlength="5" oninput="this.value = this.value.replace(/\D/g, '')" class="textInput-type1-class" style="width: 100%; height: 40px; border-radius: 10px; border: silver solid; text-align: center; color: gray;" type="text" id="user-zipcode-id" name="zipcode">
                                                 </div>
                                                 <!-- 3RD COLUMN - BUILDING/APT # INPUT -->
-                                                <div class="col3-w40pr-h100pr-container-class form-group" style="display: flex; justify-content: center; padding: 15px; overflow: hidden;">
+                                                <div class="col3-w40pr-h100pr-container-class form-group" style="display: block; justify-content: center; padding: 15px; overflow: hidden;">
                                                     <label style="display: block; font-size: medium;" for="user-buildingApt-id">Building/Apt #: <b><i>if applicable</i></b></label>
-                                                    <input class="textInput-type1-class" style="width: 50%; height: 40px; border-radius: 10px; border: 4px solid #2F9C95; text-align: center;" type="text" id="user-buildingApt-id" name="buildingAppartmentNumber">
+                                                    <div style="display: flex; width: 100%; justify-content: center; overflow: hidden;">
+                                                        <input class="textInput-type1-class" style="width: 50%; height: 40px; border-radius: 10px; border: 4px solid #2F9C95; text-align: center;" type="text" id="user-buildingApt-id" name="buildingAppartmentNumber">
+                                                    </div>
                                                 </div>
                                             </div> <!-- END - 2ND COLUMN - STREET / CITY / STATE INPUTS -->
                                         </div> <!-- END - ADDRESS INPUTS CONTAINER -->
