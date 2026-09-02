@@ -40,6 +40,16 @@
             //  //  //SHIPPING STATUS CONTAINER
             const shippingStatus_container = document.getElementById("shippingStatus-container-id"); 
 
+            //USER ADDRESS VERIFICATION BTN
+            const finish_userAddress_button = document.getElementById("finish-userAddress-button-id"); 
+            finish_userAddress_button.addEventListener('click', (e) => {
+                        if (document.getElementById("finish-userAddress-button-id").innerHTML == "re-verify") {
+                        //UPDATE - VERIFICATION TEXT
+                        document.getElementById("addressVerification-completeTxt-id").innerHTML = "Re-verification Complete";
+                        //ADD - USER ADDRESS INPUTS
+                        document.getElementById("userAddress-inner-container-id").style.display = "block"; 
+                    }
+            }
 
             //PRIMARY BUTTONS
             //  //  //UR SELECTIONS BTN
