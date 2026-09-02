@@ -44,14 +44,15 @@
             const finish_userAddress_button = document.getElementById("finish-userAddress-button-id"); 
             const addressVerification_completeTxt = document.getElementById("addressVerification-completeTxt-id");
             finish_userAddress_button.addEventListener('click', (e) => {
+                        //SCROLL TO BOTTOM OF CONTAINER
+                        let overlayContainer_inner = document.querySelector('.all-SelectedItems-inner-class').scrollBottom = 0;
+                        //IF 'RE-VERIFY' IS PRESENT
                         if (document.getElementById("finish-userAddress-button-id").innerHTML == "re-verify") {
                         //UPDATE - VERIFICATION TEXT
                         addressVerification_completeTxt.innerHTML = "Re-verification Complete";
                         //ADD - USER ADDRESS INPUTS
-                        document.getElementById("userAddress-inner-container-id").style.display = "block"; 
-                        //SCROLL TO BOTTOM OF CONTAINER
-                        let overlayContainer_inner = document.querySelector('.all-SelectedItems-inner-class').scrollBottom = 0;
-                    }
+                        document.getElementById("userAddress-inner-container-id").style.display = "block";          
+                        }
             });
 
             //PRIMARY BUTTONS
@@ -65,9 +66,9 @@
             const back_overlayContainer_btn = document.getElementById("overlay1-back-btn-id");
 
             //GET URL STRING
-            // const queryString = window.location.search; //PULL FROM BROSWER
+            const queryString = window.location.search; //PULL FROM BROSWER
             // const queryString = "https://www.urcard.org/urmarket/checkout?&s1=1&s2=2&sc1=1001171170&sc2=1234&p1=1&pc1=122000111000112&urcid=v1001a"; //TEST URL
-            const queryString = "https://www.urcard.org/urmarket-checkout.html?&s1=1&s2=0&sc1=1001171170&sc2=0&p1=1&pc1=101000&urcid=v1001a"; //TEST URL
+            // const queryString = "https://www.urcard.org/urmarket-checkout.html?&s1=1&s2=0&sc1=1001171170&sc2=0&p1=1&pc1=101000&urcid=v1001a"; //TEST URL
 
             //PARSE THE URL PARAMETERS
             const urlParams = new URLSearchParams(queryString);
