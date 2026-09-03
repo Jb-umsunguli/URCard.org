@@ -2847,7 +2847,10 @@
                 }
                 //  //CHECK - USER CITY INPUT 
                 else if (user_city.value == "") {
-                    alert("Please enter your city to continue");
+                    //NEW ALERT
+                    alert("Please enter your shipping address within the search and verify to continue");
+                    //OLD ALERT
+                    // alert("Please enter your city to continue");
                     //CHANGE INPUT BORDER RED
                     user_city.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
@@ -2855,7 +2858,10 @@
                 }
                 //  //CHECK - USER STATE INPUT
                 else if (user_state.value == "") {
-                    alert("Please enter your state to continue");
+                    //NEW ALERT
+                    alert("Please enter your shipping address within the search and verify to continue");
+                    //OLD ALERT
+                    // alert("Please enter your state to continue");
                     //CHANGE INPUT BORDER RED
                     user_state.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
@@ -2863,7 +2869,10 @@
                 }
                 //  //CHECK - USER ZIPCODE INPUT 
                 else if (user_zipcode.value == "") {
-                    alert("Please enter your zipcode to continue");
+                    //NEW ALERT
+                    alert("Please enter your shipping address within the search and verify to continue");
+                    //OLD ALERT
+                    // alert("Please enter your zipcode to continue");
                     //CHANGE INPUT BORDER RED
                     user_zipcode.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
