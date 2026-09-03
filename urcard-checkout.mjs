@@ -68,9 +68,9 @@
             const back_overlayContainer_btn = document.getElementById("overlay1-back-btn-id");
 
             //GET URL STRING
-            const queryString = window.location.search; //PULL FROM BROSWER
-            // const queryString = "https://www.urcard.org/urmarket/checkout?&s1=1&s2=2&sc1=1001171170&sc2=1234&p1=1&pc1=122000111000112&urcid=v1001a"; //TEST URL
-            // const queryString = "https://www.urcard.org/urmarket-checkout.html?&s1=1&s2=0&sc1=1001171170&sc2=0&p1=1&pc1=101000&urcid=v1001a"; //TEST URL
+            // const queryString = window.location.search; //PULL FROM BROSWER
+            // const queryString = "https://www.urcard.org/urmarket/checkout?&s1=1&s2=2&sc1=1001171170&sc2=1234&p1=1&pc1=122000111000112&urcid=v1001a"; //TEST URL OLD
+            const queryString = "https://www.urcard.org/urmarket-checkout.html?&s1=1&s2=0&sc1=1001171170&sc2=0&p1=1&pc1=101000&urcid=v1001a"; //TEST URL NEW
 
             //PARSE THE URL PARAMETERS
             const urlParams = new URLSearchParams(queryString);
@@ -3897,14 +3897,14 @@
                     } 
                     else {
                         //PLAY URCARD TONE 
-                        urcard_audioTone.play()
-                        .then(() => {
-                        // Success: Audio is playing, remove listener to prevent re-triggering
-                        document.body.removeEventListener('click', playOnFirstInteraction);
-                        })
-                        .catch(error => {
-                                    console.log("UR Card Tone Playback Failed:", error);
-                        });
+                        // urcard_audioTone.play()
+                        // .then(() => {
+                        // // Success: Audio is playing, remove listener to prevent re-triggering
+                        // document.body.removeEventListener('click', playOnFirstInteraction);
+                        // })
+                        // .catch(error => {
+                        //             console.log("UR Card Tone Playback Failed:", error);
+                        // });
                                 
                         //OEPN LOADING CONTAINER
                         loadingContainer.style.display = "block"; 
