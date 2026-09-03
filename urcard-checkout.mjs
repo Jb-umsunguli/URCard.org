@@ -2836,7 +2836,10 @@
                 }
                 //  //CHECK - USER STREET ADDRESS INPUT
                 else if (user_streetAddress.value == "") {
-                    alert("Please enter your street address to continue");
+                    //NEW ALERT
+                    alert("Please enter your shipping address within the search and verify to continue");
+                    //OLD ALERT
+                    // alert("Please enter your street address to continue");
                     //CHANGE INPUT BORDER RED
                     user_streetAddress.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
