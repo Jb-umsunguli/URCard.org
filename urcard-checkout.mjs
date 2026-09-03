@@ -2837,7 +2837,7 @@
                 //  //CHECK - USER STREET ADDRESS INPUT
                 else if (user_streetAddress.value == "") {
                     //NEW ALERT
-                    alert("Please enter your shipping address within the search and verify to continue");
+                    alert("Please enter your full shipping address within the search and verify to continue");
                     //OLD ALERT
                     // alert("Please enter your street address to continue");
                     //CHANGE INPUT BORDER RED
@@ -2848,7 +2848,7 @@
                 //  //CHECK - USER CITY INPUT 
                 else if (user_city.value == "") {
                     //NEW ALERT
-                    alert("Please enter your shipping address within the search and verify to continue");
+                    alert("Please enter your full shipping address within the search and verify to continue");
                     //OLD ALERT
                     // alert("Please enter your city to continue");
                     //CHANGE INPUT BORDER RED
@@ -2859,7 +2859,7 @@
                 //  //CHECK - USER STATE INPUT
                 else if (user_state.value == "") {
                     //NEW ALERT
-                    alert("Please enter your shipping address within the search and verify to continue");
+                    alert("Please enter your full shipping address within the search and verify to continue");
                     //OLD ALERT
                     // alert("Please enter your state to continue");
                     //CHANGE INPUT BORDER RED
@@ -2870,7 +2870,7 @@
                 //  //CHECK - USER ZIPCODE INPUT 
                 else if (user_zipcode.value == "") {
                     //NEW ALERT
-                    alert("Please enter your shipping address within the search and verify to continue");
+                    alert("Please enter your full shipping address within the search and verify to continue");
                     //OLD ALERT
                     // alert("Please enter your zipcode to continue");
                     //CHANGE INPUT BORDER RED
