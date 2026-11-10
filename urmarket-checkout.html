@@ -15,7 +15,7 @@
     <!-- <script src="https://kit.fontawesome.com/250d29013c.js" crossorigin="anonymous"></script> -->
     <title>UR Market Checkout</title>
     <!-- LINK TO EXTERNAL JS FILE -->
-    <script src="urcard-checkout.mjs" defer></script>
+    <!-- <script src="urcard-checkout.js" defer></script> -->
     <!-- <script type="module" src="urcard-checkout.mjs"></script> -->
 </head>
 
@@ -369,10 +369,10 @@
             height: 70px; 
             overflow: hidden; 
             border-radius: 30px 30px 0px 0px; 
-            background: #2F9C95;
-            /* background: -webkit-linear-gradient(180deg,rgba(47, 156, 149, 1) 0%, rgba(255, 255, 255, 1) 70%);
-            background: -moz-linear-gradient(180deg,rgba(47, 156, 149, 1) 0%, rgba(255, 255, 255, 1) 70%);
-            background: linear-gradient(180deg,rgba(47, 156, 149, 1) 90%, rgba(255, 255, 255, 1) 100%); */
+            /* background: #2F9C95; */
+            background: -webkit-linear-gradient(180deg,rgba(47, 156, 149, 1) 0%, rgba(255, 255, 255, 1) 50%);
+            background: -moz-linear-gradient(180deg,rgba(47, 156, 149, 1) 0%, rgba(255, 255, 255, 1) 50%);
+            background: linear-gradient(180deg,rgba(47, 156, 149, 1) 20%, rgb(165, 249, 243) 100%);
         }
         .overlay1-title-container-class {
             display: flex; 
@@ -1115,6 +1115,13 @@
             width: 100%; 
             overflow: hidden;
         }
+        .grid-responsive-class-3 {
+            display: flex;
+            flex-direction:column; 
+            justify-content: flex-end; 
+            width: 100%; 
+            overflow: hidden;
+        }
         .col-w33pr-h100pr-container-class {
             width: 33%; 
             justify-content: center; 
@@ -1162,7 +1169,37 @@
             .col-w33pr-h100pr-container-class {
                 width: 100%;
             }
-        }/* END - SHIPPING/DELIVERY ASSETS */
+        }
+        /* END - SHIPPING/DELIVERY ASSETS */
+
+
+        .padding_class1 {
+            padding: 0 40% 0 40%;
+        }
+        .padding_class2 {
+            padding: 0 30% 0 30%;
+        }   
+        .text-align-class1 {
+            text-align: right;
+        }      
+        .text-align-class2 {
+            text-align: left;
+        }
+
+        @media screen and (max-width: 800px) {
+            .padding_class1 {
+                padding: 0 15% 0 15%;
+            }
+            .padding_class2 {
+                padding: 0; 
+            }
+            .text-align-class1 {
+            text-align: center;
+            }      
+            .text-align-class2 {
+                text-align: center;
+            }
+        }
 
 
         /* POS ASSETS */
@@ -1253,7 +1290,7 @@
             width: 100%;
             overflow: hidden;  
             /* CHANGE URL!!! */
-            background-image: url('images/bg-full-waves-img.png'); 
+            background-image: url('/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/bg-full-waves-img.png'); 
             background-repeat: repeat; 
             background-size: contain;
         }
@@ -1301,7 +1338,7 @@
             max-width: 50%; 
             min-width: 60%; 
             transition: all .2s ease-in-out;
-            cursor: url('images/urcard-cursor.png'), pointer;
+            cursor: url('/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/urcard-cursor.png'), pointer;
         }
         #urcard-graphic-id:hover {
             filter: contrast(120%) sepia(40%);
@@ -1551,7 +1588,7 @@
                 <div id="urcard-graphic-container-id" class="bounce-in-right">
                     <div class="pulse" style="display: flex; justify-content: center; overflow: hidden;"> 
                         <!-- CHANGE IMG SOURCE!!! -->
-                        <img id="urcard-graphic-id" src="images/UR Card Graphic.png" />
+                        <img id="urcard-graphic-id" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/UR Card Graphic.png" />
                     </div>
                 </div>
             </div> <!-- END - CHECKOUT - START PAGE CONTAINER - FROM URCARD -->
@@ -1579,7 +1616,7 @@
                              <div style="height: 10%; width:100%;"></div>
                             <!-- TOP CONTAINER - LOGO -->
                             <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 65%; overflow: hidden;">
-                                <img width="60%" style="margin: 0 0 0 30px;" src="images/UrCard Logo.png"/>
+                                <img width="60%" style="margin: 0 0 0 30px;" src="/Users/jbharrington/Desktop/StartRT/Mi Card Logo/UrCard Logo.png"/>
                             </div>
                             <!-- BOTTOM CONTAINER - loading -->
                             <div class="fade-in-out-anim-1" style="width: 100%; height: 25%; overflow: hidden; font-size: 20px; text-align: center; color: rgb(0, 136, 255);">
@@ -1627,7 +1664,7 @@
             </div> <!-- END - OVERLAY POPUP CONTAINER -->
 
 
-            <!-- OVERLAY CONTAINER 1 - ITEM CHECKOUT - DISPLAY: BLOCK -->
+            <!-- OVERLAY CONTAINER 1 - ITEM CHECKOUT - DISPLAY: BLOCK **MY NIGGA CHANGE DISPLAY BACK TO NONE-->
             <div id="overlay-container-1-id" style="display: none;">
                 <!-- OVERLAY INNER CONTAINER -->
                 <div id="overlay-inner-1-id">
@@ -2700,17 +2737,17 @@
                                             <!-- VERIFICATION COMPLETE MESSAGE - DISPLAY:NONE/FLEX -->
                                             <div id="shippingAddress-verification-container1-id" style="display: none; overflow: hidden; justify-content: center;">
                                                 <!-- ICON -->
-                                                <img width="25px" height="25px" style="margin: 0 5px 0 0;" src="images/check_9068908.png"/>
+                                                <img width="25px" height="25px" style="margin: 0 5px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                 <!-- TXT -->
                                                 <b id="addressVerification-completeTxt-id">Address Verification Complete!</b>
                                             </div>
                                         </div>
                                         
-                                        <!-- ADDRESS INPUTS CONTAINER - DISPLAY:NONE/BLOCK -->
+                                        <!-- ADDRESS INPUTS CONTAINER - DISPLAY:NONE/BLOCK ** MY NIGGA - SWITCH BACK TO DISPLAY:NONE ** -->
                                         <div id="address-inputs-container-id" style="display: none; margin: 40px 0; overflow: hidden;">
                                             <!-- 2ND COLUMN - STREET / CITY / STATE INPUTS -->
                                             <div class="grid-responsive-class-2" style="display: block;">
-                                                <!-- USER ADDRESS INNER CONTANER -->
+                                                <!-- USER ADDRESS INNER CONTANER - ** MY NIGGA - SWITCH BACK TO DISPLAY:NONE **-->
                                                 <div id="userAddress-inner-container-id" style="display: none; overflow: hidden;">
                                                     <b style="font-size: large; color: rgba(255, 0, 0, 0.6);"><i>UPDATE YOUR ADDRESS IN THE SEARCH ABOVE</i></b>
                                                     <!-- 2ND COLUMN - STREET ADDRESS INPUT -->
@@ -2867,7 +2904,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item1-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -2882,7 +2919,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item1-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -2959,7 +2996,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item2-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -2974,7 +3011,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item2-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3051,7 +3088,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item3-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3066,7 +3103,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item3-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3143,7 +3180,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item4-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3158,7 +3195,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item4-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3235,7 +3272,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item5-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3250,7 +3287,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item5-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3327,7 +3364,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item6-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3342,7 +3379,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item6-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3419,7 +3456,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item7-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3434,7 +3471,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item7-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3511,7 +3548,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item8-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3526,7 +3563,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item8-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3603,7 +3640,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item9-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3618,7 +3655,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item9-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3695,7 +3732,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item10-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div> 
                                                                 Delivery
                                                             </div>
@@ -3710,7 +3747,7 @@
                                                             <div class="btnType-4-class">
                                                                 <!-- 'SELECTED' ICON - DISPLAY: BLOCK -->
                                                                 <div id="selected-icon1-delivery-item10-id" style="display: block;">
-                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/images/check_9068908.png"/>
+                                                                    <img style="width: 25px; height: 25px; margin: 0 10px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png"/>
                                                                 </div>  
                                                                 Carryout
                                                             </div>
@@ -3736,8 +3773,8 @@
 
 
 
-                    <!-- BOTTOM CONTAINER - 'NEXT' BTN - DISPLAY: BLOCK -->
-                    <div id="selectedItems-bottomBtn-container-id" class="primary-bottomBtn-container-class" style="display: none;">
+                    <!-- BOTTOM CONTAINER - 'NEXT' BTN - DISPLAY: BLOCK **MY NIGGA CHANGE DISPLAY BACK TO BLOCK -->
+                    <div id="selectedItems-bottomBtn-container-id" class="primary-bottomBtn-container-class" style="display: block;">
                         <!-- LINE -->
                         <div class="bottomContainer-line-class" style="display: flex; justify-content: center; width: 100%; height: auto;">
                             <div style="height: 3px; width: 100%; background-color: gray;"></div>
@@ -4875,7 +4912,7 @@
                                         <!-- GOOGLE PAY IMG -->
                                         <div style="display: flex; justify-content: center; width: 100%; height: 200px; overflow: hidden;">
                                             <!-- IMG -->
-                                            <img width="auto" height="auto" style="background: lightgray;" src="images/googlePay-icon1.png"/>
+                                            <img width="auto" height="auto" style="background: lightgray;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/googlePay-icon1.png"/>
                                         </div> <!-- END - PAY WITH CARD IMG -->
                                         <!-- GOOGLE PAY HEADER TEXT -->
                                         <div style="display: flex; justify-content: center; width: 100%; overflow: hidden; font-size: 20px; margin: 30px 0 0 0;">
@@ -4919,7 +4956,7 @@
                                         <!-- APPLE PAY IMG -->
                                         <div style="display: flex; justify-content: center; width: 100%; height: 200px; overflow: hidden;">
                                             <!-- IMG -->
-                                            <img width="auto" height="auto" style="background: lightgray;" src="images/applePay-icon1.png"/>
+                                            <img width="auto" height="auto" style="background: lightgray;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/applePay-icon1.png"/>
                                         </div> <!-- END - APPLE PAY IMG -->
                                         <!-- APPLE PAY HEADER TEXT -->
                                         <div style="display: flex; justify-content: center; width: 100%; overflow: hidden; font-size: 20px; margin: 30px 0 0 0;">
@@ -4962,7 +4999,7 @@
                                         <!-- PAY WITH CARD IMG -->
                                         <div style="display: flex; justify-content: center; width: 100%; height: 200px; overflow: hidden;">
                                             <!-- IMG -->
-                                            <img width="auto" height="auto" style="background: lightgray;" src="images/card-icon.png"/>
+                                            <img width="auto" height="auto" style="background: lightgray;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/card-icon.png"/>
                                         </div> <!-- END - PAY WITH CARD IMG -->
                                         <!-- DEBIT/CREDIT HEADER TEXT -->
                                         <div style="display: flex; justify-content: center; width: 100%; overflow: hidden; font-size: 20px; margin: 30px 0 0 0;">
@@ -5070,7 +5107,7 @@
                                             <!-- VERIFICATION COMPLETE MESSAGE - DISPLAY:NONE/FLEX -->
                                             <div id="billingAddress-verification-container-id" style="display: none; overflow: hidden; justify-content: center;">
                                                 <!-- ICON -->
-                                                <img width="25px" height="25px" style="margin: 0 5px 0 0;" src="images/check_9068908.png">
+                                                <img width="25px" height="25px" style="margin: 0 5px 0 0;" src="/Users/jbharrington/Desktop/StartRT/UR Marketplace/Graphics/check_9068908.png">
                                                 <!-- TXT -->
                                                 <b>Address Verification Complete!</b>
                                             </div>
@@ -5695,9 +5732,333 @@
                         </div> <!-- END - INNER CONTAINER -->
                     </div> <!-- END - ORDER CONFIRMATION CONTAINER -->
 
+
+                    <!-- USER SIGN-IN - ALL ASSETS CONTAINER - DISPLAY:NONE/BLOCK -->
+                    <div id="userSignin-allAssets-container-id" style="display: none; width: 100%; height: 100%; overflow: scroll;">
+                        <!-- INNER CONTAINER -->
+                        <div style="width: 100%; height: auto; padding: 0 0 80px 0; overflow: scroll;">
+                            <!-- HEADER IMAGE -->
+                            <div style="display: flex; justify-content: center; width: 100%; height: auto; overflow: hidden; margin: 0 0 10px 0;">
+                                <img width="100%" height="150px" style="background-color: silver;"/>
+                            </div>
+                            
+                            <!-- SIGN-IN INPUTS - ALL CONTAINERS -->
+                            <div style="display: block; width: 100%; height: auto; overflow: hidden;">
+                                <!-- SIGNIN TYPE SELECTION -->
+                                <div style="display: flex; justify-content: center; width: 100%; overflow: hidden; margin: 5px 0 0 0;">
+                                    <div class="grid-responsive-class-3 padding_class1">
+                                        <label style="display: flex; justify-content: center; color: black;" for="signinType-input-id"><b>Select login type:</b></label>
+                                        <select name="signin_type" id="signinType-input-id" style="border: silver solid;" class="textInput-type1-class" readonly>
+                                            <!-- BLANK OPTION -->
+                                            <option value="customer">Customer</option>
+                                            <option value="vendor">Vendor</option>
+                                            <option value="employee">Employee</option>
+                                        </select>
+                                    </div> <!-- END - SIGNIN TYPE SELECTION -->
+                                </div>
+                                
+                                <div class="line-container-class" style="margin: 40px 0 40px 0; padding: 0 50px 0 50px;">
+                                    <!-- LINE -->
+                                    <div class="line-2-class"></div>
+                                </div>
+
+                                <!-- DEFAULT - CUSTOMER SIGNIN CONTAINER - DISPLAY:BLOCK -->
+                                <div id="customerSignin-inputs-container-id" style="display: block; overflow: hidden;">
+                                    <!-- 1ST COLUMN - USER NAME/PASSWORD CONTAINER -->
+                                    <div class="grid-responsive-class-3 padding_class2">
+                                        <!-- 1ST COLUMN - USER NAME INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class" style="width: 100%;">
+                                            <label style="display: flex; justify-content: center;" for="customer-userName-input-id">Username:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" placeholder="Enter UR Customer Username" class="textInput-type1-class" type="text" id="customer-userName-input-id" name="customer_username">
+                                        </div>
+                                        <!-- 1ST COLUMN - PASSWORD INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class" style="width: 100%;">
+                                            <label style="display: flex; justify-content: center;" for="customer-password-input-id">Password:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="customer-password-input-id" name="customer_password">
+                                        </div>
+                                    </div>
+                                </div> <!-- END - CUSTOMER SIGNIN CONTAINER -->
+
+                                
+                                <!-- VENDOR SIGNIN CONTAINER - DISPLAY:BLOCK/NONE -->
+                                <div id="vendorSignin-inputs-container-id" style="display: none; overflow: hidden;">
+                                    <!-- 1ST COLUMN - USER NAME/PASSWORD CONTAINER -->
+                                    <div class="grid-responsive-class-3 padding_class2">
+                                        <!-- 1ST COLUMN - USER NAME INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class" style="width: 100%;">
+                                            <label style="display: flex; justify-content: center;" for="vendor-userName-input-id">Username:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" placeholder="Enter UR Vendor Username" class="textInput-type1-class" type="text" id="vendor-userName-input-id" name="vendor_username">
+                                        </div>
+                                        <!-- 1ST COLUMN - PASSWORD INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class" style="width: 100%;">
+                                            <label style="display: flex; justify-content: center;" for="vendor-password-input-id">Password:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="vendor-password-input-id" name="vendor_password">
+                                        </div>
+                                    </div>
+                                </div> <!-- END - VENDOR SIGNIN CONTAINER -->
+
+                                <!-- EMPLOYEE SIGNIN CONTAINTER - DISPLAY:BLOCK/NONE -->
+                                <div id="employeeSignin-inputs-container-id" style="display: none; overflow: hidden;">
+                                    <!-- 1ST COLUMN - USER NAME/PASSWORD CONTAINER -->
+                                    <div class="grid-responsive-class-3 padding_class2">
+                                        <!-- 1ST COLUMN - USER NAME INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class" style="width: 100%;">
+                                            <label style="display: flex; justify-content: center;" for="employee-userName-input-id">Username:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" placeholder="Enter UR Employee Username" class="textInput-type1-class" type="text" id="employee-userName-input-id" name="employee_username">
+                                        </div>
+                                        <!-- 1ST COLUMN - PASSWORD INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class" style="width: 100%;">
+                                            <label style="display: flex; justify-content: center;" for="employee-password-input-id">Password:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="employee-password-input-id" name="employee_password">
+                                        </div>
+                                    </div>
+                                </div> <!-- END - EMPLOYEE SIGNIN CONTAINER -->
+
+                                <!-- SIGN-IN BUTTON CONTAINER -->
+                                <div style="display: flex; width: 100%; justify-content: center; margin: 30px 0; overflow: hidden;">
+                                    <!-- SIGNIN BUTTON -->
+                                    <div class="btnType-2-container">
+                                        <div id="userSignin-Btn-id" class="btnType-2-class">
+                                            sign-in
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- LINE -->
+                                <div class="line-container-class" style="margin: 0; padding: 0 50px 0 50px;">
+                                    <!-- LINE -->
+                                    <div class="line-2-class"></div>
+                                </div>
+                                <!-- CREATE ACCOUNT BTN CONTAINER -->
+                                <div style="display: flex; width: 100%; justify-content: center; overflow: hidden;">
+                                    <div class="btn-bottomBtn-conatainer-class">
+                                        <div id="createAccount-btn-id" class="btnType-3-class" style="width: auto; font-size: medium;"><b>Create Account</b></div>
+                                    </div>
+                                </div>
+                                <!-- LINE -->
+                                <div class="line-container-class" style="margin: 0 0 10px 0; padding: 0 50px 0 50px;">
+                                    <!-- LINE -->
+                                    <div class="line-2-class"></div>
+                                </div>
+                                <!-- 1ST COLUMN - FORGOT BUTTONS -->
+                                <div class="grid-responsive-class-2">
+                                    <!-- FORGOT MY USERNAME BTN -->
+                                    <div class="col-w33pr-h100pr-container-class text-align-class1">
+                                        <div id="forgotUsername-btn-id"><a href="">Forgot My Username</a></div>
+                                    </div>
+                                    <!-- FORGOT MY PASSWORD BTN --> 
+                                    <div class="col-w33pr-h100pr-container-class text-align-class2">
+                                        <div id="forgotUsername-btn-id"><a href="">Forgot My Password</a></div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div> <!-- END - INNER CONTAINER -->
+                    </div><!-- END - USER SIGN-IN - ALL ASSETS CONTAINER -->
+
+
+                    <!-- CREATE USER ACCOUNT - ALL ASSETS CONTAINER - DISPLAY:NONE/BLOCK -->
+                    <div id="createAccount-allAssets-container-id" style="display: block; width: 100%; height: 100%; overflow: scroll;">
+                        <!-- INNER CONTAINER -->
+                        <div style="width: 100%; height: auto; padding: 0 0 80px 0; overflow: scroll;">
+                            <!-- HEADER IMAGE -->
+                            <div style="display: flex; justify-content: center; width: 100%; height: auto; overflow: hidden; margin: 0 0 10px 0;">
+                                <img width="100%" height="150px" style="background-color: silver;"/>
+                            </div>
+                            
+                            <!-- CREATE ACCOUNT INPUTS - ALL CONTAINERS -->
+                            <div style="display: block; width: 100%; height: auto; overflow: hidden;">
+                                <!-- ACCOUNT TYPE SELECTION -->
+                                <div style="display: flex; justify-content: center; width: 100%; overflow: hidden; margin: 5px 0 0 0;">
+                                    <div class="grid-responsive-class-3 padding_class1">
+                                        <label style="display: flex; justify-content: center; color: black;" for="accountType-input-id"><b>Select login type:</b></label>
+                                        <select name="signin_type" id="accountType-input-id" style="border: silver solid;" class="textInput-type1-class" readonly>
+                                            <!-- BLANK OPTION -->
+                                            <option value="customer">Customer</option>
+                                            <option value="vendor">Vendor</option>
+                                            <option value="employee">Employee</option>
+                                        </select>
+                                    </div> <!-- END - ACCOUNT TYPE SELECTION -->
+                                </div>
+                                
+                                <div class="line-container-class" style="margin: 40px 0 40px 0; padding: 0 50px 0 50px;">
+                                    <!-- LINE -->
+                                    <div class="line-2-class"></div>
+                                </div>
+
+                                <!-- DEFAULT - CUSTOMER ACCOUNT CONTAINER - DISPLAY:BLOCK -->
+                                <div id="customerAccount-inputs-container-id" style="display: block; text-align: center; overflow: hidden;">
+                                    <!-- CREATE ACCOUNT - FIRST/LAST NAME & PHONE CONTAINERS -->
+                                    <div class="grid-responsive-class-2">
+                                        <!-- 1ST COLUMN - FIRST NAME INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-customer-firstName-input-id">First Name:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-customer-firstName-input-id" name="firstName">
+                                        </div>
+                                        <!-- 1ST COLUMN - LAST NAME INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-customer-lastName-input-id">Last Name:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-customer-lastName-input-id" name="lastName">
+                                        </div>
+                                        <!-- 1ST COLUMN - PHONE NUMBER INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-customer-phoneNumber-input-id">Phone Number:</label>
+                                            <input oninput="this.value = this.value.replace(/\D/g, '')" placeholder="(123) 456 - 7890" maxlength="16" class="textInput-type1-class" type="tel" id="createAcct-customer-phoneNumber-input-id" name="phoneNumber">
+                                        </div>
+                                    </div>
+
+                                    <div class="line-container-class" style="margin: 40px 0 40px 0; padding: 0 50px 0 50px;">
+                                        <!-- LINE -->
+                                        <div class="line-2-class"></div>
+                                    </div>
+
+                                    <!-- CREATE ACCOUNT - EMAIL & PASSWORD CONTAINERS -->
+                                    <div class="grid-responsive-class-2">
+                                        <!-- 1ST COLUMN - EMAIL INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-customer-email-input-id">Email:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-customer-email-input-id" name="email">
+                                        </div>
+                                        <!-- 1ST COLUMN - PASSWORD INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-customer-password-input-id">Password:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-customer-password-input-id" name="password">
+                                        </div>
+                                        <!-- 1ST COLUMN - RE-ENTER PASSWORD INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-customer-rePassword-input-id">Re-enter Password:</label>
+                                            <input class="textInput-type1-class" id="createAcct-customer-rePassword-input-id" name="reenter_Password">
+                                        </div>
+                                    </div>
+                                </div> <!-- END - CUSTOMER ACCOUNT CONTAINER -->
+
+                                <!-- VENDOR ACCOUNT CONTAINER - DISPLAY:NONE/BLOCK -->
+                                <div id="vendorAccount-inputs-container-id" style="display: none; text-align: center; overflow: hidden;">
+                                    <!-- CREATE ACCOUNT - VENDOR - FIRST/LAST NAME & PHONE CONTAINERS -->
+                                    <div class="grid-responsive-class-2">
+                                        <!-- 1ST COLUMN - FIRST NAME INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-vendor-firstName-input-id">First Name:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-vendor-firstName-input-id" name="firstName">
+                                        </div>
+                                        <!-- 1ST COLUMN - LAST NAME INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-vendor-lastName-input-id">Last Name:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-vendor-lastName-input-id" name="lastName">
+                                        </div>
+                                        <!-- 1ST COLUMN - PHONE NUMBER INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-vendor-phoneNumber-input-id">Phone Number:</label>
+                                            <input oninput="this.value = this.value.replace(/\D/g, '')" placeholder="(123) 456 - 7890" maxlength="16" class="textInput-type1-class" type="tel" id="createAcct-vendor-phoneNumber-input-id" name="phoneNumber">
+                                        </div>
+                                    </div>
+
+                                    <div class="line-container-class" style="margin: 40px 0 40px 0; padding: 0 50px 0 50px;">
+                                        <!-- LINE -->
+                                        <div class="line-2-class"></div>
+                                    </div>
+
+                                    <!-- CREATE ACCOUNT - VENDOR - EMAIL & PASSWORD CONTAINERS -->
+                                    <div class="grid-responsive-class-2">
+                                        <!-- 1ST COLUMN - EMAIL INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-vendor-email-input-id">Email:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-vendor-email-input-id" name="email">
+                                        </div>
+                                        <!-- 1ST COLUMN - PASSWORD INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcc-vendor-password-input-id">Password:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-vendor-password-input-id" name="password">
+                                        </div>
+                                        <!-- 1ST COLUMN - RE-ENTER PASSWORD INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-vendor-rePassword-input-id">Re-enter Password:</label>
+                                            <input oninput="this.value = this.value.replace(/\D/g, '')" maxlength="16" class="textInput-type1-class" id="createAcct-vendor-rePassword-input-id" name="reenterPassword">
+                                        </div>
+                                    </div>
+                                </div> <!-- END - VENDOR ACCOUNT CONTAINER -->
+
+                                <!-- EMPLOYEE ACCOUNT CONTAINER - DISPLAY:NONE/BLOCK -->
+                                <div id="employeeAccount-inputs-container-id" style="display: none; text-align: center; overflow: hidden;">
+                                    <!-- CREATE ACCOUNT - EMPLOYEE - FIRST/LAST NAME & PHONE CONTAINERS -->
+                                    <div class="grid-responsive-class-2">
+                                        <!-- 1ST COLUMN - FIRST NAME INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-employee-firstName-input-id">First Name:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-employee-firstName-input-id" name="firstName">
+                                        </div>
+                                        <!-- 1ST COLUMN - LAST NAME INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-employee-lastName-input-id">Last Name:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-employee-lastName-input-id" name="lastName">
+                                        </div>
+                                        <!-- 1ST COLUMN - PHONE NUMBER INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-employee-phoneNumber-input-id">Phone Number:</label>
+                                            <input oninput="this.value = this.value.replace(/\D/g, '')" placeholder="(123) 456 - 7890" maxlength="16" class="textInput-type1-class" type="tel" id="createAcct-employee-phoneNumber-input-id" name="phoneNumber">
+                                        </div>
+                                    </div>
+
+                                    <div class="line-container-class" style="margin: 40px 0 40px 0; padding: 0 50px 0 50px;">
+                                        <!-- LINE -->
+                                        <div class="line-2-class"></div>
+                                    </div>
+
+                                    <!-- CREATE ACCOUNT - EMPLOYEE - EMAIL & PASSWORD CONTAINERS -->
+                                    <div class="grid-responsive-class-2">
+                                        <!-- 1ST COLUMN - EMAIL INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-employee-email-input-id">Email:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-employee-email-input-id" name="email">
+                                        </div>
+                                        <!-- 1ST COLUMN - PASSWORD INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAccount-employee-password-input-id">Password:</label>
+                                            <input oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="textInput-type1-class" type="text" id="createAcct-employee-password-input-id" name="password">
+                                        </div>
+                                        <!-- 1ST COLUMN - RE-ENTER PASSWORD INPUT -->
+                                        <div class="col-w33pr-h100pr-container-class">
+                                            <label style="display: block;" for="createAcct-employee-rePassword-input-id">Re-enter Password:</label>
+                                            <input oninput="this.value = this.value.replace(/\D/g, '')" maxlength="16" class="textInput-type1-class" id="createAcct-employee-rePassword-input-id" name="reenterPassword">
+                                        </div>
+                                    </div>
+                                </div> <!-- END - EMPLOYEE ACCOUNT CONTAINER -->
+
+
+                                <!-- SIGN-IN BUTTON CONTAINER -->
+                                <div style="display: flex; width: 100%; justify-content: center; margin: 30px 0; overflow: hidden;">
+                                    <!-- CREATE USER ACCOUNT BUTTON -->
+                                    <div class="btnType-2-container">
+                                        <div id="create_userAccount-Btn-id" class="btnType-2-class">
+                                            Create Account
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- LINE -->
+                                <div class="line-container-class" style="margin: 0; padding: 0 50px 0 50px;">
+                                    <!-- LINE -->
+                                    <div class="line-2-class"></div>
+                                </div>
+                                <!-- CREATE ACCOUNT BTN CONTAINER -->
+                                <div style="display: flex; width: 100%; justify-content: center; overflow: hidden;">
+                                    <div class="btn-bottomBtn-conatainer-class">
+                                        <div id="signinInstead-btn-id" class="btnType-3-class" style="width: auto; font-size: medium;"><b>Sign-in instead</b></div>
+                                    </div>
+                                </div>
+                                <!-- LINE -->
+                                <div class="line-container-class" style="margin: 0 0 10px 0; padding: 0 50px 0 50px;">
+                                    <!-- LINE -->
+                                    <div class="line-2-class"></div>
+                                </div>
+                            </div>
+                        </div> <!-- END - INNER CONTAINER -->
+                    </div><!-- END - CREATE ACCOUNT - ALL ASSETS CONTAINER -->
+                    
                 </div><!-- END - MAIN OVERLAY INNER CONTAINER -->
 
             </div>
+
+
+
+
             <!-- CHECKOUT CONTAINER -->
 
         </div>
@@ -5729,6 +6090,14 @@
                 <!-- ITEM 5 - THE MISSION -->
                 <div class="mainFooter-item-class">
                     The Mission
+                </div>
+                <!-- ITEM 6 - SIGN-IN -->
+                <div id="signin-footerBtn-id" class="mainFooter-item-class">
+                    Sign-In
+                </div>
+                <!-- ITEM 6 - CREATE ACCOUNT -->
+                <div id="createAcct-footerBtn-id" class="mainFooter-item-class">
+                    Create Account
                 </div>
              </div>
         </div>
