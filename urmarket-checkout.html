@@ -6416,10 +6416,8 @@
                     address_inputs_container.style.display = "block";
                     //SCROLL TO - BOTTOM OF CONTAINER 
                     var deliveryShipping_innerContainer = document.getElementById("deliveryShipping-innerContainer-id").scrollTo({
-                        bottom: deliveryShipping_innerContainer.scrollHeight,
-                        behavior: "smooth"
+                        bottom: address_inputs_container.offsetTop
                     });
-
                 }
         
                 // Match input element IDs
