@@ -1,4 +1,297 @@
-//CLICK ABOVE CARD TXT
+//CREATE ACCOUNT FUNCTION ASSETS
+            //  //CREATE ACCOUNT ASSETS
+            //  //  //CUSTOMER ACCOUNT CREATION INPUTS CONTAINER
+            const customer_acctCreate_inputs_container = document.getElementById("customerAccount-inputs-container-id");
+            //  //  //VENDOR ACCOUNT CREATION INPUTS CONTAINER
+            const vendor_acctCreate_inputs_container = document.getElementById("vendorAccount-inputs-container-id");
+            //  //  //EMPLOYEE ACCOUNT CREATION INPUTS CONTAINER
+            const employee_acctCreate_inputs_container = document.getElementById("employeeAccount-inputs-container-id");
+
+            //  //CREATE CUSTOMER ACCT - FIRST NAME INPUT VAR 
+            const customer_acctCreate_firstName_input = document.getElementById("createAcct-customer-firstName-input-id"); 
+            //  //CREATE CUSTOMER ACCT - LAST NAME INPUT VAR 
+            const customer_acctCreate_lastName_input = document.getElementById("createAcct-customer-lastName-input-id"); 
+            //  //CREATE CUSTOMER ACCT - PHONE NUMBER INPUT VAR 
+            const customer_acctCreate_phoneNum_input = document.getElementById("createAcct-customer-phoneNumber-input-id"); 
+            //  //CREATE CUSTOMER ACCT - EMAIL INPUT VAR 
+            const customer_acctCreate_email_input = document.getElementById("createAcct-customer-email-input-id"); 
+            //  //CREATE CUSTOMER ACCT - PASSWORD INPUT VAR 
+            const customer_acctCreate_password_input = document.getElementById("createAcct-customer-password-input-id"); 
+            //  //CREATE CUSTOMER ACCT - RE-ENTER PASSWORD INPUT VAR 
+            const customer_acctCreate_repassword_input = document.getElementById("createAcct-customer-rePassword-input-id"); 
+
+            //  //CREATE VENDOR ACCT - FIRST NAME INPUT VAR 
+            const vendor_acctCreate_firstName_input = document.getElementById("createAcct-vendor-firstName-input-id"); 
+            //  //CREATE VENDOR ACCT - LAST NAME INPUT VAR 
+            const vendor_acctCreate_lastName_input = document.getElementById("createAcct-vendor-lastName-input-id"); 
+            //  //CREATE VENDOR ACCT - PHONE NUMBER INPUT VAR 
+            const vendor_acctCreate_phoneNum_input = document.getElementById("createAcct-vendor-phoneNumber-input-id"); 
+            //  //CREATE VENDOR ACCT - EMAIL INPUT VAR 
+            const vendor_acctCreate_email_input = document.getElementById("createAcct-vendor-email-input-id"); 
+            //  //CREATE VENDOR ACCT - PASSWORD INPUT VAR 
+            const vendor_acctCreate_password_input = document.getElementById("createAcct-vendor-password-input-id"); 
+            //  //CREATE VENDOR ACCT - RE-ENTER PASSWORD INPUT VAR 
+            const vendor_acctCreate_repassword_input = document.getElementById("createAcct-vendor-rePassword-input-id"); 
+
+            //  //CREATE EMPLOYEE ACCT - FIRST NAME INPUT VAR 
+            const employee_acctCreate_firstName_input = document.getElementById("createAcct-employee-firstName-input-id"); 
+            //  //CREATE EMPLOYEE ACCT - LAST NAME INPUT VAR 
+            const employee_acctCreate_lastName_input = document.getElementById("createAcct-employee-lastName-input-id"); 
+            //  //CREATE EMPLOYEE ACCT - PHONE NUMBER INPUT VAR 
+            const employee_acctCreate_phoneNum_input = document.getElementById("createAcct-employee-phoneNumber-input-id"); 
+            //  //CREATE EMPLOYEE ACCT - EMAIL INPUT VAR 
+            const employee_acctCreate_email_input = document.getElementById("createAcct-employee-email-input-id"); 
+            //  //CREATE EMPLOYEE ACCT - PASSWORD INPUT VAR 
+            const employee_acctCreate_password_input = document.getElementById("createAcct-employee-password-input-id"); 
+            //  //CREATE EMPLOYEE ACCT - RE-ENTER PASSWORD INPUT VAR 
+            const employee_acctCreate_repassword_input = document.getElementById("createAcct-employee-rePassword-input-id"); 
+
+            //  //ACCOUNT TYPE INPUT VAR & EVENT LISTENER
+            const acctType_input = document.getElementById("accountType-input-id"); 
+            acctType_input.addEventListener('change', (event) => {
+                //  //GET SELECTION VALUE
+                const acctType_value = event.target.value; 
+                //IF 'CUSTOMER' OPTION IS SELECTED
+                if (acctType_value === 'customer') {
+                    //REMOVE - OTHER INPUT CONTAINERS & CLEAR VALUES
+                    vendor_acctCreate_inputs_container.style.display = "none"; 
+                    vendor_acctCreate_firstName_input.value = ""; 
+                    vendor_acctCreate_lastName_input.value = ""; 
+                    vendor_acctCreate_phoneNum_input.value = ""; 
+                    vendor_acctCreate_email_input.value = ""; 
+                    vendor_acctCreate_password_input.value = ""; 
+                    vendor_acctCreate_repassword_input.value = "";
+                    //  //  //  //  //  //  //  //  //  //  //  //
+                    employee_acctCreate_inputs_container.style.display = "none"; 
+                    employee_acctCreate_firstName_input.value = ""; 
+                    employee_acctCreate_lastName_input.value = ""; 
+                    employee_acctCreate_phoneNum_input.value = ""; 
+                    employee_acctCreate_email_input.value = ""; 
+                    employee_acctCreate_password_input.value = ""; 
+                    employee_acctCreate_repassword_input.value = "";
+                    //ADD - CUSTOMER INPUT CONTAINER
+                    customer_acctCreate_inputs_container.style.display = "block";  
+                }
+                //IF 'VENDOR' OPTION IS SELECTED & CLEAR VALUES
+                else if (acctType_value === 'vendor') {
+                    //REMOVE - OTHER INPUT CONTAINERS
+                    customer_acctCreate_inputs_container.style.display = "none"; 
+                    customer_acctCreate_firstName_input.value = ""; 
+                    customer_acctCreate_lastName_input.value = ""; 
+                    customer_acctCreate_phoneNum_input.value = ""; 
+                    customer_acctCreate_email_input.value = ""; 
+                    customer_acctCreate_password_input.value = ""; 
+                    customer_acctCreate_repassword_input.value = "";
+                    //  //  //  //  //  //  //  //  //  //  //  //
+                    employee_acctCreate_inputs_container.style.display = "none"; 
+                    employee_acctCreate_firstName_input.value = ""; 
+                    employee_acctCreate_lastName_input.value = ""; 
+                    employee_acctCreate_phoneNum_input.value = ""; 
+                    employee_acctCreate_email_input.value = ""; 
+                    employee_acctCreate_password_input.value = ""; 
+                    employee_acctCreate_repassword_input.value = "";
+                    //ADD - VENDOR INPUT CONTAINER
+                    vendor_acctCreate_inputs_container.style.display = "block";  
+                }
+                //IF 'EMPLOYEE' OPTION IS SELECTED & CLEAR VALUES
+                else if (acctType_value === 'employee') {
+                    //REMOVE - OTHER INPUT CONTAINERS
+                    vendor_acctCreate_inputs_container.style.display = "none"; 
+                    vendor_acctCreate_firstName_input.value = ""; 
+                    vendor_acctCreate_lastName_input.value = ""; 
+                    vendor_acctCreate_phoneNum_input.value = ""; 
+                    vendor_acctCreate_email_input.value = ""; 
+                    vendor_acctCreate_password_input.value = ""; 
+                    //  //  //  //  //  //  //  //  //  //  //  //
+                    customer_acctCreate_repassword_input.value = "";
+                    customer_acctCreate_inputs_container.style.display = "none"; 
+                    customer_acctCreate_firstName_input.value = ""; 
+                    customer_acctCreate_lastName_input.value = ""; 
+                    customer_acctCreate_phoneNum_input.value = ""; 
+                    customer_acctCreate_email_input.value = ""; 
+                    customer_acctCreate_password_input.value = ""; 
+                    customer_acctCreate_repassword_input.value = "";
+                    //ADD - EMPLOYEE INPUT CONTAINER
+                    employee_acctCreate_inputs_container.style.display = "block";  
+                }
+            });
+
+            //  //CREATE ACCOUNT BTN VAR & EVENT LISTENER
+            const create_userAccount_Btn = document.getElementById("create_userAccount-Btn-id");
+            create_userAccount_Btn.addEventListener('click', () => {
+                //CHECK WHICH ACCOUNT TYPE IS SELECTED
+                //  //IF CUSTOMER IS SELECTED
+                if (customer_acctCreate_inputs_container.style.display == "block") {
+                    //CHECK - FOR EMPTY INPUTS
+                    if (customer_acctCreate_firstName_input.value == "" || customer_acctCreate_lastName_input.value == "" || customer_acctCreate_phoneNum_input.value == "" || customer_acctCreate_email_input.value == "" || customer_acctCreate_password_input.value == "" || customer_acctCreate_repassword_input.value == "") {
+                        alert("Please enter your account information to continue");
+                    } else {
+                        //CHECK - RE-ENTERED PASSWORD INPUT 
+                        if (customer_acctCreate_password_input.value !== customer_acctCreate_repassword_input.value) {
+                            alert("Password does not match!");
+                        }
+                    }
+                }
+                //  //IF VENDOR IS SELECTED 
+                else if (vendor_acctCreate_inputs_container.style.display == "block") {
+                    //CHECK - FOR EMPTY INPUTS
+                    if (vendor_acctCreate_firstName_input.value == "" || vendor_acctCreate_lastName_input.value == "" || vendor_acctCreate_phoneNum_input.value == "" || vendor_acctCreate_email_input.value == "" || vendor_acctCreate_password_input.value == "" || vendor_acctCreate_repassword_input.value == "") {
+                        alert("Please enter all account information to continue");
+                    } 
+                    else {
+                        //CHECK - RE-ENTERED PASSWORD INPUT 
+                        if (customer_acctCreate_password_input.value !== customer_acctCreate_repassword_input.value) {
+                            alert("Password does not match!");
+                        }
+                    }
+                }
+                //  //IF EMPLOYEE IS SELECTED
+                else if (employee_acctCreate_inputs_container.style.display == "block") {
+                    //CHECK - FOR EMPTY INPUTS
+                    if (employee_acctCreate_firstName_input.value == "" || employee_acctCreate_lastName_input.value == "" || employee_acctCreate_phoneNum_input.value == "" || employee_acctCreate_email_input.value == "" || employee_acctCreate_password_input.value == "" || employee_acctCreate_repassword_input.value == "") {
+                        alert("Please enter all account information to continue");
+                    } 
+                    else {
+                        //CHECK - RE-ENTERED PASSWORD INPUT 
+                        if (employee_acctCreate_password_input.value !== customer_acctCreate_repassword_input.value) {
+                            alert("Password does not match!");
+                        }
+                    }
+                }
+            });
+
+
+            //USER SIGNIN FUNCTION ASSETS
+            //  //SIGNIN INPUTS CONTAINERS
+            //  //  //CUSTOMER SIGNIN INPUTS CONTAINER
+            const customerSignin_inputs_container = document.getElementById("customerSignin-inputs-container-id"); 
+            //  //  //VENDOR SIGNIN INPUTS CONTAINER
+            const vendorSignin_inputs_container = document.getElementById("vendorSignin-inputs-container-id"); 
+            //  //  //EMPLOYEE SIGNIN INPUTS CONTAINER
+            const employeeSignin_inputs_container = document.getElementById("employeeSignin-inputs-container-id"); 
+
+            //  //CUSTOMER - USERNAME INPUT VAR
+            const customer_userName_input = document.getElementById("customer-userName-input-id"); 
+            //  //CUSTOMER - PASSWORD INPUT VAR
+            const customer_password_input = document.getElementById("customer-password-input-id");
+            //  //VENDOR - USERNAME INPUT VAR
+            const vendor_userName_input = document.getElementById("vendor-userName-input-id"); 
+            //  //VENDOR - PASSWORD INPUT VAR
+            const vendor_password_input = document.getElementById("vendor-password-input-id"); 
+            //  //EMPLOYEE - USERNAME INPUT VAR
+            const employee_userName_input = document.getElementById("employee-userName-input-id"); 
+            //  //EMPLOYEE - PASSWORD INPUT VAR
+            const employee_password_input = document.getElementById("employee-password-input-id");
+
+            //  //SIGNIN TYPE INPUT VAR & EVENT LISTENER 
+            const signinType_input = document.getElementById("signinType-input-id"); 
+
+            signinType_input.addEventListener('change', (event) => {
+                //  //GET SELECTION VALUE
+                const signinType_value = event.target.value; 
+                //IF 'CUSTOMER' OPTION IS SELECTED
+                if (signinType_value === 'customer') {
+                    //REMOVE - OTHER INPUT CONTAINERS & CLEAR VALUES
+                    vendorSignin_inputs_container.style.display = "none"; 
+                    vendor_userName_input.value = ""; 
+                    vendor_password_input.value = ""; 
+                    employeeSignin_inputs_container.style.display = "none"; 
+                    employee_userName_input.value = ""; 
+                    employee_password_input.value = ""; 
+                    //ADD - CUSTOMER INPUT CONTAINER
+                    customerSignin_inputs_container.style.display = "block";  
+                }
+                //IF 'VENDOR' OPTION IS SELECTED & CLEAR VALUES
+                else if (signinType_value === 'vendor') {
+                    //REMOVE - OTHER INPUT CONTAINERS
+                    customerSignin_inputs_container.style.display = "none"; 
+                    customer_userName_input.value = ""; 
+                    customer_password_input.value = ""; 
+                    employeeSignin_inputs_container.style.display = "none"; 
+                    employee_userName_input.value = ""; 
+                    employee_password_input.value = ""; 
+                    //ADD - VENDOR INPUT CONTAINER
+                    vendorSignin_inputs_container.style.display = "block";  
+                }
+                //IF 'EMPLOYEE' OPTION IS SELECTED & CLEAR VALUES
+                else if (signinType_value === 'employee') {
+                    //REMOVE - OTHER INPUT CONTAINERS
+                    customerSignin_inputs_container.style.display = "none"; 
+                    customer_userName_input.value = ""; 
+                    customer_password_input.value = ""; 
+                    vendorSignin_inputs_container.style.display = "none"; 
+                    vendor_userName_input.value = ""; 
+                    vendor_password_input.value = ""; 
+                    //ADD - EMPLOYEE INPUT CONTAINER
+                    employeeSignin_inputs_container.style.display = "block";  
+                }
+            });
+
+            //USER SIGNIN BTN VAR & EVENT LISTENER
+            const userSignin_Btn = document.getElementById("userSignin-Btn-id"); 
+            userSignin_Btn.addEventListener('click', () => {
+                //CHECK WHICH SIGNIN TYPE IS SELECTED
+                //  //IF CUSTOMER IS SELECTED
+                if (customerSignin_inputs_container.style.display == "block") {
+                    //CHECK - FOR EMPTY INPUTS
+                    if (customer_userName_input.value == "" || customer_password_input.value == "") {
+                        alert("Please enter UR username & password to continue"); 
+                    } 
+                    else {
+                        //CHECK - 'CUSTOMER' USERNAME & PASSWORD
+                        customerSignin_verification();
+                    }
+                }
+                //  //IF VENDOR IS SELECTED
+                else if (vendorSignin_inputs_container.style.display == "block") {
+                    //CHECK - FOR EMPTY INPUTS
+                    if (vendor_userName_input.value == "" || vendor_password_input.value == "") {
+                        alert("Please enter UR username & password to continue"); 
+                    } 
+                    else {
+                        //CHECK - 'VENDOR' USERNAME & PASSWORD
+                        vendorSignin_verification();
+                    }
+                }
+                //  //IF EMPLOYEE IS SELECTED
+                else if (employeeSignin_inputs_container.style.display == "block") {
+                    //CHECK - FOR EMPTY INPUTS
+                    if (employee_userName_input.value == "" || employee_password_input.value == "") {
+                        alert("Please enter UR username & password to continue"); 
+                    } 
+                    else {
+                        //VERIFY - 'EMPLOYEE' USERNAME & PASSWORD
+                        employeeSignin_verification(); 
+                    }
+                }
+            });
+
+            //CUSTOMER SIGNIN VERIFICATION FUNCTION
+            function customerSignin_verification() {
+                alert("Customer verification working!!");
+                //VERIFY USERNAME
+                //  //VERIFY PASSWORD 
+                //  //PLACE USER INFO INTO TABLE SLOT
+            }
+            //VENDOR SIGNIN VERIFICATION FUNCTION
+            function vendorSignin_verification() {
+                alert("Vendor verification working!!");
+                //VERIFY USERNAME
+                //  //VERIFY PASSWORD
+                //  //PLACE USER INFO INTO TABLE SLOT
+            }
+            //EMPLOYEE SIGNIN VERIFICATION FUNCTION
+            function employeeSignin_verification() {
+                alert("Employee verification working!!");
+                //VERIFY USERNAME
+                //  //VERIFY PASSWORD
+                //  //PLACE USER INFO INTO TABLE SLOT
+            }
+
+
+
+
+            //CLICK ABOVE CARD TXT
             const clickAbove_card_txt = document.getElementById("clickAbove-card-txt-id");
             const mediaQuery = window.matchMedia("(max-width: 650px)");
 
@@ -23,8 +316,6 @@
             //MAIN CONTAINERS
             //  //  //LOADING SCREEN VARIABLE
             const loadingContainer = document.getElementById("loading-container-id");
-            //  //  //UR CARD AUDIO TONE
-            const urcard_audioTone = new Audio('audio/urCard_test_sound.mp3');
             //  //  //OVERLAY CONTAINER
             const overlayContainer = document.getElementById("overlay-container-1-id");
             //  //  //SERVICE ITEM ADDTIONAL INFO ALERT
@@ -42,20 +333,6 @@
             //  //  //SHIPPING STATUS CONTAINER
             const shippingStatus_container = document.getElementById("shippingStatus-container-id"); 
 
-            //USER ADDRESS VERIFICATION BTN
-            const finish_userAddress_button = document.getElementById("finish-userAddress-button-id"); 
-            const addressVerification_completeTxt = document.getElementById("addressVerification-completeTxt-id");
-            finish_userAddress_button.addEventListener('click', (e) => {
-                        //SCROLL TO BOTTOM OF CONTAINER
-                        let overlayContainer_inner = document.querySelector('.all-SelectedItems-inner-class').scrollBottom = 0;
-                        //IF 'RE-VERIFY' IS PRESENT
-                        if (document.getElementById("finish-userAddress-button-id").innerHTML == "re-verify") {
-                        //UPDATE - VERIFICATION TEXT
-                        addressVerification_completeTxt.innerHTML = "Re-verification Complete";
-                        //ADD - USER ADDRESS INPUTS
-                        document.getElementById("userAddress-inner-container-id").style.display = "block";          
-                        }
-            });
 
             //PRIMARY BUTTONS
             //  //  //UR SELECTIONS BTN
@@ -66,11 +343,29 @@
             const close_overlayContainer_btn = document.getElementById("overlay1-close-btn-id");
             //  //  //OVERLAY CONTAINER BACK BTN 
             const back_overlayContainer_btn = document.getElementById("overlay1-back-btn-id");
+            
+            //  //FOOTER BTNS
+            //  //  //SIGN-IN FOOTER BTN & EVENTLISTENER
+            const signin_footerBtn = document.getElementById("signin-footerBtn-id"); 
+            signin_footerBtn.addEventListener('click', () => {
+                //OPEN - OVERLAY CONTAINER
+                overlayContainer.style.display = "block";
+                //OPEN - USER SIGN-IN CONTAINER
+            }); 
+
+            //  //  //CREATE ACCOUNT FOOTER BTN & EVENTLISTENER
+            const createAcct_footerBtn = document.getElementById("createAcct-footerBtn-id"); 
+            createAcct_footerBtn.addEventListener('click', () => {
+                //REMOVE - ALL OTHER OVERLAY INNER CONTAINERS
+                //OPEN - OVERLAY CONTAINER 
+                //OPEN - CREATE ACCOUNT CONTAINER
+            });
+
 
             //GET URL STRING
-            const queryString = window.location.search; //PULL FROM BROSWER
-            // const queryString = "https://www.urcard.org/urmarket/checkout?&s1=1&s2=2&sc1=1001171170&sc2=1234&p1=1&pc1=122000111000112&urcid=v1001a"; //TEST URL OLD
-            // const queryString = "https://www.urcard.org/urmarket-checkout.html?&s1=1&s2=0&sc1=1001171170&sc2=0&p1=1&pc1=101000&urcid=v1001a"; //TEST URL NEW
+            // const queryString = window.location.search; //PULL FROM BROSWER
+            // const queryString = "https://www.urcard.org/urmarket/checkout?&s1=1&s2=2&sc1=1001171170&sc2=1234&p1=1&pc1=122000111000112&urcid=v1001a"; //TEST URL
+            const queryString = "https://www.urcard.org/urmarket-checkout.html?&s1=1&s2=0&sc1=1001171170&sc2=0&p1=1&pc1=101000&urcid=v1001a"; //TEST URL
 
             //PARSE THE URL PARAMETERS
             const urlParams = new URLSearchParams(queryString);
@@ -2579,122 +2874,6 @@
                 console.log("PRODUCT CODE1= " + productCODE_1);
             } //END - OPEN OVERLAY CONTAINER FUNCTION
 
-
-            //  //BOTTOM BUTTONS - NEXT BTN - EVENT LISTENER
-            bottomOrderTotal_nextBtn.addEventListener("click", () => {
-                //CHECK - WHICH CONTAINER IS CURRENTLY OPEN
-                //  //IF VIEW ALL SELECTIONS CONTAINER IS OPEN
-                if (allURCARD_selections_container.style.display == "block") {
-                    //CHECK FOR - SERVICE THAT REQUIRES ADDITIONAL INFO B4 PURCHASING
-                    if (serVendor1 == "urStart_bookP_vendor" || serVendor2 == "urStart_bookP_vendor") {
-                        //CLOSE - ALL URCARD SELECTIONS CONTAINERS
-                        allURCARD_selections_container.style.display = "none";
-                        //CLOSE - BOTTOM BTNS ORDER TOTAL CONTAINER
-                        bottomBtns_container1.style.display = "none"; 
-                        //REMOVE - OVERLAY HEADER CLOSE BTN 
-                        close_overlayContainer_btn.style.display = "none";
-                        //ADD - OVERLAY HEADER BACK BTN 
-                        back_overlayContainer_btn.style.display = "flex";
-                        //OPEN - SERVICE ITEM ADDITIONAL INFO CONTAINER
-                        serviceItem_additional_info_alert.style.display = "flex";
-                        //UPDATE - OVERLAY HEADER TXT
-                        mainHeader_txt.innerHTML = "Service Alert";
-
-                        //CHECK FOR - PRODUCTS TO SHIP/DELIVER
-                        if (prdVendor1 !== 0 || prdVendor1 !== null) {
-                            //CLOSE - ALL URCARD SELECTIONS CONTAINERS
-                            allURCARD_selections_container.style.display = "none";
-                            //CLOSE - BOTTOM BTNS ORDER TOTAL CONTAINER
-                            bottomBtns_container1.style.display = "none"; 
-                            //REMOVE - OVERLAY HEADER CLOSE BTN 
-                            close_overlayContainer_btn.style.display = "none";
-                            //REMOVE - DEBIT/CREDIT CARD CONTAINER | GOOGLE PAY CONTAINER | APPLE PAY CONTAINER
-                            debitCredit_container.style.display = "none";
-                            googlePay_container.style.display = "none";
-                            applePay_container.style.display = "none"; 
-                            //ADD - OVERLAY HEADER BACK BTN 
-                            back_overlayContainer_btn.style.display = "flex";
-                            //OPEN - POS CONTAINER
-                            allAssets_pos_container.style.display = "flex"; 
-                            //GET POS DATA
-                            get_pos_containerData(); 
-                            //UPDATE - OVERALY HEADER TXT
-                            mainHeader_txt.innerHTML = "Secure Checkout";
-                            //SCROLL TO TOP OF POS CONTAINER
-                            document.getElementById("pos-container-inner-id").scrollTop = 0;
-                            //CHECK FOR A SINGLE SERVICE VENDOR AT CHECKOUT
-                            checkFor_singleServiceVendor(); 
-                        }
-                    }
-                    //IF SERVICE THAT REQUIRES ADDITIONAL INFO IS NOT PRESENT - OPEN DELIVERY/SHIPPING CONTAINER
-                    else {
-                        //CHECK FOR PRODUCTS TO SHIP/DELIVER
-                        if (productItem_slot1.style.display == "none" && productItem_slot2.style.display == "none" && productItem_slot3.style.display == "none" && productItem_slot4.style.display == "none" && productItem_slot5.style.display == "none") {
-                            //CLOSE - ALL URCARD SELECTIONS CONTAINERS
-                            allURCARD_selections_container.style.display = "none";
-                            //CLOSE - BOTTOM BTNS ORDER TOTAL CONTAINER
-                            bottomBtns_container1.style.display = "none"; 
-                            //REMOVE - OVERLAY HEADER CLOSE BTN 
-                            close_overlayContainer_btn.style.display = "none";
-                            //REMOVE - VALUES FROM POS FIRST/LAST NAME & PHONE # INPUTS
-                            user_firstName.value = ""; 
-                            user_lastName.value = ""; 
-                            user_phoneNumber.value = ""; 
-                            //REMOVE - DEBIT/CREDIT CARD CONTAINER | GOOGLE PAY CONTAINER | APPLE PAY CONTAINER
-                            debitCredit_container.style.display = "none";
-                            googlePay_container.style.display = "none";
-                            applePay_container.style.display = "none"; 
-                            //ADD - OVERLAY HEADER BACK BTN 
-                            back_overlayContainer_btn.style.display = "flex";
-                            //OPEN - POS CONTAINER
-                            allAssets_pos_container.style.display = "flex"; 
-                            //GET POS DATA
-                            get_pos_containerData(); 
-                            //UPDATE - OVERALY HEADER TXT
-                            mainHeader_txt.innerHTML = "Secure Checkout";
-                            //SCROLL TO TOP OF POS CONTAINER
-                            document.getElementById("pos-container-inner-id").scrollTop = 0;
-                            //CHECK FOR A SINGLE SERVICE VENDOR AT CHECKOUT
-                            checkFor_singleServiceVendor(); 
-                        } else {
-                            //CLOSE - ALL URCARD SELECTIONS CONTAINERS
-                            allURCARD_selections_container.style.display = "none";
-                            //CLOSE - BOTTOM BTNS ORDER TOTAL CONTAINER
-                            bottomBtns_container1.style.display = "none"; 
-                            //REMOVE - OVERLAY HEADER CLOSE BTN 
-                            close_overlayContainer_btn.style.display = "none";
-                            //ADD - OVERLAY HEADER BACK BTN 
-                            back_overlayContainer_btn.style.display = "flex";
-                            //GET SHIPPING/DELIVERY DATA
-                            get_productShipping_delivery_data();
-                            //OPEN - DELIVERY/SHIPPING CONTAINER
-                            allAssets_deliveryCarryout_shippingInfo_container.style.display = "flex";
-                            //SCROLL TO TOP OF CONTAINER
-                            let overlayContainer_inner2 = document.querySelector('.all-SelectedItems-inner-class').scrollTop = 0;
-                            //OPEN - BOTTOM BTNS ORDER TOTAL CONTAINER
-                            bottomBtns_container1.style.display = "block";
-                            //UPDATE - OVERLAY HEADER TXT
-                            mainHeader_txt.innerHTML = "UR Shipping Details";
-                        }
-                    }
-                }
-                //  //IF SHIPPING/DELIVERY CONTAINER IS OPEN
-                else if (allAssets_deliveryCarryout_shippingInfo_container.style.display == "flex") {
-                    //CHECK SHIPPING/DELIVERY INPUTS BEFORE CONTINUING
-                    check_deliveryShipping_inputs();
-                    //PLACE - USER FIRST NAME INPUT DATA = POS FIRST NAME
-                    pos_firstName_input.value = user_firstName.value;
-                    //PLACE - USER LAST NAME INPUT DATA = POS LAST NAME
-                    pos_lastName_input.value = user_lastName.value;
-                    //PLACE - USER PHONE # INPUT DATA = POS PHONE #
-                    pos_phoneNumber_input.value = user_phoneNumber.value;
-                    //PLACE - USER EMAIL INPUT DATA = POS EMAIL 
-                    pos_userEmail_input.value = user_email.value; 
-                    //CHECK - TERMS OF SERVICE CHECKBOX = CHECKED
-                    pos_user_tosAgreeCheckbox.checked = true; 
-                }
-            }); //END - BOTTOM BUTTONS - NEXT BTN - EVENT LISTENER
-            
             //USER FIRST NAME INPUT 
             const user_firstName = document.getElementById("user-firstName-id");
             //USER LAST NAME INPUT 
@@ -2771,24 +2950,32 @@
                 if (e.target.value.trim() !== '') {
                     e.target.style.border = '2px #2F9C95 solid'
                 }
+                //CHECK - ADD/REMOVE NEXT BTN (SHIPPING)
+                addRemove_nextBtn_shipping();
             }); 
             //USER CITY INPUT EVENT LISTENER
             user_city.addEventListener('input', (e) => {
                 if (e.target.value.trim() !== '') { 
                     e.target.style.border = '2px #2F9C95 solid'
                 }
+                //CHECK - ADD/REMOVE NEXT BTN (SHIPPING)
+                addRemove_nextBtn_shipping();
             }); 
             //USER STATE INPUT EVENT LISTENER
             user_state.addEventListener('input', (e) => {
                 if (e.target.value.trim() !== '') { 
                     e.target.style.border = '2px #2F9C95 solid'
                 }
+                //CHECK - ADD/REMOVE NEXT BTN (SHIPPING)
+                addRemove_nextBtn_shipping();
             });
             //USER ZIPCODE INPUT EVENT LISTENER
             user_zipcode.addEventListener('input', (e) => {
                 if (e.target.value.trim() !== '') { 
                     e.target.style.border = '2px #2F9C95 solid'
                 }
+                //CHECK - ADD/REMOVE NEXT BTN (SHIPPING)
+                addRemove_nextBtn_shipping();
             });
 
             //CHECK DELIVERY AND SHIPPING INPUTS 
@@ -2836,10 +3023,7 @@
                 }
                 //  //CHECK - USER STREET ADDRESS INPUT
                 else if (user_streetAddress.value == "") {
-                    //NEW ALERT
-                    alert("Please enter your full shipping address within the search and verify to continue");
-                    //OLD ALERT
-                    // alert("Please enter your street address to continue");
+                    alert("Please enter your street address to continue");
                     //CHANGE INPUT BORDER RED
                     user_streetAddress.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
@@ -2847,10 +3031,7 @@
                 }
                 //  //CHECK - USER CITY INPUT 
                 else if (user_city.value == "") {
-                    //NEW ALERT
-                    alert("Please enter your full shipping address within the search and verify to continue");
-                    //OLD ALERT
-                    // alert("Please enter your city to continue");
+                    alert("Please enter your city to continue");
                     //CHANGE INPUT BORDER RED
                     user_city.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
@@ -2858,10 +3039,7 @@
                 }
                 //  //CHECK - USER STATE INPUT
                 else if (user_state.value == "") {
-                    //NEW ALERT
-                    alert("Please enter your full shipping address within the search and verify to continue");
-                    //OLD ALERT
-                    // alert("Please enter your state to continue");
+                    alert("Please enter your state to continue");
                     //CHANGE INPUT BORDER RED
                     user_state.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
@@ -2869,10 +3047,7 @@
                 }
                 //  //CHECK - USER ZIPCODE INPUT 
                 else if (user_zipcode.value == "") {
-                    //NEW ALERT
-                    alert("Please enter your full shipping address within the search and verify to continue");
-                    //OLD ALERT
-                    // alert("Please enter your zipcode to continue");
+                    alert("Please enter your zipcode to continue");
                     //CHANGE INPUT BORDER RED
                     user_zipcode.style.border = "solid 4px red"; 
                     //SCROLL TO INPUT
@@ -2894,6 +3069,162 @@
                     checkFor_singleServiceVendor();
                 }
             } //END - CHECK DELIVERY AND SHIPPING INPUTS
+
+
+            //REMOVE/ADD NEXT BTN (SHIPPING) FUNCTION
+            function addRemove_nextBtn_shipping() {
+                //CHECK - SHIPPING INPUTS
+                //  //CHECK - SHIPPING STREET ADDRESS INPUT
+                if (user_streetAddress.value == "" || user_streetAddress.value == " ") {
+                    //REMOVE - NEXT BTN
+                    bottomOrderTotal_nextBtn.style.display = "none";
+                }
+                //  //CHECK - SHIPPING CITY INPUT
+                else if (user_city.value == "" || user_city.value == " ") {
+                    ////REMOVE - NEXT BTN
+                    bottomOrderTotal_nextBtn.style.display = "none";
+                }
+                //  //CHECK - SHIPPING STATE INPUT
+                else if (user_state.value == "" || user_state.value == " ") {
+                    ////REMOVE - NEXT BTN
+                    bottomOrderTotal_nextBtn.style.display = "none";
+                }
+                //  //CHECK - SHIPPING ZIPCODE INPUT 
+                else if (user_zipcode.value == "" || user_zipcode.value == " ") {
+                    ////REMOVE - NEXT BTN
+                    bottomOrderTotal_nextBtn.style.display = "none";
+                }
+                else {
+                    //ADD - NEXT BTN
+                    bottomOrderTotal_nextBtn.style.display = "flex";
+                }
+            } //END - REMOVE/ADD NEXT BTN FUNCTION
+
+
+            //  //BOTTOM BUTTONS - NEXT BTN - EVENT LISTENER
+            bottomOrderTotal_nextBtn.addEventListener("click", () => {
+                //CHECK - ADD/REMOVE NEXT BTN (SHIPPING)
+                addRemove_nextBtn_shipping();
+
+                //CHECK - WHICH CONTAINER IS CURRENTLY OPEN
+                //  //IF VIEW ALL SELECTIONS CONTAINER IS OPEN
+                if (allURCARD_selections_container.style.display == "block") {
+                    //CHECK FOR - SERVICE THAT REQUIRES ADDITIONAL INFO B4 PURCHASING
+                    if (serVendor1 == "urStart_bookP_vendor" || serVendor2 == "urStart_bookP_vendor") {
+                        //CLOSE - ALL URCARD SELECTIONS CONTAINERS
+                        allURCARD_selections_container.style.display = "none";
+                        //CLOSE - BOTTOM BTNS ORDER TOTAL CONTAINER
+                        bottomBtns_container1.style.display = "none"; 
+                        //REMOVE - OVERLAY HEADER CLOSE BTN 
+                        close_overlayContainer_btn.style.display = "none";
+                        //ADD - OVERLAY HEADER BACK BTN 
+                        back_overlayContainer_btn.style.display = "flex";
+                        //OPEN - SERVICE ITEM ADDITIONAL INFO CONTAINER
+                        serviceItem_additional_info_alert.style.display = "flex";
+                        //UPDATE - OVERLAY HEADER TXT
+                        mainHeader_txt.innerHTML = "Service Alert";
+
+                        //CHECK FOR - PRODUCTS TO SHIP/DELIVER
+                        if (prdVendor1 !== 0 || prdVendor1 !== null) {
+                            //CLOSE - ALL URCARD SELECTIONS CONTAINERS
+                            allURCARD_selections_container.style.display = "none";
+                            //CLOSE - BOTTOM BTNS ORDER TOTAL CONTAINER
+                            bottomBtns_container1.style.display = "none"; 
+                            //REMOVE - OVERLAY HEADER CLOSE BTN 
+                            close_overlayContainer_btn.style.display = "none";
+                            //REMOVE - DEBIT/CREDIT CARD CONTAINER | GOOGLE PAY CONTAINER | APPLE PAY CONTAINER
+                            debitCredit_container.style.display = "none";
+                            googlePay_container.style.display = "none";
+                            applePay_container.style.display = "none"; 
+                            //ADD - OVERLAY HEADER BACK BTN 
+                            back_overlayContainer_btn.style.display = "flex";
+                            //OPEN - POS CONTAINER
+                            allAssets_pos_container.style.display = "flex"; 
+                            //GET POS DATA
+                            get_pos_containerData(); 
+                            //UPDATE - OVERALY HEADER TXT
+                            mainHeader_txt.innerHTML = "Secure Checkout";
+                            //SCROLL TO TOP OF POS CONTAINER
+                            document.getElementById("pos-container-inner-id").scrollTop = 0;
+                            //CHECK FOR A SINGLE SERVICE VENDOR AT CHECKOUT
+                            checkFor_singleServiceVendor(); 
+                        }
+                    }
+                    //IF SERVICE THAT REQUIRES ADDITIONAL INFO IS NOT PRESENT - OPEN DELIVERY/SHIPPING CONTAINER
+                    else {
+                        //CHECK FOR PRODUCTS TO SHIP/DELIVER
+                        if (productItem_slot1.style.display == "none" && productItem_slot2.style.display == "none" && productItem_slot3.style.display == "none" && productItem_slot4.style.display == "none" && productItem_slot5.style.display == "none") {
+                            //CLOSE - ALL URCARD SELECTIONS CONTAINERS
+                            allURCARD_selections_container.style.display = "none";
+                            //CLOSE - BOTTOM BTNS ORDER TOTAL CONTAINER
+                            bottomBtns_container1.style.display = "none"; 
+                            //REMOVE - OVERLAY HEADER CLOSE BTN 
+                            close_overlayContainer_btn.style.display = "none";
+                            //REMOVE - VALUES FROM POS FIRST/LAST NAME & PHONE # INPUTS
+                            user_firstName.value = ""; 
+                            user_lastName.value = ""; 
+                            user_phoneNumber.value = ""; 
+                            //REMOVE - DEBIT/CREDIT CARD CONTAINER | GOOGLE PAY CONTAINER | APPLE PAY CONTAINER
+                            debitCredit_container.style.display = "none";
+                            googlePay_container.style.display = "none";
+                            applePay_container.style.display = "none"; 
+                            //ADD - OVERLAY HEADER BACK BTN 
+                            back_overlayContainer_btn.style.display = "flex";
+                            //OPEN - POS CONTAINER
+                            allAssets_pos_container.style.display = "flex"; 
+                            //GET POS DATA
+                            get_pos_containerData(); 
+                            //UPDATE - OVERALY HEADER TXT
+                            mainHeader_txt.innerHTML = "Secure Checkout";
+                            //SCROLL TO TOP OF POS CONTAINER
+                            document.getElementById("pos-container-inner-id").scrollTop = 0;
+                            //CHECK FOR A SINGLE SERVICE VENDOR AT CHECKOUT
+                            checkFor_singleServiceVendor(); 
+                        } 
+                        //IF THERE ARE PRODUCTS TO SHIP
+                        else {
+                            //CLOSE - ALL URCARD SELECTIONS CONTAINERS
+                            allURCARD_selections_container.style.display = "none";
+                            //CLOSE - BOTTOM BTNS ORDER TOTAL CONTAINER
+                            bottomBtns_container1.style.display = "none"; 
+                            //REMOVE - OVERLAY HEADER CLOSE BTN 
+                            close_overlayContainer_btn.style.display = "none";
+                            //ADD - OVERLAY HEADER BACK BTN 
+                            back_overlayContainer_btn.style.display = "flex";
+                            //GET SHIPPING/DELIVERY DATA
+                            get_productShipping_delivery_data();
+                            //CHECK - ADD/REMOVE NEXT BTN (SHIPPING)
+                            addRemove_nextBtn_shipping();
+                            //OPEN - DELIVERY/SHIPPING CONTAINER
+                            allAssets_deliveryCarryout_shippingInfo_container.style.display = "flex";
+                            //SCROLL TO TOP OF CONTAINER
+                            let overlayContainer_inner2 = document.querySelector('.all-SelectedItems-inner-class').scrollTop = 0;
+                            //OPEN - BOTTOM BTNS ORDER TOTAL CONTAINER
+                            bottomBtns_container1.style.display = "block";
+                            //UPDATE - OVERLAY HEADER TXT
+                            mainHeader_txt.innerHTML = "UR Shipping Details";
+                        }
+                    }
+                }
+                //  //IF SHIPPING/DELIVERY CONTAINER IS OPEN
+                else if (allAssets_deliveryCarryout_shippingInfo_container.style.display == "flex") {
+                    //CHECK SHIPPING/DELIVERY INPUTS BEFORE CONTINUING
+                    check_deliveryShipping_inputs();
+                    //CHECK - ADD/REMOVE NEXT BTN (SHIPPING)
+                    addRemove_nextBtn_shipping();
+                    //PLACE - USER FIRST NAME INPUT DATA = POS FIRST NAME
+                    pos_firstName_input.value = user_firstName.value;
+                    //PLACE - USER LAST NAME INPUT DATA = POS LAST NAME
+                    pos_lastName_input.value = user_lastName.value;
+                    //PLACE - USER PHONE # INPUT DATA = POS PHONE #
+                    pos_phoneNumber_input.value = user_phoneNumber.value;
+                    //PLACE - USER EMAIL INPUT DATA = POS EMAIL 
+                    pos_userEmail_input.value = user_email.value; 
+                    //CHECK - TERMS OF SERVICE CHECKBOX = CHECKED
+                    pos_user_tosAgreeCheckbox.checked = true; 
+                }
+            }); //END - BOTTOM BUTTONS - NEXT BTN - EVENT LISTENER
+            
 
 
             //FINAL SELECTED SERVICE ITEMS CONTAINER 
@@ -3908,16 +4239,6 @@
                         overlayContainer.style.display = "block";
                     } 
                     else {
-                        //PLAY URCARD TONE 
-                        // urcard_audioTone.play()
-                        // .then(() => {
-                        // // Success: Audio is playing, remove listener to prevent re-triggering
-                        // document.body.removeEventListener('click', playOnFirstInteraction);
-                        // })
-                        // .catch(error => {
-                        //             console.log("UR Card Tone Playback Failed:", error);
-                        // });
-                                
                         //OEPN LOADING CONTAINER
                         loadingContainer.style.display = "block"; 
                         //3 SECOND DELAY TO LOAD ASSETS
