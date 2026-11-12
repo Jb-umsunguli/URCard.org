@@ -679,7 +679,7 @@
             //CUSTOM SERVICE VENDOR - PROVIDER NAME
             var customServ_providerName = "Custom Service Vendor, co.";
             //CUSTOM SERVICE VENDOR - CUSTOM INFO TXT
-            customServ_vendor_customInfoTxt = "Customizable vendor text here."; 
+            var customServ_vendor_customInfoTxt = "Customizable vendor text here."; 
             //CUSTOM SERVICE VENDOR - COST DETERMINATION 
             var customServ_serviceItem_cost;
             var customServ_serviceItem_cost_text; 
