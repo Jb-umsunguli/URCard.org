@@ -6408,6 +6408,9 @@
                         document.getElementById("addressVerification-completeTxt-id").innerHTML = "Re-verification Complete";
                         //ADD - USER ADDRESS INPUTS
                         document.getElementById("userAddress-inner-container-id").style.display = "block"; 
+                    } else if (document.getElementById("finish-userAddress-button-id").innerHTML == "verify") {
+                        //REMOVE - USER ADDRESS INPUTS
+                        document.getElementById("userAddress-inner-container-id").style.display = "none"; 
                     }
                     //OPEN - USER ADDRESS INPUTS CONTAINER 
                     address_inputs_container.style.display = "block"; 
