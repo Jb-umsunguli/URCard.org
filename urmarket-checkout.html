@@ -6415,7 +6415,10 @@
                     //OPEN - USER ADDRESS INPUTS CONTAINER 
                     address_inputs_container.style.display = "block";
                     //SCROLL TO - BOTTOM OF CONTAINER 
-                    document.getElementById("deliveryShipping-innerContainer-id").scrollTop = container.scrollHeight;
+                    document.getElementById("deliveryShipping-innerContainer-id")..scrollTo({
+                        top: container.scrollHeight,
+                        behavior: "smooth"
+                    });
 
                 }
         
